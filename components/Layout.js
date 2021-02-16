@@ -6,9 +6,11 @@ export default function Layout({ children, title = "" }) {
   return (
     <>
       <Title title={title} />
-      <Header />
-      <main className="">{children}</main>
-      <Footer />
+      <div className="container mx-auto prose max-w-full">
+        <Header />
+        <main className="">{children}</main>
+        <Footer />
+      </div>
     </>
   );
 }
