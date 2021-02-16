@@ -9,9 +9,11 @@
   },
   "dependencies": {
     "@headlessui/react": "^0.3.1",
+    "@tailwindcss/typography": "^0.4.0",
     "autoprefixer": "^10.2.4",
     "heroicons": "^0.4.2",
     "lingojs": "^2.0.8",
+    "moment": "^2.29.1",
     "next": "10.0.6",
     "postcss": "^8.2.6",
     "postcss-flexbugs-fixes": "^5.0.2",
