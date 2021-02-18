@@ -1,11 +1,14 @@
 import Layout from "../components/Layout";
 import Announcement from "../components/Announcement";
+import Carousel from "../components/Carousel";
 
 export default function Home() {
   return (
     <>
       <Layout title="">
         <Announcement />
+        {/* carousel section */}
+        <Carousel />
         {/* features section */}
         <section>
           <div className="py-12 bg-white">
