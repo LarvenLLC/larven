@@ -8,9 +8,7 @@ export default function Layout({ children, title = "" }) {
       <Title title={title} />
       <div className="container mx-auto prose max-w-full">
         <Header />
-        <main className="max-w-7xl px-4 sm:px-6 lg:py-16 lg:px-8">
-          {children}
-        </main>
+        <main className="">{children}</main>
         <Footer />
       </div>
     </>
