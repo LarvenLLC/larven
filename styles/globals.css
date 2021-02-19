@@ -24,4 +24,8 @@
   .m-0-important {
     margin: 0 !important;
   }
+
+  .carousel__dot {
+    @apply h-4 w-4 bg-blue-400 rounded-full m-1;
+  }
 }
