@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import Link from "next/link";
 
 import moment from "moment";
 
@@ -35,7 +36,11 @@ export default function Footer({}) {
         <div className="">
           <h4>Larven</h4>
           <ul className="">
-            <li>Contacts</li>
+            <li>
+              <Link href="/contacts">
+                <a className="no-underline font-normal">Contacts</a>
+              </Link>
+            </li>
             <li>About</li>
             <li>Careers</li>
             <li>Ecosystem Partners</li>
