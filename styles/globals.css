@@ -25,6 +25,10 @@
     @apply border-2 rounded w-full p-2;
   }
 
+  section {
+    @apply max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
   .carousel__dot {
     @apply h-4 w-4 bg-blue-400 rounded-full m-1;
   }
