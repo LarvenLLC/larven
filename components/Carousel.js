@@ -20,11 +20,11 @@ export default function Carousel() {
       isIntrinsicHeight
       className="relative"
     >
-      <Slider classNameTray="m-0-important">
+      <Slider classNameTray="m-0">
         <Slide
           index={0}
-          style={{ position: "relative", height: 600 }}
-          className="overflow-hidden w-100"
+          style={{ height: 600 }}
+          className="relative overflow-hidden w-100"
         >
           <Image
             src="/images/sample.jpg"
@@ -35,8 +35,8 @@ export default function Carousel() {
         </Slide>
         <Slide
           index={1}
-          style={{ position: "relative", height: 600 }}
-          className="overflow-hidden w-100"
+          style={{ height: 600 }}
+          className="relative overflow-hidden w-100"
         >
           <Image
             src="/images/sample1.jpg"
@@ -47,8 +47,8 @@ export default function Carousel() {
         </Slide>
         <Slide
           index={2}
-          style={{ position: "relative", height: 600 }}
-          className="overflow-hidden w-100"
+          style={{ height: 600 }}
+          className="relative overflow-hidden w-100"
         >
           <Image
             src="/images/sample.jpg"
