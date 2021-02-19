@@ -12,12 +12,12 @@ export default function Header({}) {
   return (
     <div className="relative bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="flex justify-between items-center border-b-2 border-gray-100 py-2 md:justify-start md:space-x-10">
+        <div className="flex justify-between items-center border-b-2 border-gray-100 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <a href="#">
               <span className="sr-only">Larven</span>
               <img
-                className="h-8 w-auto sm:h-10"
+                className="h-8 w-auto sm:h-10 my-3"
                 src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
                 alt=""
               />
@@ -47,10 +47,16 @@ export default function Header({}) {
             </button>
           </div>
           <nav className="hidden md:flex space-x-10">
+            <a
+              href="#"
+              className="no-underline text-base font-medium text-gray-500 hover:text-gray-900"
+            >
+              Insights
+            </a>
             <Menu>
               <div className="relative">
                 <Menu.Button className="group bg-white rounded-md text-gray-500 inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none">
-                  Solutions{" "}
+                  Services{" "}
                   <svg
                     className="ml-2 h-5 w-5 text-gray-400 group-hover:text-gray-500"
                     xmlns="http://www.w3.org/2000/svg"
@@ -95,10 +101,10 @@ export default function Header({}) {
                             />
                           </svg>,
                           <div key={2} className="ml-4">
-                            <p className="text-base font-medium text-gray-900">
+                            <p className="m-0 text-base font-medium text-gray-900">
                               Analytics
                             </p>
-                            <p className="mt-1 text-sm text-gray-500">
+                            <p className="mt-1 mb-0 text-sm text-gray-500">
                               Get a better understanding of where your traffic
                               is coming from.
                             </p>
@@ -128,10 +134,10 @@ export default function Header({}) {
                             />
                           </svg>,
                           <div key={2} className="ml-4">
-                            <p className="text-base font-medium text-gray-900">
+                            <p className="m-0 text-base font-medium text-gray-900">
                               Engagement
                             </p>
-                            <p className="mt-1 text-sm text-gray-500">
+                            <p className="mt-1 mb-0 text-sm text-gray-500">
                               Speak directly to your customers in a more
                               meaningful way.
                             </p>
@@ -161,10 +167,10 @@ export default function Header({}) {
                             />
                           </svg>,
                           <div key={2} className="ml-4">
-                            <p className="text-base font-medium text-gray-900">
+                            <p className="m-0 text-base font-medium text-gray-900">
                               Security
                             </p>
-                            <p className="mt-1 text-sm text-gray-500">
+                            <p className="mt-1 mb-0 text-sm text-gray-500">
                               Your customers&#039; data will be safe and secure.
                             </p>
                           </div>,
@@ -193,10 +199,10 @@ export default function Header({}) {
                             />
                           </svg>,
                           <div key={2} className="ml-4">
-                            <p className="text-base font-medium text-gray-900">
+                            <p className="m-0 text-base font-medium text-gray-900">
                               Integrations
                             </p>
-                            <p className="mt-1 text-sm text-gray-500">
+                            <p className="mt-1 mb-0 text-sm text-gray-500">
                               Connect with third-party tools that you&#039;re
                               already using.
                             </p>
@@ -226,10 +232,10 @@ export default function Header({}) {
                             />
                           </svg>,
                           <div key={2} className="ml-4">
-                            <p className="text-base font-medium text-gray-900">
+                            <p className="m-0 text-base font-medium text-gray-900">
                               Automations
                             </p>
-                            <p className="mt-1 text-sm text-gray-500">
+                            <p className="mt-1 mb-0 text-sm text-gray-500">
                               Build strategic funnels that will drive your
                               customers to convert
                             </p>
@@ -302,17 +308,10 @@ export default function Header({}) {
             </Menu>
             <a
               href="#"
-              className="text-base font-medium text-gray-500 hover:text-gray-900"
+              className="no-underline text-base font-medium text-gray-500 hover:text-gray-900"
             >
-              Pricing
+              Trainings
             </a>
-            <a
-              href="#"
-              className="text-base font-medium text-gray-500 hover:text-gray-900"
-            >
-              Docs
-            </a>
-
             <Menu>
               {/* Item active: "text-gray-900", Item inactive: "text-gray-500" */}
               {/* 'More' flyout menu, show/hide based on flyout menu state.
@@ -484,20 +483,6 @@ export default function Header({}) {
               </div>
             </Menu>
           </nav>
-          <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-            <a
-              href="#"
-              className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900"
-            >
-              Sign in
-            </a>
-            <a
-              href="#"
-              className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
-            >
-              Sign up
-            </a>
-          </div>
         </div>
       </div>
       <Transition
@@ -509,7 +494,7 @@ export default function Header({}) {
         leaveFrom="opacity-100 scale-100"
         leaveTo="opacity-0 scale-95"
       >
-        <div className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
+        <div className="absolute z-10 top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
           <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
             <div className="pt-5 pb-6 px-5">
               <div className="flex items-center justify-between">
@@ -721,20 +706,6 @@ export default function Header({}) {
                 >
                   Events
                 </a>
-              </div>
-              <div>
-                <a
-                  href="#"
-                  className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
-                >
-                  Sign up
-                </a>
-                <p className="mt-6 text-center text-base font-medium text-gray-500">
-                  Existing customer?
-                  <a href="#" className="text-indigo-600 hover:text-indigo-500">
-                    Sign in
-                  </a>
-                </p>
               </div>
             </div>
           </div>
