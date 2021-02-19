@@ -59,7 +59,7 @@ export default function Carousel() {
         </Slide>
       </Slider>
       <div>
-        <DotGroup />
+        <DotGroup className="w-full absolute bottom-1 left-1 text-center" />
         <ButtonBack className="absolute rounded-full bottom-2/4 left-1 text-white hover:text-blue-600 flex items-center justify-center h-12 w-12">
           <svg
             xmlns="http://www.w3.org/2000/svg"
