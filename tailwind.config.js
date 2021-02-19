@@ -16,5 +16,6 @@ module.exports = {
   variants: {
     extend: {},
   },
+  important: "html",
   plugins: [require("@tailwindcss/typography")],
 };
