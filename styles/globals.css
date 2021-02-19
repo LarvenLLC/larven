@@ -21,8 +21,8 @@
     box-sizing: border-box;
   }
 
-  .m-0-important {
-    margin: 0 !important;
+  input {
+    @apply border-2 rounded w-full p-2;
   }
 
   .carousel__dot {
