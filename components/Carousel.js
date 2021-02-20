@@ -20,12 +20,8 @@ export default function Carousel() {
       isIntrinsicHeight
       className="relative"
     >
-      <Slider classNameTray="m-0">
-        <Slide
-          index={0}
-          style={{ height: 600 }}
-          className="relative overflow-hidden w-100"
-        >
+      <Slider classNameTray="m-0 relative overflow-hidden w-100">
+        <Slide index={0} style={{ height: 500 }}>
           <Image
             src="/images/sample.jpg"
             layout="fill"
@@ -33,11 +29,7 @@ export default function Carousel() {
             alt=""
           />
         </Slide>
-        <Slide
-          index={1}
-          style={{ height: 600 }}
-          className="relative overflow-hidden w-100"
-        >
+        <Slide index={1} style={{ height: 500 }}>
           <Image
             src="/images/sample1.jpg"
             layout="fill"
@@ -45,11 +37,7 @@ export default function Carousel() {
             alt=""
           />
         </Slide>
-        <Slide
-          index={2}
-          style={{ height: 600 }}
-          className="relative overflow-hidden w-100"
-        >
+        <Slide index={2} style={{ height: 500 }}>
           <Image
             src="/images/sample.jpg"
             layout="fill"
@@ -59,7 +47,7 @@ export default function Carousel() {
         </Slide>
       </Slider>
       <div>
-        <DotGroup className="w-full absolute bottom-1 left-1 text-center" />
+        <DotGroup className="w-full absolute bottom-1 text-center" />
         <ButtonBack className="absolute rounded-full bottom-2/4 left-1 text-white hover:text-blue-600 flex items-center justify-center h-12 w-12">
           <svg
             xmlns="http://www.w3.org/2000/svg"
