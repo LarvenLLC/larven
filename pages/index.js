@@ -11,17 +11,21 @@ export default function Home() {
         {/* announcement section */}
         {/* <Announcement /> */}
         {/* carousel section */}
-        <Carousel />
+        <section className="pt-0 pb-12 px-0">
+          <Carousel />
+        </section>
         {/* testimonials section */}
-        <section className="py-12">
+        <section className="">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-            <div className="relative overflow-hidden h-96 w-100 rounded-lg">
-              <Image
-                src="/images/sample.jpg"
-                layout="fill"
-                objectFit="cover"
-                alt=""
-              />
+            <div className="bg-gray-100 relative p-1 rounded-lg">
+              <div className="relative overflow-hidden h-96 w-100 rounded-lg bottom-4 left-4">
+                <Image
+                  src="/images/sample.jpg"
+                  layout="fill"
+                  objectFit="cover"
+                  alt=""
+                />
+              </div>
             </div>
             <div>
               <h1>
@@ -87,7 +91,7 @@ export default function Home() {
           </div>
         </section>
         {/* features section */}
-        <section className="py-12 pt-0 bg-white">
+        <section className="pt-0 bg-white">
           <div className="mx-auto">
             <div className="lg:text-center">
               <h2 className="text-base text-indigo-600 font-semibold tracking-wide uppercase">
@@ -237,7 +241,7 @@ export default function Home() {
         <section></section>
         {/* cta section */}
         <section className="px-10 bg-gray-50">
-          <div className="mx-auto py-12 lg:flex lg:items-center lg:justify-between">
+          <div className="mx-auto lg:flex lg:items-center lg:justify-between">
             <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
               <span className="block">Ready to dive in?</span>
               <span className="block text-indigo-600">
