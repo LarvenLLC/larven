@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 import { Menu, Transition } from "@headlessui/react";
+import Link from "next/link";
 
 export default function Header({}) {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,16 +13,18 @@ export default function Header({}) {
   return (
     <div className="relative bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="flex justify-between items-center border-b-2 border-gray-100 md:justify-start md:space-x-10">
-          <div className="flex justify-start lg:w-0 lg:flex-1">
-            <a href="#">
-              <span className="sr-only">Larven</span>
-              <img
-                className="h-8 w-auto sm:h-10 my-3"
-                src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
-                alt=""
-              />
-            </a>
+        <div className="flex justify-between items-center border-b-2 border-gray-100 md:justify-center md:space-x-10">
+          <div className="flex justify-start">
+            <Link href="/">
+              <a>
+                <span className="sr-only">Larven</span>
+                <img
+                  className="h-8 w-auto sm:h-10 my-3"
+                  src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+                  alt="Larven"
+                />
+              </a>
+            </Link>
           </div>
           <div className="-mr-2 -my-2 md:hidden">
             <button
