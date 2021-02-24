@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 
 import Layout from "../components/Layout";
@@ -20,7 +21,7 @@ export default function Home() {
             <div className="bg-gray-100 relative p-1 rounded-lg">
               <div className="relative overflow-hidden h-96 w-100 rounded-lg bottom-4 left-4">
                 <Image
-                  src="/images/sample.jpg"
+                  src="/images/ceo.jpg"
                   layout="fill"
                   objectFit="cover"
                   alt=""
@@ -80,10 +81,10 @@ export default function Home() {
                 </svg>
               </h1>
               <h3>
-                In publishing and graphic design, Lorem ipsum is a placeholder
-                text commonly used to demonstrate the visual form of a document
-                or a typeface without relying on meaningful content. Lorem ipsum
-                may be used as a placeholder before final copy is available.
+                Technology and business are now inseparable. At Larven, we take
+                the road less travelled to help businesses bridge the gap
+                between business and technology. This way, we not only transform
+                businesses, but we transform lives and communities.
               </h3>
               <h6>Adam Beleko</h6>
               <h6>CEO, Larven Technologies</h6>
@@ -91,7 +92,7 @@ export default function Home() {
           </div>
         </section>
         {/* features section */}
-        <section className="pt-0 bg-white">
+        {/* <section className="pt-0 bg-white">
           <div className="mx-auto">
             <div className="lg:text-center">
               <h2 className="text-base text-indigo-600 font-semibold tracking-wide uppercase">
@@ -234,7 +235,7 @@ export default function Home() {
               </dl>
             </div>
           </div>
-        </section>
+        </section> */}
         {/* partners section */}
         <section></section>
         {/* testimonials section */}
@@ -243,27 +244,23 @@ export default function Home() {
         <section className="px-10 bg-gray-50">
           <div className="mx-auto lg:flex lg:items-center lg:justify-between">
             <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-              <span className="block">Ready to dive in?</span>
-              <span className="block text-indigo-600">
-                Start your free trial today.
-              </span>
+              <span className="block">Ready to transform your processes?</span>
+              <span className="block text-indigo-600">Join us now.</span>
             </h2>
             <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
               <div className="inline-flex rounded-md shadow">
-                <a
-                  href="#"
-                  className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
-                >
-                  Get started
-                </a>
+                <Link href="/contacts">
+                  <a className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
+                    Contact Us
+                  </a>
+                </Link>
               </div>
               <div className="ml-3 inline-flex rounded-md shadow">
-                <a
-                  href="#"
-                  className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50"
-                >
-                  Learn more
-                </a>
+                <Link href="/about">
+                  <a className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50">
+                    Learn more
+                  </a>
+                </Link>
               </div>
             </div>
           </div>
