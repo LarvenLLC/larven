@@ -12,7 +12,7 @@ export default function Footer({}) {
           <ul className="">
             <li>Artificial Intelligence</li>
             <li>Application Services</li>
-            <li>Automation</li>
+            <li>Automations</li>
             <li>Blockchain Technology</li>
           </ul>
         </div>
