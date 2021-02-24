@@ -1,5 +1,7 @@
 import "pure-react-carousel/dist/react-carousel.es.css";
+import Link from "next/link";
 import Image from "next/image";
+
 import {
   CarouselProvider,
   Slider,
@@ -18,34 +20,69 @@ export default function Carousel() {
       naturalSlideHeight={100}
       totalSlides={3}
       isIntrinsicHeight
-      className="relative"
+      className="relative no-prose"
     >
-      <Slider classNameTray="m-0 relative overflow-hidden w-100">
-        <Slide index={0} style={{ height: 500 }}>
+      <Slider classNameTray="m-0 relative overflow-hidden w-100 p-0">
+        <Slide index={0} className="p-0 mt-0" style={{ height: 500 }}>
           <Image
-            src="/images/sample.jpg"
-            layout="fill"
+            src="/images/carousel1.jpg"
+            // layout="fill"
+            layout="responsive"
+            height={600}
+            width={800}
             objectFit="cover"
             alt=""
           />
         </Slide>
-        <Slide index={1} style={{ height: 500 }}>
+        <Slide index={1} className="p-0 mt-0" style={{ height: 500 }}>
           <Image
-            src="/images/sample1.jpg"
-            layout="fill"
+            src="/images/carousel2.jpg"
+            // layout="fill"
+            layout="responsive"
+            height={600}
+            width={800}
+            objectFit="cover"
             objectFit="cover"
             alt=""
           />
         </Slide>
-        <Slide index={2} style={{ height: 500 }}>
+        <Slide index={2} className="p-0 mt-0" style={{ height: 500 }}>
           <Image
-            src="/images/sample.jpg"
-            layout="fill"
+            src="/images/carousel3.jpg"
+            // layout="fill"
+            layout="responsive"
+            height={600}
+            width={800}
+            objectFit="cover"
             objectFit="cover"
             alt=""
           />
         </Slide>
       </Slider>
+      <section className="absolute bottom-0 left-0 w-full px-10 bg-white bg-opacity-50">
+        <div className="mx-auto lg:flex lg:items-center lg:justify-between">
+          <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+            <span className="block">Ready to transform your processes?</span>
+            <span className="block text-indigo-600">Join us now.</span>
+          </h2>
+          <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
+            <div className="inline-flex rounded-md shadow">
+              <Link href="/contacts">
+                <a className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
+                  Contact Us
+                </a>
+              </Link>
+            </div>
+            <div className="ml-3 inline-flex rounded-md shadow">
+              <Link href="/about">
+                <a className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50">
+                  Learn more
+                </a>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
       <div>
         <DotGroup className="w-full absolute bottom-1 text-center" />
         <ButtonBack className="absolute rounded-full bottom-2/4 left-1 text-white hover:text-blue-600 flex items-center justify-center h-12 w-12">
