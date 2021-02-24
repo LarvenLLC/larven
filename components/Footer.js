@@ -100,7 +100,11 @@ function Socials({}) {
         </div>
         {/* twitter */}
         <div>
-          <a href="https://twitter.com/larven_tech">
+          <a
+            href="https://twitter.com/larven_tech"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -119,7 +123,11 @@ function Socials({}) {
         </div>
         {/* facebook */}
         <div>
-          <a href="https://facebook.com/Larven-Technologies-115543110576262">
+          <a
+            href="https://facebook.com/Larven-Technologies-115543110576262"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -138,7 +146,11 @@ function Socials({}) {
         </div>
         {/* instagram */}
         <div>
-          <a href="https://instagram.com/larven.tech/">
+          <a
+            href="https://instagram.com/larven.tech/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -159,7 +171,11 @@ function Socials({}) {
         </div>
         {/* youtube */}
         <div>
-          <a href="https://youtube.com/channel/UCpBfhLgZAdEutZ7LHsuKvoQ">
+          <a
+            href="https://youtube.com/channel/UCpBfhLgZAdEutZ7LHsuKvoQ"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
