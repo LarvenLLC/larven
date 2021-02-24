@@ -79,7 +79,7 @@ function Socials({}) {
       <div className="grid grid-cols-5 gap-5 py-5">
         {/* linkedIn */}
         <div>
-          <a href="">
+          <a href="https://linkedin.com/company/larven-technologies">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -100,7 +100,7 @@ function Socials({}) {
         </div>
         {/* twitter */}
         <div>
-          <a href="">
+          <a href="https://twitter.com/larven_tech">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -119,7 +119,7 @@ function Socials({}) {
         </div>
         {/* facebook */}
         <div>
-          <a href="">
+          <a href="https://facebook.com/Larven-Technologies-115543110576262">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -138,7 +138,7 @@ function Socials({}) {
         </div>
         {/* instagram */}
         <div>
-          <a href="">
+          <a href="https://instagram.com/larven.tech/">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -159,7 +159,7 @@ function Socials({}) {
         </div>
         {/* youtube */}
         <div>
-          <a href="">
+          <a href="https://youtube.com/channel/UCpBfhLgZAdEutZ7LHsuKvoQ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
