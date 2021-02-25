@@ -36,8 +36,10 @@ jobs:
           echo test, and deploy your project.
 
       # Runs firebase deploy automatically      
-      - name: GitHub Action for Firebase
+      - name: Deploy to Firebase
         uses: w9jds/firebase-action@v2.0.0
+        with:
+          args: deploy --only hosting
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
           PROJECT_ID: ${{ secrets.PROJECT_ID }}
