@@ -1,11 +1,12 @@
 import "pure-react-carousel/dist/react-carousel.es.css";
 import Link from "next/link";
-import Image from "next/image";
+// import Image from "next/image";
 
 import {
   CarouselProvider,
   Slider,
   Slide,
+  Image,
   DotGroup,
   ButtonBack,
   ButtonNext,
@@ -27,34 +28,29 @@ export default function Carousel() {
           <Image
             src="/images/carousel1.jpg"
             // layout="fill"
-            layout="responsive"
+            // layout="responsive"
+            // objectFit="cover"
+            className="object-cover object-center my-0"
             height={600}
             width={800}
-            objectFit="cover"
             alt=""
           />
         </Slide>
         <Slide index={1} className="p-0 mt-0" style={{ height: 500 }}>
           <Image
-            src="/images/carousel2.jpg"
-            // layout="fill"
-            layout="responsive"
+            src="/images/carousel4.jpg"
+            className="object-cover object-center my-0"
             height={600}
             width={800}
-            objectFit="cover"
-            objectFit="cover"
             alt=""
           />
         </Slide>
         <Slide index={2} className="p-0 mt-0" style={{ height: 500 }}>
           <Image
             src="/images/carousel3.jpg"
-            // layout="fill"
-            layout="responsive"
+            className="object-cover object-center my-0"
             height={600}
             width={800}
-            objectFit="cover"
-            objectFit="cover"
             alt=""
           />
         </Slide>
@@ -68,14 +64,14 @@ export default function Carousel() {
           <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
             <div className="inline-flex rounded-md shadow">
               <Link href="/contacts">
-                <a className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
+                <a className="no-underline inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
                   Contact Us
                 </a>
               </Link>
             </div>
             <div className="ml-3 inline-flex rounded-md shadow">
               <Link href="/about">
-                <a className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50">
+                <a className="no-underline inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50">
                   Learn more
                 </a>
               </Link>
