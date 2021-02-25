@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+// import Image from "next/image";
 
 import Layout from "../components/Layout";
 import Announcement from "../components/Announcement";
@@ -19,11 +19,12 @@ export default function Home() {
         <section className="">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
             <div className="bg-gray-100 relative p-1 rounded-lg">
-              <div className="relative overflow-hidden h-96 w-100 rounded-lg bottom-4 left-4">
-                <Image
+              <div className="relative overflow-hidden h-96 w-full rounded-lg bottom-4 left-4">
+                <img
                   src="/images/ceo.jpg"
-                  layout="fill"
-                  objectFit="cover"
+                  className="absolute object-cover object-center my-0"
+                  // layout="fill"
+                  // objectFit="cover"
                   alt=""
                 />
               </div>
