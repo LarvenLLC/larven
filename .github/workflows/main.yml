@@ -34,8 +34,11 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-      
+
       # Runs firebase deploy automatically      
       - name: GitHub Action for Firebase
         uses: w9jds/firebase-action@v2.0.0
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          PROJECT_ID: ${{ secrets.PROJECT_ID }}
 
