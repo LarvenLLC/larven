@@ -4,7 +4,7 @@ name: Build and Deploy
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: master
+    branches: main
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -15,13 +15,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@master
+        uses: actions/checkout@main
       - name: Install Dependencies
         run: npm install
       - name: Build
         run: npm run build
       - name: Archive Production Artifact
-        uses: actions/upload-artifact@master
+        uses: actions/upload-artifact@main
         with:
           name: out
           path: out
@@ -31,14 +31,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@master
+        uses: actions/checkout@main
       - name: Download Artifact
-        uses: actions/download-artifact@master
+        uses: actions/download-artifact@main
         with:
           name: out
           path: out
       - name: Deploy to Firebase
-        uses: w9jds/firebase-action@master
+        uses: w9jds/firebase-action@main
         with:
           args: deploy --only hosting
         env:
