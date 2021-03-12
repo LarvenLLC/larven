@@ -31,6 +31,11 @@
     @apply h-3 w-3 bg-blue-400 rounded-full m-1;
   }
 
+  .carousel__dot--selected {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+
   .no-prose ul > li::before {
     display: none !important;
   }
