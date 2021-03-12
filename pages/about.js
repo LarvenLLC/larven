@@ -18,9 +18,9 @@ export default function About({}) {
         <div className="">
           <h2>Our Values</h2>
           <ul>
-            <li>Human Centered Design</li>
-            <li>Humane Development</li>
-            <li>Specialization &amp; Division of Labour</li>
+            <li>Team Work</li>
+            <li>Innovation</li>
+            <li>Individual Development</li>
           </ul>
         </div>
         {/* pillars section */}
@@ -39,9 +39,9 @@ export default function About({}) {
         <div className="flex flex-wrap items-center justify-center gap-10">
           <h1>How we work</h1>
           <ul>
-            <li>Total inclusiveness</li>
-            <li>Humane Development</li>
-            <li>Specialization &amp; Division of Labour</li>
+            <li>Total inclusiveness &amp; Extreme feedback</li>
+            <li>User &amp; Business Centric</li>
+            <li>Research &amp; Design Focused</li>
           </ul>
         </div>
       </section>
