@@ -1,3 +1,7 @@
+import Link from "next/link";
+
+import lingo from "lingojs";
+
 import Layout from "../../components/Layout";
 import software from "../../software";
 
@@ -11,14 +15,13 @@ export default function Industries({}) {
   return (
     <>
       <Layout title="">
-        <section className="flex items-center flex-wrap">
+        <section className="flex items-center flex-wrap gap-5">
           {industries?.map((industry, i) => (
-            <div
-              key={i}
-              className="px-5 py-3 border border-light text-secondary font-medium rounded-md"
-            >
-              {industry ?? ""}
-            </div>
+            <Link href={`industry/${industry}`}>
+              <a className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base no-underline font-medium rounded-md text-primary bg-green-50 hover:bg-primary hover:text-white">
+                {lingo(industry ?? "").title()}
+              </a>
+            </Link>
           )) ?? ""}
         </section>
       </Layout>
