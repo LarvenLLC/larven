@@ -181,3 +181,4 @@ const software = [
     keywords: ["banking", "finance", "microfinance"],
   },
 ];
+export default software;
