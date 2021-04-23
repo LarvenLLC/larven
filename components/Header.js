@@ -91,7 +91,7 @@ export default function Header({}) {
                           {({ active }) => [
                             <svg
                               key={1}
-                              className="flex-shrink-0 h-6 w-6 text-indigo-600"
+                              className="flex-shrink-0 h-6 w-6 text-primary"
                               xmlns="http://www.w3.org/2000/svg"
                               fill="none"
                               viewBox="0 0 24 24"
@@ -123,7 +123,7 @@ export default function Header({}) {
                           {({ active }) => [
                             <svg
                               key={1}
-                              className="flex-shrink-0 h-6 w-6 text-indigo-600"
+                              className="flex-shrink-0 h-6 w-6 text-primary"
                               xmlns="http://www.w3.org/2000/svg"
                               fill="none"
                               viewBox="0 0 24 24"
@@ -156,7 +156,7 @@ export default function Header({}) {
                           {(active) => [
                             <svg
                               key={1}
-                              className="flex-shrink-0 h-6 w-6 text-indigo-600"
+                              className="flex-shrink-0 h-6 w-6 text-primary"
                               xmlns="http://www.w3.org/2000/svg"
                               fill="none"
                               viewBox="0 0 24 24"
@@ -189,7 +189,7 @@ export default function Header({}) {
                           {(active) => [
                             <svg
                               key={1}
-                              className="flex-shrink-0 h-6 w-6 text-indigo-600"
+                              className="flex-shrink-0 h-6 w-6 text-primary"
                               xmlns="http://www.w3.org/2000/svg"
                               fill="none"
                               viewBox="0 0 24 24"
@@ -221,7 +221,7 @@ export default function Header({}) {
                           {({ active }) => [
                             <svg
                               key={1}
-                              className="flex-shrink-0 h-6 w-6 text-indigo-600"
+                              className="flex-shrink-0 h-6 w-6 text-primary"
                               xmlns="http://www.w3.org/2000/svg"
                               fill="none"
                               viewBox="0 0 24 24"
@@ -256,7 +256,7 @@ export default function Header({}) {
                           {({ active }) => [
                             <svg
                               key={1}
-                              className="flex-shrink-0 h-6 w-6 text-indigo-600"
+                              className="flex-shrink-0 h-6 w-6 text-primary"
                               xmlns="http://www.w3.org/2000/svg"
                               fill="none"
                               viewBox="0 0 24 24"
@@ -290,7 +290,7 @@ export default function Header({}) {
                           {(active) => [
                             <svg
                               key={1}
-                              className="flex-shrink-0 h-6 w-6 text-indigo-600"
+                              className="flex-shrink-0 h-6 w-6 text-primary"
                               xmlns="http://www.w3.org/2000/svg"
                               fill="none"
                               viewBox="0 0 24 24"
@@ -323,7 +323,7 @@ export default function Header({}) {
                           {(active) => [
                             <svg
                               key={1}
-                              className="flex-shrink-0 h-6 w-6 text-indigo-600"
+                              className="flex-shrink-0 h-6 w-6 text-primary"
                               xmlns="http://www.w3.org/2000/svg"
                               fill="none"
                               viewBox="0 0 24 24"
@@ -356,7 +356,7 @@ export default function Header({}) {
                           {(active) => [
                             <svg
                               key={1}
-                              className="flex-shrink-0 h-6 w-6 text-indigo-600"
+                              className="flex-shrink-0 h-6 w-6 text-primary"
                               xmlns="http://www.w3.org/2000/svg"
                               fill="none"
                               viewBox="0 0 24 24"
@@ -389,7 +389,7 @@ export default function Header({}) {
                           {(active) => [
                             <svg
                               key={1}
-                              className="flex-shrink-0 h-6 w-6 text-indigo-600"
+                              className="flex-shrink-0 h-6 w-6 text-primary"
                               xmlns="http://www.w3.org/2000/svg"
                               fill="none"
                               viewBox="0 0 24 24"
@@ -484,7 +484,7 @@ export default function Header({}) {
                           {({ active }) => [
                             <svg
                               key={1}
-                              className="flex-shrink-0 h-6 w-6 text-indigo-600"
+                              className="flex-shrink-0 h-6 w-6 text-primary"
                               xmlns="http://www.w3.org/2000/svg"
                               fill="none"
                               viewBox="0 0 24 24"
@@ -513,7 +513,7 @@ export default function Header({}) {
                           {({ active }) => [
                             <svg
                               key={1}
-                              className="flex-shrink-0 h-6 w-6 text-indigo-600"
+                              className="flex-shrink-0 h-6 w-6 text-primary"
                               xmlns="http://www.w3.org/2000/svg"
                               fill="none"
                               viewBox="0 0 24 24"
@@ -542,7 +542,7 @@ export default function Header({}) {
                           {(active) => [
                             <svg
                               key={1}
-                              className="flex-shrink-0 h-6 w-6 text-indigo-600"
+                              className="flex-shrink-0 h-6 w-6 text-primary"
                               xmlns="http://www.w3.org/2000/svg"
                               fill="none"
                               viewBox="0 0 24 24"
@@ -571,7 +571,7 @@ export default function Header({}) {
                           {(active) => [
                             <svg
                               key={1}
-                              className="flex-shrink-0 h-6 w-6 text-indigo-600"
+                              className="flex-shrink-0 h-6 w-6 text-primary"
                               xmlns="http://www.w3.org/2000/svg"
                               fill="none"
                               viewBox="0 0 24 24"
@@ -602,7 +602,7 @@ export default function Header({}) {
                           {({ active }) => [
                             <svg
                               key={1}
-                              className="flex-shrink-0 h-6 w-6 text-indigo-600"
+                              className="flex-shrink-0 h-6 w-6 text-primary"
                               xmlns="http://www.w3.org/2000/svg"
                               fill="none"
                               viewBox="0 0 24 24"
@@ -631,7 +631,7 @@ export default function Header({}) {
                           {({ active }) => [
                             <svg
                               key={1}
-                              className="flex-shrink-0 h-6 w-6 text-indigo-600"
+                              className="flex-shrink-0 h-6 w-6 text-primary"
                               xmlns="http://www.w3.org/2000/svg"
                               fill="none"
                               viewBox="0 0 24 24"
@@ -660,7 +660,7 @@ export default function Header({}) {
                           {(active) => [
                             <svg
                               key={1}
-                              className="flex-shrink-0 h-6 w-6 text-indigo-600"
+                              className="flex-shrink-0 h-6 w-6 text-primary"
                               xmlns="http://www.w3.org/2000/svg"
                               fill="none"
                               viewBox="0 0 24 24"
@@ -816,7 +816,7 @@ export default function Header({}) {
                     className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
                   >
                     <svg
-                      className="flex-shrink-0 h-6 w-6 text-indigo-600"
+                      className="flex-shrink-0 h-6 w-6 text-primary"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -839,7 +839,7 @@ export default function Header({}) {
                     className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
                   >
                     <svg
-                      className="flex-shrink-0 h-6 w-6 text-indigo-600"
+                      className="flex-shrink-0 h-6 w-6 text-primary"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -862,7 +862,7 @@ export default function Header({}) {
                     className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
                   >
                     <svg
-                      className="flex-shrink-0 h-6 w-6 text-indigo-600"
+                      className="flex-shrink-0 h-6 w-6 text-primary"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -885,7 +885,7 @@ export default function Header({}) {
                     className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
                   >
                     <svg
-                      className="flex-shrink-0 h-6 w-6 text-indigo-600"
+                      className="flex-shrink-0 h-6 w-6 text-primary"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -908,7 +908,7 @@ export default function Header({}) {
                     className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
                   >
                     <svg
-                      className="flex-shrink-0 h-6 w-6 text-indigo-600"
+                      className="flex-shrink-0 h-6 w-6 text-primary"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
