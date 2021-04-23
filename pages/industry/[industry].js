@@ -4,7 +4,7 @@ export default function Industry({}) {
   return (
     <>
       <Layout title="">
-        <div />
+        <section></section>
       </Layout>
     </>
   );
