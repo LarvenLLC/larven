@@ -75,7 +75,7 @@ export default function Contacts({}) {
           <br />
           <button
             type="submit"
-            className="w-full rounded text-white h-12 bg-primary focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50"
+            className="w-full rounded text-white h-12 bg-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50"
           >
             Submit
           </button>
