@@ -21,12 +21,20 @@ export default function Industry({}) {
           {systems?.map((system, i) => (
             <div key={i}>
               <h4>{system?.name ?? "System Name"}</h4>
-              <div className="flex items-center flex-wrap gap-5">
-                {system?.benefits?.map((benefit, i) => (
-                  <button className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base no-underline font-medium rounded-md text-primary bg-green-50 hover:bg-primary hover:text-white">
-                    {lingo(system ?? "").title()}
-                  </button>
-                ))}
+              <div className="grid md:grid-cols-2 gap-5">
+                {system?.benefits?.map(
+                  ({ benefit = "", description = "" }, j) => (
+                    <button
+                      key={j}
+                      className="px-5 py-3 border border-light text-base text-left font-medium rounded-md text-primary hover:bg-green-50"
+                    >
+                      {benefit}
+                      <div className="text-light">
+                        <small>{description}</small>
+                      </div>
+                    </button>
+                  )
+                )}
               </div>
             </div>
           )) ?? ""}
