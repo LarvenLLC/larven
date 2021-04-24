@@ -69,13 +69,13 @@ export default function Contacts({}) {
                 name="message"
                 className="border-2 rounded-md w-full p-2 resize-none"
                 rows={5}
-              ></textarea>
+              />
             </div>
           </div>
           <br />
           <button
             type="submit"
-            className="w-full rounded text-white h-12 bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50"
+            className="w-full rounded text-white h-12 bg-primary focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50"
           >
             Submit
           </button>
