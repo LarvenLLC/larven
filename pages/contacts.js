@@ -3,7 +3,7 @@ import Layout from "../components/Layout";
 export default function Contacts({}) {
   function submitInquiry(e) {
     e.preventDefault();
-    let form,
+    let form = {},
       formData = new FormData(e.target);
     for (let pair of formData.entries()) {
       let key = pair[0],
