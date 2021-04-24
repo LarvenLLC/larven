@@ -17,7 +17,7 @@ export default function Industries({}) {
       <Layout title="">
         <section className="flex items-center flex-wrap gap-5">
           {industries?.map((industry, i) => (
-            <Link href={`industry/${industry}`}>
+            <Link key={i} href={`industry/${industry}`}>
               <a className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base no-underline font-medium rounded-md text-primary bg-green-50 hover:bg-primary hover:text-white">
                 {lingo(industry ?? "").title()}
               </a>
