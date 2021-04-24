@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 import lingo from "lingojs";
+import numeral from "numeral";
 
 import Layout from "../../components/Layout";
 import software from "../../software";
@@ -9,9 +10,22 @@ import software from "../../software";
 export default function Industry({}) {
   const router = useRouter();
   const { industry = "" } = router.query;
+  const industries = industry.split("-");
 
   const systems = Array.isArray(software)
-    ? software?.filter((el) => el?.keywords?.includes(industry))
+    ? software?.filter((el) => {
+        industry.split("-");
+        let keywordsLength = el?.keywords?.length ?? 0;
+        let industriesLength = industries?.length ?? 0;
+        let mergedArray = [...industries, ...el?.keywords];
+        if (
+          mergedArray.length !==
+          numeral(keywordsLength).add(industriesLength).value
+        ) {
+          return false;
+        }
+        return true;
+      })
     : [];
 
   return (
@@ -20,7 +34,7 @@ export default function Industry({}) {
         <section>
           {systems?.map((system, i) => (
             <div key={i}>
-              <h4>{system?.name ?? "System Name"}</h4>
+              <h4>{lingo(system?.name ?? "System Name").title()}</h4>
               <div className="grid md:grid-cols-2 gap-5">
                 {system?.benefits?.map(
                   ({ benefit = "", description = "" }, j) => (
