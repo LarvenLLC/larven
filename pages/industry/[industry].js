@@ -22,9 +22,11 @@ export default function Industry({}) {
             <div key={i}>
               <h4>{system?.name ?? "System Name"}</h4>
               <div className="flex items-center flex-wrap gap-5">
-                <a className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base no-underline font-medium rounded-md text-primary bg-green-50 hover:bg-primary hover:text-white">
-                  {lingo(system ?? "").title()}
-                </a>
+                {system?.benefits?.map((benefit, i) => (
+                  <button className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base no-underline font-medium rounded-md text-primary bg-green-50 hover:bg-primary hover:text-white">
+                    {lingo(system ?? "").title()}
+                  </button>
+                ))}
               </div>
             </div>
           )) ?? ""}
