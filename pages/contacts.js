@@ -33,7 +33,7 @@ export default function Contacts({}) {
             From the United Republic of Tanzania
           </div>
           <div>
-            <h4>inquiry@larven.co.tz</h4>
+            <h4>info@larven.co.tz</h4>
             Worldwide
           </div>
           <div>
