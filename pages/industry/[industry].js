@@ -28,13 +28,13 @@ export default function Industry({}) {
                       key={j}
                       className="px-5 py-3 border border-light text-base text-left font-medium rounded-md text-primary hover:bg-green-50"
                     >
-                      {benefit}
+                      {lingo(benefit).sentence()}
                       <div className="text-light">
                         <small>{description}</small>
                       </div>
                     </button>
                   )
-                )}
+                ) ?? ""}
               </div>
             </div>
           )) ?? ""}
