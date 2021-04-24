@@ -29,7 +29,7 @@ export default function Footer({}) {
           <h4>&ensp;</h4>
           <ul className="">
             <li>Infrastructure</li>
-            <li>Technology Consulting</li>
+            <li>Consulting</li>
             <li>Training</li>
           </ul>
         </div>
