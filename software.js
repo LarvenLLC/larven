@@ -11,7 +11,7 @@ const software = [
       {
         benefit: "warehouse management system",
         description:
-          "Warehouse management system is a software application designed to support and optimize warehouse functionality and distribution center management.",
+          "The software application is designed to support and optimize warehouse functionality and distribution center management.",
       },
       {
         benefit: "Forecasting",
