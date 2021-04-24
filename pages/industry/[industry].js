@@ -10,21 +10,17 @@ import software from "../../software";
 export default function Industry({}) {
   const router = useRouter();
   const { industry = "" } = router.query;
-  const industries = industry.split("-");
+  const industries = industry.split("-").map((el) => el?.toLowerCase());
 
   const systems = Array.isArray(software)
     ? software?.filter((el) => {
-        industry.split("-");
         let keywordsLength = el?.keywords?.length ?? 0;
         let industriesLength = industries?.length ?? 0;
-        let mergedArray = [...industries, ...el?.keywords];
-        if (
-          mergedArray.length !==
-          numeral(keywordsLength).add(industriesLength).value
-        ) {
-          return false;
-        }
-        return true;
+        let mergedArray = [...new Set([...industries, ...el?.keywords])];
+        return (
+          mergedArray.length <
+          numeral(keywordsLength).add(industriesLength).value()
+        );
       })
     : [];
 
@@ -32,9 +28,14 @@ export default function Industry({}) {
     <>
       <Layout title="">
         <section>
+          <h3 className="text-secondary">
+            Larven offers these collection of systems for free:
+          </h3>
           {systems?.map((system, i) => (
             <div key={i}>
-              <h4>{lingo(system?.name ?? "System Name").title()}</h4>
+              <h4 className="text-secondary">
+                {lingo(system?.name ?? "System Name").title()}
+              </h4>
               <div className="grid md:grid-cols-2 gap-5">
                 {system?.benefits?.map(
                   ({ benefit = "", description = "" }, j) => (
