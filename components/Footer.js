@@ -20,69 +20,71 @@ export default function Footer({}) {
   }, []);
 
   return (
-    <footer className="py-5 px-10 divide-y-2 divide-solid">
-      <section className="grid grid-cols-1 md:grid-cols-4 gap-5">
-        <div className="">
-          <h4>Services</h4>
-          <ul className="">
-            <li>Artificial Intelligence</li>
-            <li>Application Services</li>
-            <li>Automations</li>
-            <li>Blockchain Technology</li>
-          </ul>
-        </div>
-        <div className="">
-          <h4>&ensp;</h4>
-          <ul className="">
-            <li>Cloud Computing</li>
-            <li>Customer Experience</li>
-            <li>Cyber Security</li>
-            <li>Data &amp; Analytics</li>
-          </ul>
-        </div>
-        <div className="">
-          <h4>&ensp;</h4>
-          <ul className="">
-            <li>Infrastructure</li>
-            <li>Consulting</li>
-            <li>Training</li>
-          </ul>
-        </div>
-        <div className="">
-          <h4>Larven</h4>
-          <ul className="">
-            <li>
-              <Link href="/contacts">
-                <a className="no-underline font-normal">Contacts</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/about">
-                <a className="no-underline font-normal">About</a>
-              </Link>
-            </li>
-            <li>Careers</li>
-            <li>Ecosystem Partners</li>
-          </ul>
-        </div>
-      </section>
-      <Socials />
-      <section className="grid grid-cols-1 md:grid-cols-2 pt-5">
-        <div className="grid grid-flow-col auto-cols-auto md:auto-cols-max gap-5 md:gap-10">
-          <small>
-            <a href="#">Privacy Statement</a>
+    <footer className="py-5 divide-y-2 divide-solid flex flex-col items-center">
+      <div>
+        <section className="grid grid-cols-1 md:grid-cols-4 gap-5">
+          <div className="">
+            <h4>Services</h4>
+            <ul className="">
+              <li>Artificial Intelligence</li>
+              <li>Application Services</li>
+              <li>Automations</li>
+              <li>Blockchain Technology</li>
+            </ul>
+          </div>
+          <div className="">
+            <h4>&ensp;</h4>
+            <ul className="">
+              <li>Cloud Computing</li>
+              <li>Customer Experience</li>
+              <li>Cyber Security</li>
+              <li>Data &amp; Analytics</li>
+            </ul>
+          </div>
+          <div className="">
+            <h4>&ensp;</h4>
+            <ul className="">
+              <li>Infrastructure</li>
+              <li>Consulting</li>
+              <li>Training</li>
+            </ul>
+          </div>
+          <div className="">
+            <h4>Larven</h4>
+            <ul className="">
+              <li>
+                <Link href="/contacts">
+                  <a className="no-underline font-normal">Contacts</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/about">
+                  <a className="no-underline font-normal">About</a>
+                </Link>
+              </li>
+              <li>Careers</li>
+              <li>Ecosystem Partners</li>
+            </ul>
+          </div>
+        </section>
+        <Socials />
+        <section className="grid grid-cols-1 md:grid-cols-2 pt-5">
+          <div className="grid grid-flow-col auto-cols-auto md:auto-cols-max gap-5 md:gap-10">
+            <small>
+              <a href="#">Privacy Statement</a>
+            </small>
+            <small>
+              <a href="#">Cookie policy</a>
+            </small>
+            <small>
+              <a href="#">Terms &amp; Conditions</a>
+            </small>
+          </div>
+          <small className="text-center md:text-right">
+            © {moment().year()} Larven. All Rights Reserved.
           </small>
-          <small>
-            <a href="#">Cookie policy</a>
-          </small>
-          <small>
-            <a href="#">Terms &amp; Conditions</a>
-          </small>
-        </div>
-        <small className="text-center md:text-right">
-          © {moment().year()} Larven. All Rights Reserved.
-        </small>
-      </section>
+        </section>
+      </div>
     </footer>
   );
 }
@@ -90,7 +92,7 @@ export default function Footer({}) {
 function Socials({}) {
   return (
     <>
-      <div className="grid grid-cols-5 gap-5 py-5">
+      <section className="grid grid-cols-5 gap-5 py-5">
         {/* linkedIn */}
         <div>
           <a href="https://linkedin.com/company/larven-technologies">
@@ -207,7 +209,7 @@ function Socials({}) {
             </svg>
           </a>
         </div>
-      </div>
+      </section>
     </>
   );
 }
