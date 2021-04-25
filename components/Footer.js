@@ -5,6 +5,7 @@ import moment from "moment";
 
 export default function Footer({}) {
   useEffect(() => {
+    // https://www.tawk.to/software/live-chat/
     var Tawk_API = Tawk_API || {},
       Tawk_LoadStart = new Date();
     (function () {
