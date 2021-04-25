@@ -8,7 +8,9 @@ export default function Layout({ children, title = "" }) {
       <Title title={title} />
       <div className="container mx-auto prose max-w-full">
         <Header />
-        <main className="">{children}</main>
+        <main className="flex flex-col items-center">
+          <div>{children}</div>
+        </main>
         <Footer />
       </div>
     </>
