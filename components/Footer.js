@@ -4,6 +4,20 @@ import Link from "next/link";
 import moment from "moment";
 
 export default function Footer({}) {
+  useEffect(() => {
+    var Tawk_API = Tawk_API || {},
+      Tawk_LoadStart = new Date();
+    (function () {
+      var s1 = document.createElement("script"),
+        s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.src = "https://embed.tawk.to/6085d1a55eb20e09cf3678b7/1f45bls3g";
+      s1.charset = "UTF-8";
+      s1.setAttribute("crossorigin", "*");
+      s0.parentNode.insertBefore(s1, s0);
+    })();
+  }, []);
+
   return (
     <footer className="py-5 px-10 divide-y-2 divide-solid">
       <section className="grid grid-cols-1 md:grid-cols-4 gap-5">
@@ -73,7 +87,6 @@ export default function Footer({}) {
 }
 
 function Socials({}) {
-  useEffect(() => {}, []);
   return (
     <>
       <div className="grid grid-cols-5 gap-5 py-5">
