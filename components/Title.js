@@ -4,7 +4,7 @@ import Head from "next/head";
 
 import lingo from "lingojs";
 
-export default function Title({ title = "" }) {
+export default function Title({ title = "Home" }) {
   const router = useRouter();
 
   const [pathname, setPathname] = useState("");
@@ -42,11 +42,7 @@ export default function Title({ title = "" }) {
       <meta name="msapplication-TileColor" content="#00ab44" />
       <meta name="msapplication-config" content="/browserconfig.xml" />
       <meta name="theme-color" content="#ffffff"></meta>
-      <title>
-        {`${!pathname ? "Larven | " : ""}
-        ${lingo(title).title()}
-        ${pathname ? " | Larven" : ""}`}
-      </title>
+      <title>{`${lingo(title).title()} ${pathname ? "| Larven" : ""}`}</title>
     </Head>
   );
 }
