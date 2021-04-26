@@ -16,7 +16,6 @@ export default function Title({ title = "Home" }) {
     }
   }, [router?.pathname]);
 
-  title;
   return (
     <Head>
       <link
