@@ -423,7 +423,7 @@ export default function Header({}) {
                       {(active) => [
                         <div key={1} className="flow-root">
                           <a
-                            href="#"
+                            href="contacts"
                             className="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-100"
                           >
                             <svg
@@ -477,7 +477,7 @@ export default function Header({}) {
                       <div>
                         <Menu.Item
                           as="a"
-                          href="#"
+                          href="industry/e-commerce"
                           className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50 focus:outline-none"
                         >
                           {/* active ? "text-gray-900" : "text-gray-500" */}
@@ -500,14 +500,14 @@ export default function Header({}) {
                             </svg>,
                             <div key={2} className="ml-4">
                               <p className="m-0 text-base font-medium text-gray-900">
-                                Ecommerce
+                                E-commerce
                               </p>
                             </div>,
                           ]}
                         </Menu.Item>
                         <Menu.Item
                           as="a"
-                          href="#"
+                          href="industry/distribution-wholesale-retail"
                           className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50 focus:outline-none"
                         >
                           {({ active }) => [
@@ -536,7 +536,7 @@ export default function Header({}) {
                         </Menu.Item>
                         <Menu.Item
                           as="a"
-                          href="#"
+                          href="industry/transport-automobile-airlines"
                           className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50 focus:outline-none"
                         >
                           {(active) => [
@@ -565,7 +565,7 @@ export default function Header({}) {
                         </Menu.Item>
                         <Menu.Item
                           as="a"
-                          href="#"
+                          href="industry/medicine-pharmacy-health"
                           className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50 focus:outline-none"
                         >
                           {(active) => [
@@ -596,7 +596,7 @@ export default function Header({}) {
                       <div>
                         <Menu.Item
                           as="a"
-                          href="#"
+                          href="industry/banking-finance"
                           className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50 focus:outline-none"
                         >
                           {({ active }) => [
@@ -625,7 +625,7 @@ export default function Header({}) {
                         </Menu.Item>
                         <Menu.Item
                           as="a"
-                          href="#"
+                          href="industry/restaurant-food-service"
                           className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50 focus:outline-none"
                         >
                           {({ active }) => [
@@ -654,7 +654,7 @@ export default function Header({}) {
                         </Menu.Item>
                         <Menu.Item
                           as="a"
-                          href="#"
+                          href="industry/utilities"
                           className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50 focus:outline-none"
                         >
                           {(active) => [
@@ -690,7 +690,7 @@ export default function Header({}) {
                       {(active) => [
                         <div key={1} className="flow-root">
                           <a
-                            href="#"
+                            href="contacts"
                             className="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-100"
                           >
                             <svg
