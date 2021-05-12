@@ -16,7 +16,7 @@
     "moment": "^2.29.1",
     "next": "10.0.6",
     "numeral": "^2.0.6",
-    "postcss": "^8.2.6",
+    "postcss": "^8.2.10",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^6.7.0",
     "pure-react-carousel": "^1.27.6",
