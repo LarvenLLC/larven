@@ -2,7 +2,7 @@ import Layout from "../components/Layout";
 
 export default function Careers({}) {
   return (
-    <Layout>
+    <Layout title="Careers">
       <section>
         <h3>Careers</h3>
         <div>Under Construction</div>
