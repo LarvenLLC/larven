@@ -8,7 +8,7 @@ import Carousel from "../components/Carousel";
 export default function Home() {
   return (
     <>
-      <Layout title="">
+      <Layout title="Home">
         {/* announcement section */}
         {/* <Announcement /> */}
         {/* carousel section */}
