@@ -26,9 +26,7 @@ export default function Title({ title = "Home" }) {
       />
       <link rel="manifest" href="/site.webmanifest" />
       <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#00ab44" />
-      <link rel="shortcut icon" href="/favicon.ico" />
       <meta name="msapplication-TileColor" content="#00ab44" />
-      <meta name="msapplication-config" content="/browserconfig.xml" />
       <meta name="theme-color" content="#ffffff" />
       <meta
         name="description"
