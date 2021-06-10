@@ -14,7 +14,7 @@ export default function Industries({}) {
 
   return (
     <>
-      <Layout title="">
+      <Layout title="Industries">
         <section className="flex items-center flex-wrap gap-5">
           {industries?.map((industry, i) => (
             <Link key={i} href={`industry/${industry}`}>
