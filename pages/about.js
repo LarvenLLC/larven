@@ -2,7 +2,7 @@ import Layout from "../components/Layout";
 
 export default function About({}) {
   return (
-    <Layout>
+    <Layout title="About Us">
       {/* purpose section */}
       <section className="text-center">
         <h2>Our Purpose</h2>

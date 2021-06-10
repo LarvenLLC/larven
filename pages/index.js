@@ -4,11 +4,12 @@ import Link from "next/link";
 import Layout from "../components/Layout";
 import Announcement from "../components/Announcement";
 import Carousel from "../components/Carousel";
+import Partners from "../components/Partners";
 
 export default function Home() {
   return (
     <>
-      <Layout title="">
+      <Layout title="Home">
         {/* announcement section */}
         {/* <Announcement /> */}
         {/* carousel section */}
@@ -238,7 +239,7 @@ export default function Home() {
           </div>
         </section> */}
         {/* partners section */}
-        <section></section>
+        <Partners />
         {/* testimonials section */}
         <section></section>
         {/* cta section */}

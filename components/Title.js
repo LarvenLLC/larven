@@ -5,17 +5,6 @@ import Head from "next/head";
 import lingo from "lingojs";
 
 export default function Title({ title = "Home" }) {
-  const router = useRouter();
-
-  const [pathname, setPathname] = useState("");
-
-  useEffect(() => {
-    let path = router?.pathname.replace("/", "");
-    if (path) {
-      setPathname(path);
-    }
-  }, [router?.pathname]);
-
   return (
     <Head>
       <link
@@ -37,17 +26,13 @@ export default function Title({ title = "Home" }) {
       />
       <link rel="manifest" href="/site.webmanifest" />
       <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#00ab44" />
-      <link rel="shortcut icon" href="/favicon.ico" />
       <meta name="msapplication-TileColor" content="#00ab44" />
-      <meta name="msapplication-config" content="/browserconfig.xml" />
       <meta name="theme-color" content="#ffffff" />
       <meta
         name="description"
         content="To uplift mankind with technology they can own, we embrace the power of technology to bring happiness to our clients, people and communities."
       />
-      <title>{`${lingo(title).title()} | ${
-        pathname ? pathname : ""
-      } | Larven`}</title>
+      <title>{`${lingo(title).title()} | Larven`}</title>
     </Head>
   );
 }

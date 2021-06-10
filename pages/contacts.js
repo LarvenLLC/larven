@@ -17,7 +17,7 @@ export default function Contacts({}) {
   }
 
   return (
-    <Layout>
+    <Layout title="Contact Us">
       <section>
         <h2>Contact Larven</h2>
         <p>

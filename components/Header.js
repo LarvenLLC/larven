@@ -19,16 +19,16 @@ export default function Header({}) {
   }
 
   return (
-    <div className="relative bg-white">
+    <div className="sticky top-0 relative bg-white z-10 shadow">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="flex justify-between items-center border-b-2 border-gray-100 md:justify-center md:space-x-10">
+        <div className="flex justify-between items-center md:justify-center md:space-x-10">
           <div className="flex justify-start">
             <Link href="/">
               <a>
                 <span className="sr-only">Larven</span>
                 <img
                   className="h-8 w-auto sm:h-10 my-3"
-                  src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+                  src="/apple-touch-icon.png"
                   alt="Larven"
                 />
               </a>

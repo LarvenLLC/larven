@@ -26,7 +26,7 @@ export default function Industry({}) {
 
   return (
     <>
-      <Layout title="">
+      <Layout title={industry}>
         <section>
           <h3 className="text-secondary">
             Larven offers these collection of systems for free:
