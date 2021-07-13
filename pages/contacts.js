@@ -49,28 +49,91 @@ export default function Contacts({}) {
         <h3>Get in Touch Below</h3>
         <form onSubmit={submitInquiry}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div className="flex flex-col justify-between	">
+            <div className="flex flex-row justify-between">
               <div>
-                <label>Name</label>
-                <input name="name" />
+                <label>First Name</label>
+                <input name="first_name" />
               </div>
               <div>
-                <label>Phone</label>
-                <input name="phone" type="tel" />
+                <label>Last Name</label>
+                <input name="last_name" />
+              </div>
+            </div>
+            <div className="flex flex-row justify-between">
+              <div>
+                <label>Job Title</label>
+                <input name="title" />
               </div>
               <div>
-                <label>Email</label>
-                <input name="email" type="email" />
+                <label>Company Name</label>
+                <input name="title" />
               </div>
             </div>
             <div>
-              <label>Message</label>
-              <textarea
-                name="message"
-                className="border-2 rounded-md w-full p-2 resize-none"
-                rows={5}
-              />
+              <label>Phone Number</label>
+              <input name="phone" type="tel" />
             </div>
+            <div>
+              <label>Email</label>
+              <input name="email" type="email" />
+            </div>
+            <div>
+              <h4 className="uppercase">Which service(s) are you interested in? Please select all that apply*</h4>
+              <div className="flex-row">
+                <input className="w-9" type="checkbox" id="ai" name="Artificial_Intelligence"
+                       checked />
+                  <label htmlFor="ai">Artificial Intelligence</label>
+              </div>
+
+              <div className="flex-row">
+                <input className="w-9" type="checkbox" id="application_services" name="Application_Services" />
+                  <label htmlFor="application_services">Application Services</label>
+              </div>
+              <div className="flex-row">
+                <input className="w-9" type="checkbox" id="automations" name="Automations" />
+                  <label htmlFor="automations">Automations</label>
+              </div>
+              <div className="flex-row">
+                <input className="w-9" type="checkbox" id="bct" name="Blockchain_Technology" />
+                  <label htmlFor="bct">Blockchain Technology</label>
+              </div>
+              <div className="flex-row">
+                <input className="w-9" type="checkbox" id="cc" name="Cloud_Computing" />
+                  <label htmlFor="cc">Cloud Computing</label>
+              </div>
+              <div className="flex-row">
+                <input className="w-9" type="checkbox" id="ce" name="Customer_Experience" />
+                  <label htmlFor="ce">Customer Experience</label>
+              </div>
+              <div className="flex-row">
+                <input className="w-9" type="checkbox" id="security" name="Cyber_Security" />
+                  <label htmlFor="security">Cyber Security</label>
+              </div>
+              <div className="flex-row">
+                <input className="w-9" type="checkbox" id="data" name="Data_&_Analytics" />
+                  <label htmlFor="horns">Data & Analytics</label>
+              </div>
+              <div className="flex-row">
+                <input className="w-9" type="checkbox" id="infrastructure" name="Infrastructure" />
+                  <label htmlFor="infrastructure">Infrastructure</label>
+              </div>
+              <div className="flex-row">
+                <input className="w-9" type="checkbox" id="consulting" name="Consulting" />
+                  <label htmlFor="consulting">Consulting</label>
+              </div>
+              <div className="flex-row">
+                <input className="w-9" type="checkbox" id="training" name="Training" />
+                  <label htmlFor="training">Training</label>
+              </div>
+            </div>
+            {/*<div>*/}
+            {/*  <label>Message</label>*/}
+            {/*  <textarea*/}
+            {/*    name="message"*/}
+            {/*    className="border-2 rounded-md w-full p-2 resize-none"*/}
+            {/*    rows={5}*/}
+            {/*  />*/}
+            {/*</div>*/}
           </div>
           <br />
           <button
