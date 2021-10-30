@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import Layout from "../components/Layout";
 import Announcement from "../components/Announcement";
+import Newsletter from "../components/Newsletter";
 import Carousel from "../components/Carousel";
 import Partners from "../components/Partners";
 
@@ -242,6 +243,8 @@ export default function Home() {
         <Partners />
         {/* testimonials section */}
         <section></section>
+        {/* newsletter section */}
+        <Newsletter />
         {/* cta section */}
         <section className="px-10 bg-gray-50">
           <div className="mx-auto lg:flex lg:items-center lg:justify-between">
@@ -251,10 +254,10 @@ export default function Home() {
             </h2>
             <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
               <div className="inline-flex rounded-md shadow">
-                <Link href="/contacts">
-                  <a className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-indigo-700">
+                <Link href="/contacts" passHref>
+                  <button className="button-primary">
                     Contact Us
-                  </a>
+                  </button>
                 </Link>
               </div>
               <div className="ml-3 inline-flex rounded-md shadow">
