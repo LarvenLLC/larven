@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import { Menu, Transition } from "@headlessui/react";
 import Link from "next/link";
