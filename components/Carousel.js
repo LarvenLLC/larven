@@ -63,10 +63,10 @@ export default function Carousel() {
           </h2>
           <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
             <div className="inline-flex rounded-md shadow">
-              <Link href="/contacts">
-                <a className="no-underline inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-indigo-700">
+              <Link href="/contacts" passHref>
+                <button className="button-primary">
                   Contact Us
-                </a>
+                </button>
               </Link>
             </div>
             <div className="ml-3 inline-flex rounded-md shadow">

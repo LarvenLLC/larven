@@ -48,8 +48,8 @@ export default function Contacts({}) {
       <section>
         <h3>Get in Touch Below</h3>
         <form onSubmit={submitInquiry}>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div className="flex flex-row justify-between">
+          <div className="grid grid-cols-1 gap-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
               <div>
                 <label>First Name</label>
                 <input name="first_name" />
@@ -59,7 +59,7 @@ export default function Contacts({}) {
                 <input name="last_name" />
               </div>
             </div>
-            <div className="flex flex-row justify-between">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
               <div>
                 <label>Job Title</label>
                 <input name="title" />
@@ -69,19 +69,20 @@ export default function Contacts({}) {
                 <input name="title" />
               </div>
             </div>
-            <div>
-              <label>Phone Number</label>
-              <input name="phone" type="tel" />
-            </div>
-            <div>
-              <label>Email</label>
-              <input name="email" type="email" />
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+              <div>
+                <label>Phone Number</label>
+                <input name="phone" type="tel" />
+              </div>
+              <div>
+                <label>Email</label>
+                <input name="email" type="email" />
+              </div>
             </div>
             <div>
               <h4 className="uppercase">Which service(s) are you interested in? Please select all that apply*</h4>
               <div className="flex-row">
-                <input className="w-9" type="checkbox" id="ai" name="Artificial_Intelligence"
-                       checked />
+                <input className="w-9" type="checkbox" id="ai" name="Artificial_Intelligence" defaultChecked />
                   <label htmlFor="ai">Artificial Intelligence</label>
               </div>
 
@@ -90,8 +91,8 @@ export default function Contacts({}) {
                   <label htmlFor="application_services">Application Services</label>
               </div>
               <div className="flex-row">
-                <input className="w-9" type="checkbox" id="automations" name="Automations" />
-                  <label htmlFor="automations">Automations</label>
+                <input className="w-9" type="checkbox" id="automation" name="Automation" />
+                  <label htmlFor="automation">Automation</label>
               </div>
               <div className="flex-row">
                 <input className="w-9" type="checkbox" id="bct" name="Blockchain_Technology" />
@@ -110,8 +111,8 @@ export default function Contacts({}) {
                   <label htmlFor="security">Cyber Security</label>
               </div>
               <div className="flex-row">
-                <input className="w-9" type="checkbox" id="data" name="Data_&_Analytics" />
-                  <label htmlFor="horns">Data & Analytics</label>
+                <input className="w-9" type="checkbox" id="data" name="Data_&amp;_Analytics" />
+                  <label htmlFor="horns">Data &amp; Analytics</label>
               </div>
               <div className="flex-row">
                 <input className="w-9" type="checkbox" id="infrastructure" name="Infrastructure" />
