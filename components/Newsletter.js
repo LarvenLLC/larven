@@ -13,19 +13,21 @@ export default function Newsletter() {
             }
             form[key] = value;
         }
-        return console.log(form);
+        window.Tawk_API.setAttributes(form, function (error) { });
+        window.Tawk_API.addEvent('requested-free-audit', form, function (error) { });
+        return true;
     }
 
     return (
         <section className="flex flex-col flex-wrap items-center justify-center py-12" style={{ backgroundColor: '#f4e0d8' }}>
             <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl hidden">
-                Newsletter
+                Request Free Audit
             </h2>
-            <div className="grid grid-flow-col md:grid-cols-3 gap-4">
+            <div className="grid grid-flow-col md:grid-cols-3 gap-4 mb-12">
                 <br />
                 <h6 className="text-2xl font-extrabold tracking-tight sm:text-2xl text-center" style={{ color: '#b23c1c' }}>
-                    There is more that technology can do for your business.
-                    Join the list for a free audit.
+                    Need to transform your business processes and operations but don't'know where to start?
+                    Join the list for a free audit, to see what can be improved.
                 </h6>
                 <br />
             </div>
@@ -36,13 +38,13 @@ export default function Newsletter() {
                 </div>
                 <br />
                 <button className="button-primary w-full" type="submit">
-                    Contact Us
+                    Get On The List
                 </button>
             </form>
             <p>
-                Want to learn more?
+                Only a few spots are available,
                 <br />
-                We are online - Chat with us.
+                terms and conditions apply.
             </p>
         </section>
     );
