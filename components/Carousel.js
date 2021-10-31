@@ -24,7 +24,7 @@ export default function Carousel() {
       className="relative no-prose"
     >
       <Slider classNameTray="m-0 relative overflow-hidden w-100 p-0">
-        <Slide index={0} className="p-0 mt-0" style={{ height: 500 }}>
+        <Slide index={0} className="p-0 my-0" style={{ height: 600 }}>
           <Image
             src="/images/carousel1.jpg"
             // layout="fill"
@@ -36,7 +36,7 @@ export default function Carousel() {
             alt=""
           />
         </Slide>
-        <Slide index={1} className="p-0 mt-0" style={{ height: 500 }}>
+        <Slide index={1} className="p-0 my-0" style={{ height: 600 }}>
           <Image
             src="/images/carousel4.jpg"
             className="object-cover object-center my-0"
@@ -45,7 +45,7 @@ export default function Carousel() {
             alt=""
           />
         </Slide>
-        <Slide index={2} className="p-0 mt-0" style={{ height: 500 }}>
+        <Slide index={2} className="p-0 my-0" style={{ height: 600 }}>
           <Image
             src="/images/carousel3.jpg"
             className="object-cover object-center my-0"
@@ -69,18 +69,11 @@ export default function Carousel() {
                 </button>
               </Link>
             </div>
-            <div className="ml-3 inline-flex rounded-md shadow">
-              <Link href="/about">
-                <a className="no-underline inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-primary bg-white hover:bg-indigo-50">
-                  Learn more
-                </a>
-              </Link>
-            </div>
           </div>
         </div>
       </section>
       <div>
-        <DotGroup className="w-full absolute bottom-1 text-center" />
+        <DotGroup className="w-full absolute bottom-8 text-center" />
         <ButtonBack className="absolute rounded-full bottom-2/4 left-1 text-white hover:text-blue-600 flex items-center justify-center h-12 w-12">
           <svg
             xmlns="http://www.w3.org/2000/svg"
