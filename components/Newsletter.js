@@ -31,7 +31,6 @@ export default function Newsletter() {
                 </h6>
                 <br />
             </div>
-            <br />
             <form onSubmit={signup}>
                 <div>
                     <input name="email" type="email" placeholder="Email Address" required />
