@@ -14,9 +14,11 @@ export default function Home() {
         {/* announcement section */}
         {/* <Announcement /> */}
         {/* carousel section */}
-        <section className="pt-0 pb-12 px-0">
+        <section className="py-0 px-0">
           <Carousel />
         </section>
+        {/* newsletter section */}
+        <Newsletter />
         {/* testimonials section */}
         <section className="">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
@@ -243,8 +245,6 @@ export default function Home() {
         <Partners />
         {/* testimonials section */}
         <section></section>
-        {/* newsletter section */}
-        <Newsletter />
         {/* cta section */}
         <section className="px-10 bg-gray-50">
           <div className="mx-auto lg:flex lg:items-center lg:justify-between">
@@ -260,13 +260,13 @@ export default function Home() {
                   </button>
                 </Link>
               </div>
-              <div className="ml-3 inline-flex rounded-md shadow">
+              {/* <div className="ml-3 inline-flex rounded-md shadow">
                 <Link href="/about">
                   <a className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-primary bg-white hover:bg-indigo-50">
                     Learn more
                   </a>
                 </Link>
-              </div>
+              </div> */}
             </div>
           </div>
         </section>
