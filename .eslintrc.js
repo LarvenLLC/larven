@@ -5,6 +5,7 @@ module.exports = {
   },
   'extends': [
     'plugin:react/recommended',
+    'plugin:react/jsx-runtime',
     'google',
   ],
   'parserOptions': {
@@ -18,5 +19,8 @@ module.exports = {
     'react',
   ],
   'rules': {
+    'max-len': ['error', {'code': 100}],
+    'react/jsx-uses-react': 'off',
+    'react/react-in-jsx-scope': 'off',
   },
 };
