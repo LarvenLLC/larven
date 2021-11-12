@@ -1,5 +1,7 @@
 // import Image from "next/image";
 
+import axios from "../pages/api";
+
 export default function Newsletter() {
     function signup(e) {
         e.preventDefault();
@@ -15,6 +17,7 @@ export default function Newsletter() {
         }
         window.Tawk_API.setAttributes(form, function (error) { });
         window.Tawk_API.addEvent('requested-free-audit', form, function (error) { });
+        axios.post('mailchimp/members', form);
         return true;
     }
 
