@@ -16,7 +16,7 @@ export default async function handler(req, res) {
       email_address: email,
       status: "subscribed",
       tags: ["audit"]
-    })
+    });
     break;
   }
   case 'GET':
@@ -37,5 +37,5 @@ export default async function handler(req, res) {
     res.status(405).end(`Method ${method} Not Allowed`);
   }
 
-  return res.status(200).json(result);
+  return res.status(200).json(response);
 }
