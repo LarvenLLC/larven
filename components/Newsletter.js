@@ -26,7 +26,7 @@ export default function Newsletter() {
             <div className="grid grid-flow-col md:grid-cols-3 gap-4 mb-12">
                 <br />
                 <h6 className="text-2xl font-extrabold tracking-tight sm:text-2xl text-center" style={{ color: '#b23c1c' }}>
-                    Need to transform your business processes and operations but don't'know where to start?
+                    Need to transform your business processes and operations but don't know where to start?
                     Join the list for a free audit, to see what can be improved.
                 </h6>
                 <br />
