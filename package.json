@@ -1,11 +1,13 @@
 {
   "name": "larven",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "predeploy": "vercel",
+    "deploy": "vercel --prod"
   },
   "engines": {
     "node": ">=14.0.0"
