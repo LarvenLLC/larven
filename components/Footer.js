@@ -1,20 +1,20 @@
-import { useEffect } from "react";
-import Link from "next/link";
+import {useEffect} from 'react';
+import Link from 'next/link';
 
-import moment from "moment";
+import moment from 'moment';
 
 export default function Footer({}) {
   useEffect(() => {
     // https://www.tawk.to/software/live-chat/
-    var Tawk_API = Tawk_API || {},
-      Tawk_LoadStart = new Date();
-    (function () {
-      var s1 = document.createElement("script"),
-        s0 = document.getElementsByTagName("script")[0];
+    var Tawk_API = Tawk_API || {};
+    const Tawk_LoadStart = new Date();
+    (function() {
+      const s1 = document.createElement('script');
+      const s0 = document.getElementsByTagName('script')[0];
       s1.async = true;
-      s1.src = "https://embed.tawk.to/6085d1a55eb20e09cf3678b7/1f45bls3g";
-      s1.charset = "UTF-8";
-      s1.setAttribute("crossorigin", "*");
+      s1.src = 'https://embed.tawk.to/6085d1a55eb20e09cf3678b7/1f45bls3g';
+      s1.charset = 'UTF-8';
+      s1.setAttribute('crossorigin', '*');
       s0.parentNode.insertBefore(s1, s0);
     })();
   }, []);
@@ -163,7 +163,7 @@ function Socials({}) {
         {/* instagram */}
         <div>
           <a
-            href="https://instagram.com/larven.tech/"
+            href="https://instagram.com/larvencl/"
             target="_blank"
             rel="noopener noreferrer"
           >
