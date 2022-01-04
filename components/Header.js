@@ -1,9 +1,9 @@
-import { useState } from "react";
+import {useState} from 'react';
 
-import { Menu, Transition } from "@headlessui/react";
-import Link from "next/link";
+import {Menu, Transition} from '@headlessui/react';
+import Link from 'next/link';
 
-const MenuLink = ({ href, ...props }) => {
+const MenuLink = ({href, ...props}) => {
   return (
     <Link href={href} passHref>
       <Menu.Item as="a" {...props} />
@@ -11,9 +11,19 @@ const MenuLink = ({ href, ...props }) => {
   );
 };
 
+/**
+ * Header component
+ * @param {Object} props
+ * @return {React.Component}
+ */
 export default function Header({}) {
   const [isOpen, setIsOpen] = useState(false);
 
+  /**
+   * Toggle menu
+   * @return {void}
+   * @private
+   */
   function toggleMenu() {
     setIsOpen(!isOpen);
   }
@@ -68,7 +78,7 @@ export default function Header({}) {
             <Menu>
               <div className="relative">
                 <Menu.Button className="group bg-white rounded-md text-gray-500 inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none">
-                  Services{" "}
+                  Services{' '}
                   <svg
                     className="ml-2 h-5 w-5 text-gray-400 group-hover:text-gray-500"
                     xmlns="http://www.w3.org/2000/svg"
@@ -96,7 +106,7 @@ export default function Header({}) {
                           className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50 focus:outline-none"
                         >
                           {/* active ? "text-gray-900" : "text-gray-500" */}
-                          {({ active }) => [
+                          {({active}) => [
                             <svg
                               key={1}
                               className="flex-shrink-0 h-6 w-6 text-primary"
@@ -128,7 +138,7 @@ export default function Header({}) {
                           href="#"
                           className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50 focus:outline-none"
                         >
-                          {({ active }) => [
+                          {({active}) => [
                             <svg
                               key={1}
                               className="flex-shrink-0 h-6 w-6 text-primary"
@@ -226,7 +236,7 @@ export default function Header({}) {
                           href="#"
                           className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50 focus:outline-none"
                         >
-                          {({ active }) => [
+                          {({active}) => [
                             <svg
                               key={1}
                               className="flex-shrink-0 h-6 w-6 text-primary"
@@ -261,7 +271,7 @@ export default function Header({}) {
                           href="#"
                           className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50 focus:outline-none"
                         >
-                          {({ active }) => [
+                          {({active}) => [
                             <svg
                               key={1}
                               className="flex-shrink-0 h-6 w-6 text-primary"
@@ -460,7 +470,7 @@ export default function Header({}) {
             <Menu>
               <div className="relative">
                 <Menu.Button className="group bg-white rounded-md text-gray-500 inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none">
-                  Industries{" "}
+                  Industries{' '}
                   <svg
                     className="ml-2 h-5 w-5 text-gray-400 group-hover:text-gray-500"
                     xmlns="http://www.w3.org/2000/svg"
@@ -487,7 +497,7 @@ export default function Header({}) {
                           className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50 focus:outline-none"
                         >
                           {/* active ? "text-gray-900" : "text-gray-500" */}
-                          {({ active }) => [
+                          {({active}) => [
                             <svg
                               key={1}
                               className="flex-shrink-0 h-6 w-6 text-primary"
@@ -515,7 +525,7 @@ export default function Header({}) {
                           href="/industry/distribution-wholesale-retail"
                           className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50 focus:outline-none"
                         >
-                          {({ active }) => [
+                          {({active}) => [
                             <svg
                               key={1}
                               className="flex-shrink-0 h-6 w-6 text-primary"
@@ -601,7 +611,7 @@ export default function Header({}) {
                           href="/industry/banking-finance"
                           className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50 focus:outline-none"
                         >
-                          {({ active }) => [
+                          {({active}) => [
                             <svg
                               key={1}
                               className="flex-shrink-0 h-6 w-6 text-primary"
@@ -629,7 +639,7 @@ export default function Header({}) {
                           href="/industry/restaurant-food-service"
                           className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50 focus:outline-none"
                         >
-                          {({ active }) => [
+                          {({active}) => [
                             <svg
                               key={1}
                               className="flex-shrink-0 h-6 w-6 text-primary"
@@ -718,18 +728,6 @@ export default function Header({}) {
             </Menu>
             <Menu>
               <div className="relative">
-                <Link href="/events" passHref>
-                  <Menu.Button
-                    as="a"
-                    className="no-underline group bg-white rounded-md text-gray-500 inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none"
-                  >
-                    ThinkTank
-                  </Menu.Button>
-                </Link>
-              </div>
-            </Menu>
-            <Menu>
-              <div className="relative">
                 <Link href="/about" passHref>
                   <Menu.Button
                     as="a"
@@ -743,7 +741,7 @@ export default function Header({}) {
             <Menu>
               {/* Item active: "text-gray-900", Item inactive: "text-gray-500" */}
               {/* 'More' flyout menu, show/hide based on flyout menu state.
-        
+
                     Entering: "transition ease-out duration-200"
                       From: "opacity-0 translate-y-1"
                       To: "opacity-100 translate-y-0"
