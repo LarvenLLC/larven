@@ -52,11 +52,11 @@ export default function Announcement() {
               </p>
             </div>
             <div className="order-3 mt-2 flex-shrink-0 w-full sm:order-2 sm:mt-0 sm:w-auto">
-              <Link href='' passHref>
+              <Link href='https://discord.gg/X4YcTCNJFU' passHref>
                 <button
                   className="button-primary-light"
                 >
-                Learn more
+                Register on Discord
                 </button>
               </Link>
             </div>
