@@ -120,7 +120,7 @@ export default function Home() {
               <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
                 <div className="flex">
                   <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
                       <svg
                         className="h-6 w-6"
                         xmlns="http://www.w3.org/2000/svg"
@@ -151,7 +151,7 @@ export default function Home() {
                 </div>
                 <div className="flex">
                   <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
                       <svg
                         className="h-6 w-6"
                         xmlns="http://www.w3.org/2000/svg"
@@ -182,7 +182,7 @@ export default function Home() {
                 </div>
                 <div className="flex">
                   <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
                       <svg
                         className="h-6 w-6"
                         xmlns="http://www.w3.org/2000/svg"
@@ -213,7 +213,7 @@ export default function Home() {
                 </div>
                 <div className="flex">
                   <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
                       <svg
                         className="h-6 w-6"
                         xmlns="http://www.w3.org/2000/svg"
@@ -265,13 +265,6 @@ export default function Home() {
                   </button>
                 </Link>
               </div>
-              {/* <div className="ml-3 inline-flex rounded-md shadow">
-                <Link href="/about">
-                  <a className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-primary bg-white hover:bg-indigo-50">
-                    Learn more
-                  </a>
-                </Link>
-              </div> */}
             </div>
           </div>
         </section>
