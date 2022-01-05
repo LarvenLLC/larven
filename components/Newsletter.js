@@ -47,36 +47,39 @@ export default function Newsletter() {
       <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl hidden">
         Request Free Audit
       </h2>
-      <div className="grid grid-flow-col md:grid-cols-3 gap-4 mb-10">
-        <br />
-        <h6
-          className="text-2xl font-extrabold tracking-tight sm:text-2xl text-justify"
-          style={{color: '#b23c1c'}}>
+      <div className="grid grid-flow-col md:grid-cols-5 gap-4 mb-10">
+        <div />
+        <div className='col-start-2 col-span-3'>
+          <br/>
+          <h6
+            className="text-2xl font-extrabold tracking-tight sm:text-2xl text-justify"
+            style={{color: '#b23c1c'}}>
           Need to transform your business processes and operations but
           don&apos;t know where to start?
           Join the list for a free audit, to see what can be improved.
-        </h6>
-        <br />
-      </div>
-      <form onSubmit={signup}>
-        <div>
-          <input
-            name="email"
-            type="email"
-            placeholder="Email Address"
-            required
-          />
+          </h6>
+          <br/>
+          <form onSubmit={signup}>
+            <div>
+              <input
+                name="email"
+                type="email"
+                placeholder="Email Address"
+                required
+              />
+            </div>
+            <br />
+            <button className="button-primary w-full" type="submit">
+              Get On The List
+            </button>
+          </form>
+          <p className='md:text-center'>
+            Only a few spots are available,
+            terms and conditions apply.
+          </p>
         </div>
-        <br />
-        <button className="button-primary w-full" type="submit">
-          Get On The List
-        </button>
-      </form>
-      <p>
-        Only a few spots are available,
-        <br />
-        terms and conditions apply.
-      </p>
+        <div />
+      </div>
     </section>
   );
 }
