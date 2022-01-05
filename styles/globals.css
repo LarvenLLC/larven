@@ -28,12 +28,11 @@
   }
 
   .carousel__dot {
-    @apply h-3 w-3 bg-blue-400 rounded-full m-1;
+    @apply h-3 w-3 border border-primary border-opacity-30 bg-primary bg-opacity-30 rounded-full m-1;
   }
 
   .carousel__dot--selected {
-    background-color: #007bff;
-    border-color: #007bff;
+    @apply bg-primary border-opacity-100;
   }
 
   .no-prose ul > li::before {
@@ -41,7 +40,7 @@
   }
 
   .button-primary {
-    @apply inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary focus:bg-primary underline;
+    @apply inline-flex items-center justify-center px-5 py-3 text-base border border-transparent font-medium rounded-md shadow text-white bg-primary hover:bg-primary focus:bg-primary underline;
   }
 
   .button-primary-light {
