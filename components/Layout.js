@@ -1,8 +1,13 @@
-import Title from "./Title";
-import Footer from "./Footer";
-import Header from "./Header";
+import Title from './Title';
+import Footer from './Footer';
+import Header from './Header';
 
-export default function Layout({ children, title = "" }) {
+/**
+ * @description Layout wrapper
+ * @param {object} props
+ * @return {JSX}
+ */
+export default function Layout({children, title = ''}) {
   return (
     <>
       <Title title={title} />
