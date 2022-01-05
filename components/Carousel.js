@@ -1,5 +1,5 @@
-import "pure-react-carousel/dist/react-carousel.es.css";
-import Link from "next/link";
+import 'pure-react-carousel/dist/react-carousel.es.css';
+import Link from 'next/link';
 // import Image from "next/image";
 
 import {
@@ -10,8 +10,13 @@ import {
   DotGroup,
   ButtonBack,
   ButtonNext,
-} from "pure-react-carousel";
+} from 'pure-react-carousel';
 
+/**
+ * @description Carousel component
+ * @param {object} props
+ * @return {JSX}
+ */
 export default function Carousel() {
   return (
     <CarouselProvider
@@ -24,7 +29,7 @@ export default function Carousel() {
       className="relative no-prose"
     >
       <Slider classNameTray="m-0 relative overflow-hidden w-100 p-0">
-        <Slide index={0} className="p-0 my-0" style={{ height: 600 }}>
+        <Slide index={0} className="p-0 my-0" style={{height: 600}}>
           <Image
             src="/images/carousel1.jpg"
             // layout="fill"
@@ -36,7 +41,7 @@ export default function Carousel() {
             alt=""
           />
         </Slide>
-        <Slide index={1} className="p-0 my-0" style={{ height: 600 }}>
+        <Slide index={1} className="p-0 my-0" style={{height: 600}}>
           <Image
             src="/images/carousel4.jpg"
             className="object-cover object-center my-0"
@@ -45,7 +50,7 @@ export default function Carousel() {
             alt=""
           />
         </Slide>
-        <Slide index={2} className="p-0 my-0" style={{ height: 600 }}>
+        <Slide index={2} className="p-0 my-0" style={{height: 600}}>
           <Image
             src="/images/carousel3.jpg"
             className="object-cover object-center my-0"
@@ -55,26 +60,33 @@ export default function Carousel() {
           />
         </Slide>
       </Slider>
-      <section className="absolute bottom-0 left-0 w-full px-10 bg-white bg-opacity-50">
-        <div className="mx-auto lg:flex lg:items-center lg:justify-between">
-          <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-            <span className="block">Ready to transform your processes?</span>
-            <span className="block text-primary">Join us now.</span>
-          </h2>
-          <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
-            <div className="inline-flex rounded-md shadow">
-              <Link href="/contacts" passHref>
-                <button className="button-primary">
-                  Contact Us
-                </button>
-              </Link>
-            </div>
-          </div>
+      <section className="absolute bottom-0 left-0 flex flex-col h-full w-full p-10 lg:px-48 bg-white bg-opacity-50">
+        <h2 className="tracking-tight text-gray-900">
+          <span className="text-4xl block font-extrabold">Digital Systems Centered on Your Success</span>
+        </h2>
+        <br/>
+        <p className="text-3xl font-medium my-5">We are here to assist you in transforming your business processes
+          and operations so that you can accomplish more in less time while increasing your
+          profitability.
+        </p>
+        <br/>
+        <br/>
+        <div className="mt-8 lg:mt-0 lg:flex lg:items-center">
+          <Link href="/contacts" passHref>
+            <button className="button-primary px-10 py-5 text-xl mr-6">
+                  Get Free Audit
+            </button>
+          </Link>
+          <Link href="/contacts" passHref>
+            <button className="button-primary-light px-10 py-5 text-xl">
+                  Brief Us
+            </button>
+          </Link>
         </div>
       </section>
       <div>
         <DotGroup className="w-full absolute bottom-8 text-center" />
-        <ButtonBack className="absolute rounded-full bottom-2/4 left-1 text-white hover:text-blue-600 flex items-center justify-center h-12 w-12">
+        <ButtonBack className="absolute rounded-full bottom-2/4 left-1 text-white hover:text-primary flex items-center justify-center h-12 w-12">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -90,7 +102,7 @@ export default function Carousel() {
             />
           </svg>
         </ButtonBack>
-        <ButtonNext className="absolute rounded-full bottom-2/4 right-1 text-white hover:text-blue-600 flex items-center justify-center h-12 w-12">
+        <ButtonNext className="absolute rounded-full bottom-2/4 right-1 text-white hover:text-primary flex items-center justify-center h-12 w-12">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
