@@ -1,4 +1,5 @@
 import Layout from '../components/Layout';
+import Email from '../components/Email';
 
 /**
  * This is the contacts page
@@ -71,7 +72,7 @@ export default function Contacts() {
   return (
     <Layout title="Contact Us">
       <section>
-        <h2>Contact Larven</h2>
+        <h1>Contact Larven</h1>
         <p>
           We appreciate your interest in Larven. Please select from the options
           below.
@@ -88,7 +89,7 @@ export default function Contacts() {
           </div>
           <div>
             <h4>
-              <a href="mailto:info@larven.co.tz" className='no-underline'>info@larven.co.tz</a>
+              <Email className='no-underline' />
             </h4>
             Worldwide
           </div>
