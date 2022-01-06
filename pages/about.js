@@ -1,8 +1,16 @@
-import Layout from "../components/Layout";
+import Layout from '../components/Layout';
 
-export default function About({}) {
+/**
+ * The about page
+ * @param {object} props
+ * @return {JSX}
+ */
+export default function About() {
   return (
     <Layout title="About Us">
+      <section>
+        <h1 className='mb-0'>About Larven</h1>
+      </section>
       {/* purpose section */}
       <section className="text-center">
         <h2>Our Purpose</h2>
