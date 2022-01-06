@@ -13,7 +13,7 @@ export default function Layout({children, title = ''}) {
       <Title title={title} />
       <div className="container mx-auto prose max-w-full">
         <Header />
-        <main className="flex flex-col items-center">
+        <main className="container mx-auto">
           <div>{children}</div>
         </main>
         <Footer />
