@@ -481,7 +481,7 @@ export default function Header({}) {
             </Menu>
             <Menu>
               <div className="relative">
-                <Link href="/contact" passHref>
+                <Link href="/contacts" passHref>
                   <Menu.Button
                     as="a"
                     className="no-underline group bg-white rounded-md text-gray-500 inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none"
