@@ -1,14 +1,24 @@
-import Layout from "../components/Layout";
+import Layout from '../components/Layout';
 
-export default function Contacts({ }) {
+/**
+ * This is the contacts page
+ * @param {Object} props
+ * @return {Object}
+ */
+export default function Contacts() {
+  /**
+   * Function to submit the inquiry form
+   * @param {Object} e
+   * @return {boolean}
+   */
   function submitInquiry(e) {
     e.preventDefault();
-    let form = {},
-      formData = new FormData(e.target);
-    for (let pair of formData.entries()) {
-      let key = pair[0],
-        value = pair[1];
-      if (typeof value === "string") {
+    const form = {};
+    const formData = new FormData(e.target);
+    for (const pair of formData.entries()) {
+      const key = pair[0];
+      let value = pair[1];
+      if (typeof value === 'string') {
         value = value.trim();
       }
       form[key] = value;
@@ -21,15 +31,15 @@ export default function Contacts({ }) {
     // script.charset = 'UTF-8'
     // script.setAttribute('crossorigin', '*')
 
-    const { firstname, lastname, email, company, phone, title, services } = form;
+    const {firstname, lastname, email, company, phone, title, services} = form;
     // set customer attributes
     window.Tawk_API.setAttributes({
       name: `${firstname} ${lastname}`,
       email,
       company,
       phone,
-      title
-    }, function (error) {
+      title,
+    }, function(error) {
       // returns string on error only
       if (error) {
         console.error(error);
@@ -41,15 +51,15 @@ export default function Contacts({ }) {
       email,
       company,
       phone,
-      title
-    }, function (error) {
+      title,
+    }, function(error) {
       // returns string on error only
       if (error) {
         console.error(error);
       }
     });
     // tags to enhance data
-    window.Tawk_API.addTags(services, function (error) {
+    window.Tawk_API.addTags(services, function(error) {
       // returns string on error only
       if (error) {
         console.error(error);
@@ -69,13 +79,13 @@ export default function Contacts({ }) {
       </section>
       <section>
         <h3>General Inquiries</h3>
-        <div className="grid grid-cols-1 md:grid-cols-3">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div>
-            <h4>255 (757) 590-414</h4>
+            <h4><a href="tel:+255(757)590-414" className='no-underline'>+255 (757) 590-414</a></h4>
             From the United Republic of Tanzania
           </div>
           <div>
-            <h4>info@larven.co.tz</h4>
+            <h4><a href="mailto:info@larven.co.tz" className='no-underline'>info@larven.co.tz</a></h4>
             Worldwide
           </div>
           <div>
@@ -123,60 +133,60 @@ export default function Contacts({ }) {
             </div>
             <div>
               <h4 className="uppercase">Which service(s) are you interested in? Please select all that apply*</h4>
-              <div className="flex-row">
-                <input name="services" className="w-9" type="checkbox" id="ai" value="Artificial Intelligence" defaultChecked />
+              <div className="flex flex-row items-center">
+                <input name="services" className="w-9 mr-2" type="checkbox" id="ai" value="Artificial Intelligence" defaultChecked />
                 <label htmlFor="ai">Artificial Intelligence</label>
               </div>
 
-              <div className="flex-row">
-                <input name="services" className="w-9" type="checkbox" id="application_services" value="Application Services" />
+              <div className="flex flex-row items-center">
+                <input name="services" className="w-9 mr-2" type="checkbox" id="application_services" value="Application Services" />
                 <label htmlFor="application_services">Application Services</label>
               </div>
-              <div className="flex-row">
-                <input name="services" className="w-9" type="checkbox" id="automation" value="Automation" />
+              <div className="flex flex-row items-center">
+                <input name="services" className="w-9 mr-2" type="checkbox" id="automation" value="Automation" />
                 <label htmlFor="automation">Automation</label>
               </div>
-              <div className="flex-row">
-                <input name="services" className="w-9" type="checkbox" id="bct" value="Blockchain Technology" />
+              <div className="flex flex-row items-center">
+                <input name="services" className="w-9 mr-2" type="checkbox" id="bct" value="Blockchain Technology" />
                 <label htmlFor="bct">Blockchain Technology</label>
               </div>
-              <div className="flex-row">
-                <input name="services" className="w-9" type="checkbox" id="cc" value="Cloud Computing" />
+              <div className="flex flex-row items-center">
+                <input name="services" className="w-9 mr-2" type="checkbox" id="cc" value="Cloud Computing" />
                 <label htmlFor="cc">Cloud Computing</label>
               </div>
-              <div className="flex-row">
-                <input name="services" className="w-9" type="checkbox" id="ce" value="Customer Experience" />
+              <div className="flex flex-row items-center">
+                <input name="services" className="w-9 mr-2" type="checkbox" id="ce" value="Customer Experience" />
                 <label htmlFor="ce">Customer Experience</label>
               </div>
-              <div className="flex-row">
-                <input name="services" className="w-9" type="checkbox" id="security" value="Cyber Security" />
+              <div className="flex flex-row items-center">
+                <input name="services" className="w-9 mr-2" type="checkbox" id="security" value="Cyber Security" />
                 <label htmlFor="security">Cyber Security</label>
               </div>
-              <div className="flex-row">
-                <input name="services" className="w-9" type="checkbox" id="data" value="Data &amp; Analytics" />
+              <div className="flex flex-row items-center">
+                <input name="services" className="w-9 mr-2" type="checkbox" id="data" value="Data &amp; Analytics" />
                 <label htmlFor="horns">Data &amp; Analytics</label>
               </div>
-              <div className="flex-row">
-                <input name="services" className="w-9" type="checkbox" id="infrastructure" value="Infrastructure" />
+              <div className="flex flex-row items-center">
+                <input name="services" className="w-9 mr-2" type="checkbox" id="infrastructure" value="Infrastructure" />
                 <label htmlFor="infrastructure">Infrastructure</label>
               </div>
-              <div className="flex-row">
-                <input name="services" className="w-9" type="checkbox" id="consulting" value="Consulting" />
+              <div className="flex flex-row items-center">
+                <input name="services" className="w-9 mr-2" type="checkbox" id="consulting" value="Consulting" />
                 <label htmlFor="consulting">Consulting</label>
               </div>
-              <div className="flex-row">
-                <input name="services" className="w-9" type="checkbox" id="training" value="Training" />
+              <div className="flex flex-row items-center">
+                <input name="services" className="w-9 mr-2" type="checkbox" id="training" value="Training" />
                 <label htmlFor="training">Training</label>
               </div>
             </div>
-            {/*<div>*/}
+            {/* <div>*/}
             {/*  <label>Message</label>*/}
             {/*  <textarea*/}
             {/*    name="message"*/}
             {/*    className="border-2 rounded-md w-full p-2 resize-none"*/}
             {/*    rows={5}*/}
             {/*  />*/}
-            {/*</div>*/}
+            {/* </div>*/}
           </div>
           <br />
           <button
