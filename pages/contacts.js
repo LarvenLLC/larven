@@ -73,13 +73,14 @@ export default function Contacts() {
     <Layout title="Contact Us">
       <section>
         <h1>Get In Touch!</h1>
-        <p>
+        <p className='mb-0'>
           We&apos;d be delighted to hear from you. Here&apos;s how you can reach us:
         </p>
       </section>
-      <section className='grid grid-cols-1 md:grid-cols-2 gap-4'>
-        <div>
-          <h3>Get in Touch Below</h3>
+      <section className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+        <div className='border-2 p-6'>
+          <h3>For Service Inquiry</h3>
+          <em>Please fill out the form below</em>
           <form onSubmit={submitInquiry}>
             <div className="grid grid-cols-1 gap-10">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
@@ -98,7 +99,7 @@ export default function Contacts() {
                   <input name="title" />
                 </div>
                 <div>
-                  <label>Company Name</label>
+                  <label>Company</label>
                   <input name="company" />
                 </div>
               </div>
@@ -114,12 +115,12 @@ export default function Contacts() {
               </div>
               <div>
                 <h4 className="uppercase">
-                Which service(s) are you interested in? Please select all that apply*
+                Which service(s) are you looking for? (Select all that apply)
                 </h4>
                 <div className="flex flex-row items-center">
                   <input
                     name="services"
-                    className="w-9 mr-2"
+                    className="w-8 mr-2"
                     type="checkbox"
                     id="ai"
                     value="Artificial Intelligence"
@@ -131,7 +132,7 @@ export default function Contacts() {
                 <div className="flex flex-row items-center">
                   <input
                     name="services"
-                    className="w-9 mr-2"
+                    className="w-8 mr-2"
                     type="checkbox"
                     id="application_services"
                     value="Application Services"
@@ -141,7 +142,7 @@ export default function Contacts() {
                 <div className="flex flex-row items-center">
                   <input
                     name="services"
-                    className="w-9 mr-2"
+                    className="w-8 mr-2"
                     type="checkbox"
                     id="automation"
                     value="Automation"
@@ -151,7 +152,7 @@ export default function Contacts() {
                 <div className="flex flex-row items-center">
                   <input
                     name="services"
-                    className="w-9 mr-2"
+                    className="w-8 mr-2"
                     type="checkbox"
                     id="bct"
                     value="Blockchain Technology"
@@ -161,7 +162,7 @@ export default function Contacts() {
                 <div className="flex flex-row items-center">
                   <input
                     name="services"
-                    className="w-9 mr-2"
+                    className="w-8 mr-2"
                     type="checkbox"
                     id="cc"
                     value="Cloud Computing"
@@ -171,7 +172,7 @@ export default function Contacts() {
                 <div className="flex flex-row items-center">
                   <input
                     name="services"
-                    className="w-9 mr-2"
+                    className="w-8 mr-2"
                     type="checkbox"
                     id="ce"
                     value="Customer Experience"
@@ -181,7 +182,7 @@ export default function Contacts() {
                 <div className="flex flex-row items-center">
                   <input
                     name="services"
-                    className="w-9 mr-2"
+                    className="w-8 mr-2"
                     type="checkbox"
                     id="security"
                     value="Cyber Security"
@@ -191,7 +192,7 @@ export default function Contacts() {
                 <div className="flex flex-row items-center">
                   <input
                     name="services"
-                    className="w-9 mr-2"
+                    className="w-8 mr-2"
                     type="checkbox"
                     id="data"
                     value="Data &amp; Analytics"
@@ -201,7 +202,7 @@ export default function Contacts() {
                 <div className="flex flex-row items-center">
                   <input
                     name="services"
-                    className="w-9 mr-2"
+                    className="w-8 mr-2"
                     type="checkbox"
                     id="infrastructure"
                     value="Infrastructure"
@@ -211,7 +212,7 @@ export default function Contacts() {
                 <div className="flex flex-row items-center">
                   <input
                     name="services"
-                    className="w-9 mr-2"
+                    className="w-8 mr-2"
                     type="checkbox"
                     id="consulting"
                     value="Consulting"
@@ -221,7 +222,7 @@ export default function Contacts() {
                 <div className="flex flex-row items-center">
                   <input
                     name="services"
-                    className="w-9 mr-2"
+                    className="w-8 mr-2"
                     type="checkbox"
                     id="training"
                     value="Training"
@@ -248,28 +249,28 @@ export default function Contacts() {
             </button>
           </form>
         </div>
-        <div>
-          <h3>General Inquiries</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div>
-              <h4>
-                <a href="tel:+255(757)590-414" className='no-underline'>+255 (757) 590-414</a>
-              </h4>
-            From the United Republic of Tanzania
-            </div>
-            <div>
-              <h4>
-                <Email className='no-underline' />
-              </h4>
-            Worldwide
-            </div>
-            <div>
-              <h4>Location</h4>
-              <div>Bagamoyo Road</div>
-              <div>Sayansi, Kijitonyama</div>
-              <div>Dar es Salaam,</div>
-              <div>Tanzania</div>
-            </div>
+        <div className='border-2 p-6 flex flex-col self-start'>
+          <h3>For General Inquiries</h3>
+          <em />
+          <div>
+            <h4 className='my-0'>
+              Call us: <a
+                href="tel:+255(757)590-414"
+                className='no-underline'
+              >+255 (757) 590-414</a>
+            </h4>
+          </div>
+          <div>
+            <h4 className='my-0'>
+              Email us: <Email className='no-underline' />
+            </h4>
+          </div>
+          <div>
+            <h4>Visit our Office</h4>
+            <div>Bagamoyo Road</div>
+            <div>Sayansi, Kijitonyama</div>
+            <div>Dar es Salaam,</div>
+            <div>Tanzania</div>
           </div>
         </div>
       </section>
