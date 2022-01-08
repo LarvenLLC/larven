@@ -1,18 +1,23 @@
-import Link from "next/link";
+import Link from 'next/link';
 // import Image from "next/image";
 
-import Layout from "../components/Layout";
-import Announcement from "../components/Announcement";
-import Newsletter from "../components/Newsletter";
-import Carousel from "../components/Carousel";
-import Partners from "../components/Partners";
+import Layout from '../components/Layout';
+import Announcement from '../components/Announcement';
+import Newsletter from '../components/Newsletter';
+import Carousel from '../components/Carousel';
+import Partners from '../components/Partners';
 
+/**
+ * Index page
+ * @param {*} props
+ * @return {React.Component}
+ */
 export default function Home() {
   return (
     <>
       <Layout title="Home">
         {/* announcement section */}
-        {/* <Announcement /> */}
+        <Announcement />
         {/* carousel section */}
         <section className="py-0 px-0">
           <Carousel />
@@ -42,14 +47,14 @@ export default function Home() {
                   x="0px"
                   y="0px"
                   viewBox="0 0 612 612"
-                  style={{ enableBackground: "new 0 0 612 612" }}
+                  style={{enableBackground: 'new 0 0 612 612'}}
                   height={48}
                   width={48}
                 >
                   <g>
                     <g>
                       <path
-                        style={{ fill: "#010002" }}
+                        style={{fill: '#010002'}}
                         d="M587.826,186.966c-16.116-37.332-37.944-69.768-65.484-97.308s-59.976-49.368-97.308-65.484
 			S348.024,0,306,0c-28.152,0-55.284,3.672-81.396,11.016s-50.49,17.646-73.134,30.906s-43.248,29.172-61.812,47.736
 			s-34.476,39.168-47.736,61.812c-13.26,22.646-23.562,47.022-30.906,73.134C3.672,250.716,0,277.848,0,306
@@ -115,7 +120,7 @@ export default function Home() {
               <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
                 <div className="flex">
                   <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
                       <svg
                         className="h-6 w-6"
                         xmlns="http://www.w3.org/2000/svg"
@@ -146,7 +151,7 @@ export default function Home() {
                 </div>
                 <div className="flex">
                   <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
                       <svg
                         className="h-6 w-6"
                         xmlns="http://www.w3.org/2000/svg"
@@ -177,7 +182,7 @@ export default function Home() {
                 </div>
                 <div className="flex">
                   <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
                       <svg
                         className="h-6 w-6"
                         xmlns="http://www.w3.org/2000/svg"
@@ -208,7 +213,7 @@ export default function Home() {
                 </div>
                 <div className="flex">
                   <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
                       <svg
                         className="h-6 w-6"
                         xmlns="http://www.w3.org/2000/svg"
@@ -260,13 +265,6 @@ export default function Home() {
                   </button>
                 </Link>
               </div>
-              {/* <div className="ml-3 inline-flex rounded-md shadow">
-                <Link href="/about">
-                  <a className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-primary bg-white hover:bg-indigo-50">
-                    Learn more
-                  </a>
-                </Link>
-              </div> */}
             </div>
           </div>
         </section>

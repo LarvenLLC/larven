@@ -104,10 +104,10 @@
   resolved "https://registry.npmjs.org/@hapi/hoek/-/hoek-9.2.1.tgz"
   integrity sha512-gfta+H8aziZsm8pZa0vj04KO6biEiisppNgA1kbJvFrrWu9Vm7eaUEy76DIxsuTaWvti5fkJVhllWc6ZTE+Mdw==
 
-"@headlessui/react@^0.3.1":
-  version "0.3.2"
-  resolved "https://registry.npmjs.org/@headlessui/react/-/react-0.3.2.tgz"
-  integrity sha512-N8XpYJNEP1jH5V8qq2cX8pnipOd93UJNKky1B7Ac3/yFFehB/0C4k5kOHt8ShHsmcohrZUB4sOl4+m0CjQpXng==
+"@headlessui/react@^1.4.2":
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/@headlessui/react/-/react-1.4.2.tgz#87e264f190dbebbf8dfdd900530da973dad24576"
+  integrity sha512-N8tv7kLhg9qGKBkVdtg572BvKvWhmiudmeEpOCyNwzOsZHCXBtl8AazGikIfUS+vBoub20Fse3BjawXDVPPdug==
 
 "@humanwhocodes/config-array@^0.6.0":
   version "0.6.0"
@@ -1491,6 +1491,11 @@ globals@^13.6.0, globals@^13.9.0:
   integrity sha512-uS8X6lSKN2JumVoXrbUz+uG4BYG+eiawqm3qFcT7ammfbUHeCBoJMlHcec/S3krSk73/AE/f0szYFmgAA3kYZg==
   dependencies:
     type-fest "^0.20.2"
+
+goober@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/goober/-/goober-2.1.1.tgz#2328a6dae015c3cd30fc55a70090037a244ad2f6"
+  integrity sha512-TkGCqHxE4g5DtdpwxFCi53bXRtvw0BoSgCihVSIOioe9kfkqin5wXG8BQKykN0tjzmxZJ81qU2KWinZf5qKVlw==
 
 graceful-fs@^4.1.2, graceful-fs@^4.1.6, graceful-fs@^4.2.0:
   version "4.2.8"

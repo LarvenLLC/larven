@@ -19,21 +19,25 @@
     box-sizing: border-box;
   }
 
+  h1, h2, h3, h4, h5, h6, .prose h3 {
+    @apply mt-0;
+  }
+
   input {
     @apply border-2 rounded w-full p-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50;
   }
 
   section {
-    @apply max-w-7xl py-6 px-4 sm:px-6 lg:px-8;
+    /* @apply max-w-7xl py-6 px-4 sm:px-6 lg:px-8; */
+    @apply container py-6;
   }
 
   .carousel__dot {
-    @apply h-3 w-3 bg-blue-400 rounded-full m-1;
+    @apply h-3 w-3 border border-primary border-opacity-30 bg-primary bg-opacity-30 rounded-full m-1;
   }
 
   .carousel__dot--selected {
-    background-color: #007bff;
-    border-color: #007bff;
+    @apply bg-primary border-opacity-100;
   }
 
   .no-prose ul > li::before {
@@ -41,10 +45,18 @@
   }
 
   .button-primary {
-    @apply inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-indigo-700 underline;
+    @apply inline-flex items-center justify-center px-5 py-3 text-base border border-transparent font-medium rounded-md shadow text-white bg-primary hover:bg-primary focus:bg-primary underline;
+  }
+
+  .button-primary-light {
+    @apply inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-primary bg-white hover:bg-primary hover:text-white focus:bg-primary underline;
   }
 
   input {
     @apply rounded-md h-14;
+  }
+
+  .menu-button {
+    @apply bg-white rounded-md text-gray-500 inline-flex items-center text-base font-medium no-underline hover:text-gray-900 focus:outline-none !important;
   }
 }

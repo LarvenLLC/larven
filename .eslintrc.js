@@ -22,5 +22,6 @@ module.exports = {
     'max-len': ['error', {'code': 100}],
     'react/jsx-uses-react': 'off',
     'react/react-in-jsx-scope': 'off',
+    'react/prop-types': 'off',
   },
 };

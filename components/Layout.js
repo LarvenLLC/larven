@@ -1,14 +1,19 @@
-import Title from "./Title";
-import Footer from "./Footer";
-import Header from "./Header";
+import Title from './Title';
+import Footer from './Footer';
+import Header from './Header';
 
-export default function Layout({ children, title = "" }) {
+/**
+ * @description Layout wrapper
+ * @param {object} props
+ * @return {JSX}
+ */
+export default function Layout({children, title = ''}) {
   return (
     <>
       <Title title={title} />
       <div className="container mx-auto prose max-w-full">
         <Header />
-        <main className="flex flex-col items-center">
+        <main className="container mx-auto">
           <div>{children}</div>
         </main>
         <Footer />
