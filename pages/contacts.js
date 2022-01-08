@@ -1,5 +1,6 @@
 import Layout from '../components/Layout';
 import Email from '../components/Email';
+import {useToasts} from '../hooks/useToasts';
 
 /**
  * This is the contacts page
@@ -7,6 +8,8 @@ import Email from '../components/Email';
  * @return {Object}
  */
 export default function Contacts() {
+  const {toast} = useToasts();
+
   /**
    * Function to submit the inquiry form
    * @param {Object} e
@@ -66,6 +69,9 @@ export default function Contacts() {
         console.error(error);
       }
     });
+    toast('Thank you for your inquiry. We will get back to you shortly.');
+    // reset form
+    e?.target?.reset();
     return true;
   }
 
