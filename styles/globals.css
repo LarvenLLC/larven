@@ -19,6 +19,10 @@
     box-sizing: border-box;
   }
 
+  h1, h2, h3, h4, h5, h6, .prose h3 {
+    @apply mt-0;
+  }
+
   input {
     @apply border-2 rounded w-full p-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50;
   }
