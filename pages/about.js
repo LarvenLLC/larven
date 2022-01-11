@@ -1,51 +1,41 @@
 import Layout from "../components/Layout";
 
-export default function About({}) {
+export default function About({ }) {
   return (
     <Layout title="About Us">
       {/* purpose section */}
-      <section className="text-center">
-        <h2>Our Purpose</h2>
-        <p>To uplift mankind with technology they can own</p>
+      <section className="text-left">
+        <h2>We Are Larven</h2>
+        <p> A technology firm focused on the consultation and development of digital systems for the success of your business. Our journey began in 2019, and we are committed to creating the technological solutions that you seek. We provide a variety of services ranging from application and software development to consultation and training.</p>
+
+        <h3>We make it a point to work closely with clients</h3>
         <p>
-          We embrace the power of technology to bring happiness to our clients,
-          people and communities.
+          We want to understand your problems, objectives, and desired outcomes; our dedication is to provide you with the bespoken solution centered on your customers and business.
         </p>
-      </section>
-      {/* numbers section */}
-      {/* values section */}
-      <section className="flex flex-wrap justify-center gap-10">
-        <div className="">
-          <h2>Our Values</h2>
-          <ul>
-            <li>Team Work</li>
-            <li>Innovation</li>
-            <li>Individual Development</li>
-          </ul>
+
+        <h2 className="text-center">We Value</h2>
+        <div className="d-flex flex-row justify-space-around w-100" style={{ display: "flex" }}>
+
+          <div className="text-center" style={{ width: "33%" }}>
+            <h3>Teamwork</h3>
+            <p> We collaborate and communicate effectively to provide you with high-quality service. </p>
+          </div>
+          <div className="text-center" style={{ width: "33%" }}>
+            <h3>Innovation</h3>
+            <p>We believe in developing and introducing new things.</p>
+          </div>
+          <div className="text-center" style={{ width: "33%" }}>
+            <h3>Individual Development</h3>
+            <p>A great team, we believe, begins with great individuals. We are constantly improving ourselves to serve you with excellence.</p>
+          </div>
         </div>
-        {/* pillars section */}
-        <div>
-          <h2>Our Pillars</h2>
-          <ul>
-            <li>Human Centered Design</li>
-            <li>Humane Development</li>
-            <li>Specialization &amp; Division of Labour</li>
-          </ul>
-        </div>
-      </section>
-      {/* accomplishments section */}
-      {/* how we work section */}
-      <section>
-        <div className="flex flex-wrap items-center justify-center gap-10">
-          <h1>How we work</h1>
-          <ul>
-            <li>Total inclusiveness &amp; Extreme feedback</li>
-            <li>User &amp; Business Centric</li>
-            <li>Research &amp; Design Focused</li>
-          </ul>
+
+        <div className="text-center">
+          <h2 >Meet Our Team</h2>
+          <p>A perfect blend of creativity and technical prowess.</p>
         </div>
       </section>
-      {/* awards & recognition section */}
+
     </Layout>
   );
 }

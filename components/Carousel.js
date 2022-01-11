@@ -70,7 +70,7 @@ export default function Carousel() {
               </Link>
             </div>
             <div className="ml-3 inline-flex rounded-md shadow">
-              <Link href="/about">
+              <Link href="/services">
                 <a className="no-underline inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-primary bg-white hover:bg-indigo-50">
                   Learn more
                 </a>

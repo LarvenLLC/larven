@@ -2,7 +2,6 @@ import Link from "next/link";
 // import Image from "next/image";
 
 import Layout from "../components/Layout";
-import Announcement from "../components/Announcement";
 import Carousel from "../components/Carousel";
 import Partners from "../components/Partners";
 
