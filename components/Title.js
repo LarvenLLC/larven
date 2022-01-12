@@ -1,10 +1,13 @@
-import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
-import Head from "next/head";
+import Head from 'next/head';
 
-import lingo from "lingojs";
+import lingo from 'lingojs';
 
-export default function Title({ title = "Home" }) {
+/**
+ * Title component
+ * @param {Object} props
+ * @return {React.Component}
+ */
+export default function Title({title = 'Home'}) {
   return (
     <Head>
       <link
@@ -30,7 +33,8 @@ export default function Title({ title = "Home" }) {
       <meta name="theme-color" content="#ffffff" />
       <meta
         name="description"
-        content="To uplift mankind with technology they can own, we embrace the power of technology to bring happiness to our clients, people and communities."
+        content="To uplift mankind with technology they can own, we embrace the power of technology
+         to bring happiness to our clients, people and communities."
       />
       <title>{`${lingo(title).title()} | Larven`}</title>
     </Head>

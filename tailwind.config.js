@@ -1,8 +1,9 @@
 module.exports = {
+  mode: 'jit',
   purge: {
     content: [
-      "./pages/**/*.{js,ts,jsx,tsx}",
-      "./components/**/*.{js,ts,jsx,tsx}",
+      './pages/**/*.{js,ts,jsx,tsx}',
+      './components/**/*.{js,ts,jsx,tsx}',
     ],
     options: {
       keyframes: true,
@@ -13,9 +14,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#00AB44",
-        secondary: "#353744",
-        light: "#666666",
+        primary: '#00AB44',
+        secondary: '#353744',
+        light: '#666666',
       },
     },
   },
@@ -23,5 +24,5 @@ module.exports = {
     extend: {},
   },
   important: true,
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [require('@tailwindcss/typography')],
 };

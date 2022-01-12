@@ -1,7 +1,16 @@
-import "../styles/globals.css";
+import '../styles/globals.css';
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+import ToastProvider from '../hooks/useToasts';
+
+/**
+ * App component
+ * @component
+ * @return {function}
+ */
+export default function MyApp({Component, pageProps}) {
+  return (
+    <ToastProvider>
+      <Component {...pageProps} />
+    </ToastProvider>
+  );
 }
-
-export default MyApp;
