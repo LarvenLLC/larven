@@ -74,13 +74,13 @@ export default function Footer() {
         <section className="grid grid-cols-1 md:grid-cols-2 pt-5">
           <div className="grid grid-flow-col auto-cols-auto md:auto-cols-max gap-5 md:gap-10">
             <small>
-              <a href="#">Privacy Statement</a>
+              <Link href="/privacy"><a>Privacy Statement</a></Link>
             </small>
             <small>
               <a href="#">Cookie policy</a>
             </small>
             <small>
-              <a href="#">Terms &amp; Conditions</a>
+              <Link href="/terms"><a>Terms &amp; Conditions</a></Link>
             </small>
           </div>
           <small className="text-center md:text-right">
