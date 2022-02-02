@@ -65,7 +65,11 @@ export default function Footer() {
                   <a className="no-underline font-normal">About</a>
                 </Link>
               </li>
-              <li>Careers</li>
+              <li>
+                <Link href="/careers">
+                  <a className="no-underline font-normal">Careers</a>
+                </Link>
+              </li>
               <li>Ecosystem Partners</li>
             </ul>
           </div>
