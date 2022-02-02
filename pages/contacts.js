@@ -1,6 +1,7 @@
 import Layout from '../components/Layout';
 import Email from '../components/Email';
 import {useToasts} from '../hooks/useToasts';
+import {addContact} from '../firebase/firestore/contacts';
 
 /**
  * This is the contacts page
@@ -15,7 +16,7 @@ export default function Contacts() {
    * @param {Object} e
    * @return {boolean}
    */
-  function submitInquiry(e) {
+  async function submitInquiry(e) {
     e.preventDefault();
     const form = {};
     const formData = new FormData(e.target);
@@ -69,6 +70,10 @@ export default function Contacts() {
         console.error(error);
       }
     });
+
+    // submit form to firestore
+    await addContact(form);
+
     toast('Thank you for your inquiry. We will get back to you shortly.');
     // reset form
     e?.target?.reset();
