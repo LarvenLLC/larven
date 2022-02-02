@@ -15,8 +15,8 @@ async function add(collectionName = '', data = {}) {
   const firestore = getFirestore(app);
   // Add a new document with a generated id.
   const docRef = await addDoc(collection(firestore, collectionName), data);
-  console.log('Document written with ID: ', docRef.id);
-  return true;
+  // console.log('Document written with ID: ', docRef.id);
+  return !!docRef?.id;
 }
 
 export {add};
