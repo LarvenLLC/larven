@@ -1,6 +1,11 @@
-import Layout from "../components/Layout";
+import Layout from '../components/Layout';
 
-export default function Events({}) {
+/**
+ * Events page
+ * @param {Object} props
+ * @return {React.Component}
+ */
+export default function Events() {
   return (
     <Layout title="Events">
       <section>
