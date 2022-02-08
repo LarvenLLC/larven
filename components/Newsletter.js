@@ -42,6 +42,7 @@ export default function Newsletter() {
 
   return (
     <section
+      id="audit"
       className="flex flex-col flex-wrap items-center justify-center py-12"
       style={{backgroundColor: '#f4e0d8'}}>
       <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl hidden">
