@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Layout from '../components/Layout';
 import Announcement from '../components/Announcement';
 import Newsletter from '../components/Newsletter';
-import Carousel from '../components/Carousel';
+import {Link as ScrollLink} from "react-scroll";
 import Partners from '../components/Partners';
 
 /**
@@ -19,8 +19,44 @@ export default function Home() {
         {/* announcement section */}
         <Announcement />
         {/* carousel section */}
-        <section className="py-0 px-0">
-          <Carousel />
+        <section className="py-0 px-0 relative h-[800px]">
+          <div
+            className="absolute bottom-0 left-0 flex flex-col h-full w-full justify-center p-10 lg:p-20
+            bg-white bg-opacity-50"
+          >
+            <div className='sm:px-10 sm:border-l-[10px] lg:border-l-[14px] border-primary'>
+              <h2 className="tracking-tight text-gray-900 mt-0">
+                <span className="text-4xl lg:text-6xl block font-extrabold">
+                  Digital Systems Centered on Your Success
+                </span>
+              </h2>
+              <br className='hidden sm:inline' />
+              <p className="text-3xl lg:text-4xl font-medium my-5">
+                We are here to assist you in transforming your business processes and operations so that
+                you can accomplish more in less time while increasing your profitability.
+              </p>
+              <br className='hidden sm:inline' />
+              <br />
+              <div className="mt-8 mb-2 lg:mt-0 lg:flex lg:items-center grid gap-4">
+                <ScrollLink
+                  to="audit"
+                  spy={true}
+                  smooth={true}
+                  offset={-100}
+                  duration={300}
+                >
+                  <button className="button-primary px-10 py-5 text-xl">
+                      Get Free Audit
+                  </button>
+                </ScrollLink>
+                <Link href="/contacts" passHref>
+                  <button className="button-primary-light px-10 py-5 text-xl">
+                      Brief Us
+                  </button>
+                </Link>
+              </div>
+            </div>
+          </div>
         </section>
         {/* newsletter section */}
         <Newsletter />
