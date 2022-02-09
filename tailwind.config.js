@@ -18,6 +18,21 @@ module.exports = {
         secondary: '#353744',
         light: '#666666',
       },
+      transitionProperty: {
+        'height': 'height',
+        'width': 'width',
+        'left': 'left',
+        'spacing': 'margin, padding',
+      },
+      keyframes: {
+        slidein: {
+          '0%': { transform: 'translateX(0px)' },
+          '100%': { transform: 'translateX(80%)' },
+        }
+      },
+      animation: {
+        slidein: 'slidein 4s ease-in-out 300ms forwards',
+      }
     },
   },
   variants: {
