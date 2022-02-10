@@ -2,27 +2,27 @@ import '../styles/globals.css';
 
 import ToastProvider from '../hooks/useToasts';
 import GoogleAnalytics from '../components/GoogleAnalytics';
-import {initializeApp} from 'firebase/app';
-import {getAuth, onAuthStateChanged, signInAnonymously} from 'firebase/auth';
-import {useEffect, useState} from 'react';
+import { initializeApp } from 'firebase/app';
+import { getAuth, onAuthStateChanged, signInAnonymously } from 'firebase/auth';
+import { useEffect, useState } from 'react';
 
 /**
  * App component
  * @component
  * @return {function}
  */
-export default function MyApp({Component, pageProps}) {
+export default function MyApp({ Component, pageProps }) {
   const [app, setApp] = useState(null);
-  useEffect(()=>{
+  useEffect(() => {
     const firebaseConfig = JSON.parse(
-        process?.env?.NEXT_PUBLIC_FIREBASE_CONFIG || '{}',
+      process?.env?.NEXT_PUBLIC_FIREBASE_CONFIG || '{}',
     );
     // Initialize Firebase
-    const {name} = initializeApp(firebaseConfig);
+    const { name } = initializeApp(firebaseConfig);
     setApp(name);
   }, []);
 
-  useEffect(()=>{
+  useEffect(() => {
     if (app) {
       const auth = getAuth();
       onAuthStateChanged(auth, (user) => {
@@ -39,16 +39,16 @@ export default function MyApp({Component, pageProps}) {
     }
   }, []);
 
-  useEffect(()=>{
+  useEffect(() => {
     if (app) {
       const auth = getAuth();
       signInAnonymously(auth)
-          .then(() => {
+        .then(() => {
           // Signed in..
-          })
-          .catch((error) => {
-            console.error(error);
-          });
+        })
+        .catch((error) => {
+          console.error(error);
+        });
     }
   }, [app]);
 
