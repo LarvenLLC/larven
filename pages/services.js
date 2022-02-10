@@ -25,10 +25,10 @@ export default function Services({ }) {
                 <div className="d-flex flex-row justify-space-around w-100" style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between" }}>
                     {
                         servicesArray.map((service, index) => (
-                            <div className="text-center" style={{ width: "30%" }}>
+                            <div className="text-center" style={{ width: "30%", alignItems: 'center', display: 'flex', flexDirection: "column" }}>
                                 <h3>{service.title}</h3>
-                                <img src={service?.image} alt="IMG" />
-                                <p>{service.descriptiom}</p>
+                                <img src={service?.image} alt="IMG" className="img-fluid" style={{ height: 240, width: 400 }} />
+                                <p style={{ marginTop: -30 }}>{service.descriptiom}</p>
                             </div>
                         ))
                     }

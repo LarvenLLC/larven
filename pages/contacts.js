@@ -1,15 +1,18 @@
 import Layout from '../components/Layout';
 import Email from '../components/Email';
-import {useToasts} from '../hooks/useToasts';
-import {addContact} from '../firebase/firestore/contacts';
+import { useToasts } from '../hooks/useToasts';
+import { addContact } from '../firebase/firestore/contacts';
 
 /**
  * This is the contacts page
  * @param {Object} props
  * @return {Object}
  */
+
+
+let timerManager = null;
 export default function Contacts() {
-  const {toast} = useToasts();
+  const { toast } = useToasts();
 
   /**
    * Function to submit the inquiry form
@@ -36,7 +39,7 @@ export default function Contacts() {
     // script.charset = 'UTF-8'
     // script.setAttribute('crossorigin', '*')
 
-    const {firstname, lastname, email, company, phone, title, services} = form;
+    const { firstname, lastname, email, company, phone, title, services } = form;
     // set customer attributes
     window.Tawk_API.setAttributes({
       name: `${firstname} ${lastname}`,
@@ -44,7 +47,7 @@ export default function Contacts() {
       company,
       phone,
       title,
-    }, function(error) {
+    }, function (error) {
       // returns string on error only
       if (error) {
         console.error(error);
@@ -57,25 +60,31 @@ export default function Contacts() {
       company,
       phone,
       title,
-    }, function(error) {
+    }, function (error) {
       // returns string on error only
       if (error) {
         console.error(error);
       }
     });
     // tags to enhance data
-    window.Tawk_API.addTags(services, function(error) {
+    window.Tawk_API.addTags(services, function (error) {
       // returns string on error only
       if (error) {
         console.error(error);
       }
     });
 
-    // submit form to firestore
-    await addContact(form);
+    if (timerManager !== null) {
+      clearTimeout(timerManager)
+    }
 
-    toast('Thank you for your inquiry. We will get back to you shortly.');
-    // reset form
+    // submit form to firestore
+    addContact(form);
+
+    timerManager = setTimeout(function () {
+      toast('Thank you for your inquiry. We will get back to you shortly.');
+    }, 800);
+    // reset form 
     e?.target?.reset();
     return true;
   }
@@ -126,7 +135,7 @@ export default function Contacts() {
               </div>
               <div>
                 <h4 className="uppercase">
-                Which service(s) are you looking for? (Select all that apply)
+                  Which service(s) are you looking for? (Select all that apply)
                 </h4>
                 <div className="flex flex-row items-center">
                   <input
@@ -256,7 +265,7 @@ export default function Contacts() {
               className="w-full rounded text-white h-12 bg-primary focus:outline-none focus:ring-2
             focus:ring-primary focus:ring-opacity-50"
             >
-            Submit
+              Submit
             </button>
           </form>
         </div>
