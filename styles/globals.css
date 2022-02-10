@@ -8,6 +8,7 @@
   body {
     padding: 0;
     margin: 0;
+    scroll-behavior: smooth;
   }
 
   a {
@@ -17,6 +18,7 @@
 
   * {
     box-sizing: border-box;
+    @apply transition duration-300 ease-out;
   }
 
   h1, h2, h3, h4, h5, h6, .prose h3 {

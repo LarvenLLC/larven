@@ -1,15 +1,43 @@
-import {useState} from 'react';
+import {useMemo, useState} from 'react';
 
-import {Menu, Transition} from '@headlessui/react';
+import {Tab, Transition} from '@headlessui/react';
 import Link from 'next/link';
+import {useRouter} from "next/router";
+
+const navLinks = [
+  {href: "/services", label: "Services"},
+  {href: "/about", label: "About Us"},
+  {href: "/contacts", label: "Contact Us"},
+  {href: "/careers", label: "Careers"}
+];
+
+function TabLink({href, label, disabled}) {
+  return (
+    <Tab disabled={disabled} as="a" className="no-underline">
+    {({ selected }) => (
+      <Link href={href}>
+        <a className={`menu-button px-2 mx-1 rounded-none ${selected ? 'border-b-4 text-gray-900' : 'text-gray-500'}`}>
+          {label}
+        </a>
+      </Link>
+    )}
+  </Tab>
+  )
+}
 
 /**
  * Header component
  * @param {Object} props
  * @return {React.Component}
  */
-export default function Header({}) {
+export default function Header() {
+  const router = useRouter();
+
   const [isOpen, setIsOpen] = useState(false);
+  
+  const defaultIndex = useMemo(() => {
+    return navLinks.findIndex(({href}) => router.pathname == href)
+  },[router?.pathname])
 
   /**
    * Toggle menu
@@ -67,44 +95,11 @@ export default function Header({}) {
                 </Menu.Button>
               </div>
             </Menu> */}
-            <Menu>
-              <div className="relative">
-                <Link href="/services" passHref>
-                  <Menu.Button
-                    as="a"
-                    className="menu-button"
-                  >
-                    Services
-                  </Menu.Button>
-                </Link>
-              </div>
-            </Menu>
-            <Menu>
-              <div className="relative">
-                <Link href="/about" passHref>
-                  <Menu.Button
-                    as="a"
-                    className="menu-button"
-                  >
-                    About Us
-                  </Menu.Button>
-                </Link>
-              </div>
-            </Menu>
-            <Menu>
-              <div className="relative">
-                <Link href="/contacts" passHref>
-                  <Menu.Button
-                    as="a"
-                    className="menu-button"
-                  >
-                    Contact Us
-                  </Menu.Button>
-                </Link>
-              </div>
-            </Menu>
-            <Menu>
-              {/* Item active: "text-gray-900", Item inactive: "text-gray-500" */}
+            <Tab.Group defaultIndex={defaultIndex}>
+            <Tab.List>
+            {navLinks.map(({href, label}) => (
+              <TabLink key={href} href={href} label={label} disabled={defaultIndex === -1} />
+            ))}
               {/* 'More' flyout menu, show/hide based on flyout menu state.
 
                     Entering: "transition ease-out duration-200"
@@ -113,17 +108,8 @@ export default function Header({}) {
                     Leaving: "transition ease-in duration-150"
                       From: "opacity-100 translate-y-0"
                       To: "opacity-0 translate-y-1" */}
-              <div className="relative">
-                <Link href="/careers" passHref>
-                  <Menu.Button
-                    as="a"
-                    className="menu-button"
-                  >
-                    Careers
-                  </Menu.Button>
-                </Link>
-              </div>
-            </Menu>
+                </Tab.List>
+            </Tab.Group>
           </nav>
         </div>
       </div>
