@@ -21,11 +21,12 @@ export default function Home() {
         {/* carousel section */}
         <section className="py-0 px-0 relative h-[800px]">
           <div
-            className="absolute bottom-0 left-0 flex flex-col h-full w-full justify-center p-10 lg:p-20
-            bg-white bg-opacity-50"
+            className="flex flex-col h-full w-full justify-center p-10 lg:p-20"
           >
-            <img src="images/larven_ring.png" className="m-0 absolute top-[-100px] left-0 h-80 animate-slidein" alt="" />
-            <img src="images/larven_comet.png" className="m-0 absolute bottom-0 left-1/2 h-80 animate-slidein" alt="" />
+            <div className="z-[-1]">
+              <img src="images/larven_ring.png" className="m-0 absolute top-[-100px] left-0 h-80 animate-slidein" alt="" />
+              <img src="images/larven_comet.png" className="m-0 absolute bottom-0 left-1/2 h-80 animate-slidein" alt="" />
+            </div>
             <div className='sm:px-10 sm:border-l-[10px] lg:border-l-[14px] border-primary'>
               <h2 className="tracking-tight text-gray-900 mt-0">
                 <span className="text-4xl lg:text-6xl block font-extrabold">
