@@ -19,7 +19,7 @@ export default function Home() {
         {/* announcement section */}
         <Announcement />
         {/* carousel section */}
-        <section className="py-0 px-0 relative h-[800px]">
+        <section className="py-0 px-0 relative overflow-x-hidden h-[800px]">
           <div
             className="flex flex-col h-full w-full justify-center p-10 lg:p-20"
           >
