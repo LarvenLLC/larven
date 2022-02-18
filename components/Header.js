@@ -13,7 +13,7 @@ const navLinks = [
 
 function TabLink({href, label, disabled}) {
   return (
-    <Tab disabled={disabled} as="a" className="no-underline">
+    <Tab disabled={disabled} className="no-underline">
     {({ selected }) => (
       <Link href={href}>
         <a className={`menu-button px-2 mx-1 rounded-none ${selected ? 'border-b-4 text-gray-900' : 'text-gray-500'}`}>
@@ -37,7 +37,7 @@ export default function Header() {
   
   const defaultIndex = useMemo(() => {
     return navLinks.findIndex(({href}) => router.pathname == href)
-  },[router?.pathname])
+  },[router?.pathname]);
 
   /**
    * Toggle menu
