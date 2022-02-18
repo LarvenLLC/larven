@@ -10,8 +10,8 @@ import SEO from './SEO';
  */
 export default function Title({ title = 'Home' }) {
   return (
-    [
-      <Head key={title}>
+    <>
+      <Head>
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -35,15 +35,15 @@ export default function Title({ title = 'Home' }) {
         <meta name="theme-color" content="#ffffff" />
         <meta
           name="description"
-          content="To uplift mankind with technology they can own, we embrace the power of technology
-         to bring happiness to our clients, people and communities."
+          content="To uplift mankind with technology they can own, we embrace the power of
+           technology to bring happiness to our clients, people and communities."
         />
         <title>{`${lingo(title).title()} | Larven`}</title>
-      </Head>,
+      </Head>
       <SEO
-        key={`seo-${title}`}
-        description='To uplift mankind with technology they can own, we embrace the power of technology
-      to bring happiness to our clients, people and communities.'
-        title={lingo(title).title()} />]
+        description='To uplift mankind with technology they can own, we embrace the power of
+         technology to bring happiness to our clients, people and communities.'
+        title={lingo(title).title()} />
+    </>
   );
 }
