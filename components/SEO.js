@@ -1,17 +1,31 @@
 import Head from "next/head";
+import { useMemo } from "react";
 
-export default function SEO() {
+/**
+ * SEO component
+ * @param {Object} props
+ * @return {React.Component}
+ */
+export default function SEO({description = "", image = "/apple-touch-icon.png", siteName = "Larven", title = "", twitterHandle = "@larven_tech"}) {
+  const url = useMemo(() => {
+    if(window && window.location) {
+      return window.location.href;
+    }
+    return "/";
+  })
+
   return (
     <Head>
       {/* Twitter */}
       <meta name="twitter:card" content="summary" key="twcard" />
       <meta name="twitter:creator" content={twitterHandle} key="twhandle" />
       {/* Open Graph */}
-      <meta property="og:url" content={currentURL} key="ogurl" />
-      <meta property="og:image" content={previewImage} key="ogimage" />
+      <meta property="og:url" content={url} key="ogurl" />
+      <meta property="og:image" content={image} key="ogimage" />
       <meta property="og:site_name" content={siteName} key="ogsitename" />
-      <meta property="og:title" content={pageTitle} key="ogtitle" />
+      <meta property="og:title" content={title} key="ogtitle" />
       <meta property="og:description" content={description} key="ogdesc" />
+      <meta property="og:type" content="website" />
       {/* Search */}
       {/* <script type="application/ld+json">
           {
