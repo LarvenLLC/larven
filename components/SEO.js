@@ -6,13 +6,15 @@ import { useMemo } from "react";
  * @param {Object} props
  * @return {React.Component}
  */
-export default function SEO({description = "", image = "/apple-touch-icon.png", siteName = "Larven", title = "", twitterHandle = "@larven_tech"}) {
+export default function SEO({
+  description = "", image = "/apple-touch-icon.png", siteName = "Larven", title = "", twitterHandle = "@larven_tech"
+}) {
   const url = useMemo(() => {
-    if(window && window.location) {
+    if (typeof window !== 'undefined' && window?.location) {
       return window.location.href;
     }
-    return "/";
-  })
+    return '/';
+  },[]);
 
   return (
     <Head>
