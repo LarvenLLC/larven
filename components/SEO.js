@@ -7,7 +7,7 @@ import { useMemo } from "react";
  * @return {React.Component}
  */
 export default function SEO({
-  description = "", image = "/apple-touch-icon.png", siteName = "Larven", title = "", twitterHandle = "@larven_tech"
+  description = "", image = "https://larven.co.tz/apple-touch-icon.png", siteName = "Larven", title = "", twitterHandle = "@larven_tech"
 }) {
   const url = useMemo(() => {
     if (typeof window !== 'undefined' && window?.location) {
