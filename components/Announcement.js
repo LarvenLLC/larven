@@ -2,6 +2,7 @@ import {useState} from 'react';
 import Link from 'next/link';
 
 /**
+ * Announcement component
  * @param {Object} props
  * @return {JSX}
  */
