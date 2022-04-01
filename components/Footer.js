@@ -70,6 +70,11 @@ export default function Footer() {
                   <a className="no-underline font-normal">Careers</a>
                 </Link>
               </li>
+              <li>
+                <Link href="/values">
+                  <a className="no-underline font-normal">Core Values</a>
+                </Link>
+              </li>
               <li>Ecosystem Partners</li>
             </ul>
           </div>
