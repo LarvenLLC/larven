@@ -21,7 +21,7 @@
     "firebase": "9.6.5",
     "heroicons": "^0.4.2",
     "lingojs": "^2.0.7",
-    "moment": "^2.29.1",
+    "moment": "^2.29.2",
     "next": "^12.1.0",
     "numeral": "^2.0.6",
     "postcss": "^8.2.10",
