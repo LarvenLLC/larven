@@ -66,6 +66,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="https://hackathons.larven.co.tz">
+                  <a className="no-underline font-normal">Hackathons</a>
+                </Link>
+              </li>
+              <li>
                 <Link href="/careers">
                   <a className="no-underline font-normal">Careers</a>
                 </Link>
