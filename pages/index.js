@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Layout from '../components/Layout';
 import Announcement from '../components/Announcement';
 import Newsletter from '../components/Newsletter';
-import {Link as ScrollLink} from "react-scroll";
+import {Link as ScrollLink} from 'react-scroll';
 import Partners from '../components/Partners';
 
 /**
@@ -17,7 +17,7 @@ export default function Home() {
     <>
       <Layout title="Home">
         {/* announcement section */}
-        <Announcement />
+        {/* <Announcement /> */}
         {/* carousel section */}
         <section className="py-0 px-0 relative overflow-x-hidden h-[800px]">
           <div
