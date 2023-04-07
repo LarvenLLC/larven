@@ -51,6 +51,10 @@
     display: none !important;
   }
 
+  .no-prose ul > li {
+    @apply pl-4;
+  }
+
   input {
     @apply rounded-md h-14;
   }
