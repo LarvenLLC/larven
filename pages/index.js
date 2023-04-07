@@ -2,10 +2,12 @@ import Link from 'next/link';
 // import Image from "next/image";
 
 import Layout from '../components/Layout';
-import Announcement from '../components/Announcement';
 import Newsletter from '../components/Newsletter';
 import {Link as ScrollLink} from 'react-scroll';
 import Partners from '../components/Partners';
+import Image from 'next/image';
+
+import buttonStyles from '../styles/Button.module.css';
 
 /**
  * Index page
@@ -18,8 +20,61 @@ export default function Home() {
       <Layout title="Home">
         {/* announcement section */}
         {/* <Announcement /> */}
+        {/* landing section */}
+        <section className="container-fluid !p-0 !mx-0 max-w-none relative overflow-x-hidden min-h-[600px]">
+          <div className="container">
+            <div className="row">
+              <div className='col-6 flex flex-col justify-center'>
+                <h1 className="mb-0">Unlock Your <span className='text-primary'>Potential</span> with Digital Solutions</h1>
+                <p className="mb-12">
+              We are here to assist you in transforming your business processes and operations so that you can
+              accomplish more in less time while increasing your profitability.
+                </p>
+                <button type="button" className={`${buttonStyles.primary} mb-6`}>Hire Your Technicians</button>
+              </div>
+              <div className='col-6'>
+                <Image src="/images/landing-right.png"
+                  className='max-w-[670px] mb-0'
+                  height={760}
+                  width={670}
+                  alt="Larven workspace"
+                  priority
+                />
+              </div>
+            </div>
+          </div>
+          <Image src="/images/landing-cover.png"
+            className='p-0 m-0 max-w-[800px] max-h-[800px] object-contain object-left-top z-[-1]'
+            alt=""
+            fill
+          />
+        </section>
+        {/* what we do section */}
+        <section className="container overflow-x-hidden">
+          <h1>WHAT WE DO</h1>
+          <h1>Discover What We Can Do For You!</h1>
+          <div className="row">
+            <div className='col-6 flex flex-col justify-center'>
+              <h1 className="mb-0">Unlock Your <span className='text-primary'>Potential</span> with Digital Solutions</h1>
+              <p className="mb-12">
+              We are here to assist you in transforming your business processes and operations so that you can
+              accomplish more in less time while increasing your profitability.
+              </p>
+              <button type="button" className={`${buttonStyles.primary} mb-6`}>Hire Your Technicians</button>
+            </div>
+            <div className='col-6'>
+              <Image src="/images/landing-right.png"
+                className='max-w-[670px] mb-0'
+                height={760}
+                width={670}
+                alt="Larven workspace"
+                priority
+              />
+            </div>
+          </div>
+        </section>
         {/* carousel section */}
-        <section className="py-0 px-0 relative overflow-x-hidden h-[800px]">
+        <section className="container py-0 px-0 relative overflow-x-hidden h-[800px]">
           <div
             className="flex flex-col h-full w-full justify-center p-10 lg:p-20"
           >
