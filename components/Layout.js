@@ -11,9 +11,9 @@ export default function Layout({children, title = ''}) {
   return (
     <>
       <Title title={title} />
-      <div className="container mx-auto prose max-w-full">
+      <div className="mx-auto prose max-w-full">
         <Header />
-        <main className="container mx-auto">
+        <main className="mx-auto">
           <div>{children}</div>
         </main>
         <Footer />
