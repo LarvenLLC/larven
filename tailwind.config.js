@@ -1,3 +1,5 @@
+const {fontFamily} = require('tailwindcss/defaultTheme');
+
 module.exports = {
   mode: 'jit',
   purge: {
@@ -12,6 +14,9 @@ module.exports = {
   },
   darkMode: false, // or 'media' or 'class'
   theme: {
+    fontFamily: {
+      sans: ['var(--font-outfit)', ...fontFamily.sans],
+    },
     extend: {
       colors: {
         primary: '#00AB44',
@@ -26,13 +31,13 @@ module.exports = {
       },
       keyframes: {
         slidein: {
-          '0%': { transform: 'translateX(0px)' },
-          '100%': { transform: 'translateX(80%)' },
-        }
+          '0%': {transform: 'translateX(0px)'},
+          '100%': {transform: 'translateX(80%)'},
+        },
       },
       animation: {
         slidein: 'slidein 4s ease-in-out 300ms forwards',
-      }
+      },
     },
   },
   variants: {
