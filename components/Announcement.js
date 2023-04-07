@@ -53,7 +53,7 @@ export default function Announcement() {
               </p>
             </div>
             <div className="order-3 mt-0 m-3 flex-shrink-0 w-full sm:order-2 sm:m-0 sm:w-auto">
-              <Link href='https://discord.gg/X4YcTCNJFU' passHref>
+              <Link href='https://discord.gg/X4YcTCNJFU' >
                 <button
                   className="button-primary-light"
                 >
