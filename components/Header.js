@@ -5,12 +5,13 @@ import Link from 'next/link';
 import {useRouter} from 'next/router';
 
 import headerStyles from '../styles/Header.module.css';
+import buttonStyles from '../styles/Button.module.css';
 
 const navLinks = [
   {href: '/services', label: 'Services'},
   {href: '/about', label: 'About Us'},
   {href: '/contacts', label: 'Contact Us'},
-  {href: '/careers', label: 'Careers'},
+  {href: '/cases', label: 'Case Studies'},
 ];
 
 /**
@@ -22,7 +23,6 @@ const navLinks = [
  * @return {JSX}
  */
 function TabLink({href, label, disabled}) {
-  console.log(headerStyles);
   return (
     <Tab disabled={disabled} className="no-underline">
       {({selected}) => (
@@ -61,7 +61,7 @@ export default function Header() {
   return (
     <div className="sticky top-0 relative bg-white z-10 shadow">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="flex justify-between items-center md:justify-center md:space-x-10">
+        <div className="flex justify-between items-center md:space-x-10">
           <div className="flex justify-start">
             <Link href="/">
               <span className="sr-only">Larven</span>
@@ -118,6 +118,11 @@ export default function Header() {
                       To: "opacity-0 translate-y-1" */}
               </Tab.List>
             </Tab.Group>
+          </nav>
+          <nav className="hidden md:flex space-x-10">
+            <button type="button" className={`${buttonStyles.primary}`}>
+              Hire Your Technicians
+            </button>
           </nav>
         </div>
       </div>
