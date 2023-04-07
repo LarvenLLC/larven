@@ -1,0 +1,16 @@
+@tailwind components;
+
+/* These styles will be purged */
+@layer components {
+  .menu-button {
+    @apply bg-white rounded-md !text-gray-500 inline-flex items-center text-base uppercase !font-medium !no-underline hover:text-gray-900 focus:outline-none;
+  }
+
+  .tablink {
+    @apply menu-button px-2 mx-1 !text-lg !rounded-none !text-gray-500;
+  }
+
+  .tablinkActive {
+    @apply border-b-4 !text-gray-900;
+  }
+}
