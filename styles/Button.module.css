@@ -1,0 +1,21 @@
+@tailwind components;
+
+/* These styles will be purged */
+@layer components {
+  .button {
+    /* border-radius: 0px 30px 30px 30px; */
+    @apply inline-flex items-center justify-center px-12 py-4 text-base border border-transparent rounded-[30px] rounded-tl-none font-medium shadow;
+  }
+
+  .primary {
+    @apply button text-white bg-primary hover:bg-primary focus:bg-primary;
+  }
+
+  .outline-primary {
+    @apply button text-primary bg-white hover:bg-primary hover:text-white focus:bg-primary;
+  }
+
+  .large {
+    @apply px-10 py-5 text-xl;
+  }
+}
