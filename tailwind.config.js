@@ -44,5 +44,5 @@ module.exports = {
     extend: {},
   },
   important: true,
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [require('@tailwindcss/typography'), require('tailwind-bootstrap-grid')()],
 };
