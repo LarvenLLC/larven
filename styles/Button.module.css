@@ -2,9 +2,16 @@
 
 /* These styles will be purged */
 @layer components {
+  .bottom-edge {
+    @apply !rounded-tl-[30px] !rounded-bl-none;
+  }
+
+  .top-edge {
+    @apply rounded-bl-[30px] rounded-tl-none;
+  }
+
   .button {
-    /* border-radius: 0px 30px 30px 30px; */
-    @apply inline-flex items-center justify-center px-12 py-4 text-base border border-transparent rounded-[30px] rounded-tl-none font-medium shadow;
+    @apply inline-flex items-center justify-center px-12 py-4 text-base border border-transparent rounded-[30px] top-edge font-medium shadow;
   }
 
   .primary {
@@ -16,6 +23,10 @@
   }
 
   .large {
-    @apply px-10 py-5 text-xl;
+    @apply px-12 py-4 text-xl;
+  }
+
+  .small {
+    @apply px-5 py-3 text-base;
   }
 }
