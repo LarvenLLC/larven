@@ -1,0 +1,16 @@
+@tailwind components;
+
+/* These styles will be purged */
+@layer components {
+  .title {
+    @apply !mb-1 text-center uppercase !text-xl !text-primary;
+  }
+
+  .heading {
+    @apply !mt-0 text-center capitalize !text-4xl;
+  }
+
+  .subheading {
+    @apply mt-0 text-center capitalize text-4xl;
+  }
+}
