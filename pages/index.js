@@ -1,13 +1,15 @@
+import {useEffect, useRef, useState} from 'react';
 import Link from 'next/link';
-// import Image from "next/image";
+import Image from 'next/image';
 
 import Layout from '../components/Layout';
 import Newsletter from '../components/Newsletter';
-import {Link as ScrollLink} from 'react-scroll';
 import Partners from '../components/Partners';
-import Image from 'next/image';
 
 import buttonStyles from '../styles/Button.module.css';
+import cardStyles from '../styles/Card.module.css';
+import headingStyles from '../styles/Heading.module.css';
+import VerticalButtonIcon from '../components/VerticalButtonIcon';
 
 /**
  * Index page
@@ -15,6 +17,16 @@ import buttonStyles from '../styles/Button.module.css';
  * @return {React.Component}
  */
 export default function Home() {
+  const cardRef = useRef();
+
+  const [cardHeight, setCardHeight] = useState(0);
+
+  useEffect(() => {
+    if (cardRef.current?.clientHeight) {
+      setCardHeight(cardRef.current.clientHeight);
+    }
+  }, [cardRef.current?.clientHeight]);
+
   return (
     <>
       <Layout title="Home">
@@ -23,9 +35,11 @@ export default function Home() {
         {/* landing section */}
         <section className="container-fluid !p-0 !mx-0 max-w-none relative overflow-x-hidden min-h-[600px]">
           <div className="container">
-            <div className="row">
-              <div className='col-6 flex flex-col justify-center'>
-                <h1 className="mb-0">Unlock Your <span className='text-primary'>Potential</span> with Digital Solutions</h1>
+            <div className="row gx-5">
+              <div className='col-6 flex flex-col items-start justify-center'>
+                <h1 className="mb-0">
+                  Unlock Your <span className='text-primary'>Potential</span> with Digital Solutions
+                </h1>
                 <p className="mb-12">
               We are here to assist you in transforming your business processes and operations so that you can
               accomplish more in less time while increasing your profitability.
@@ -51,70 +65,191 @@ export default function Home() {
         </section>
         {/* what we do section */}
         <section className="container overflow-x-hidden">
-          <h1>WHAT WE DO</h1>
-          <h1>Discover What We Can Do For You!</h1>
-          <div className="row">
-            <div className='col-6 flex flex-col justify-center'>
-              <h1 className="mb-0">Unlock Your <span className='text-primary'>Potential</span> with Digital Solutions</h1>
-              <p className="mb-12">
-              We are here to assist you in transforming your business processes and operations so that you can
-              accomplish more in less time while increasing your profitability.
-              </p>
-              <button type="button" className={`${buttonStyles.primary} mb-6`}>Hire Your Technicians</button>
+          <h1 className={headingStyles.title}>WHAT WE DO</h1>
+          <h2 className={headingStyles.heading}>
+            Discover What We Can Do
+            <div className='font-normal'>For You!</div>
+          </h2>
+          <div className="row row-cols-4 no-prose">
+            <div>
+              <VerticalButtonIcon src="/images/desktop-tower.svg" alt="Larven Software" />
+              <h3>Software Project Implementation</h3>
+              <ul className="list-disc pl-4">
+                <li className="">Project Basis</li>
+                <li className="">Prototypes/MVPs</li>
+                <li className="">For Startups Enterprises</li>
+              </ul>
             </div>
-            <div className='col-6'>
-              <Image src="/images/landing-right.png"
-                className='max-w-[670px] mb-0'
-                height={760}
-                width={670}
-                alt="Larven workspace"
-                priority
+            <div>
+              <VerticalButtonIcon
+                colorclassName="bg-[#397DF8]"
+                src="/images/desktop-tower.svg"
+                alt="Larven Software"
               />
+              <h3>Staff Augmentation</h3>
+              <ul className="list-disc pl-4">
+                <li className="">Dedicated Team</li>
+                <li className="">Support/Maintenance</li>
+                <li className="">For Enterprises/Startups</li>
+              </ul>
+            </div>
+            <div>
+              <VerticalButtonIcon
+                colorclassName="bg-[#05306A]"
+                src="/images/desktop-tower.svg"
+                alt="Larven Software"
+              />
+              <h3>Process Digitization</h3>
+              <ul className="list-disc pl-4">
+                <li className="">Client-Agency Collaboration</li>
+                <li className="">Process Improvement/Scaling</li>
+                <li className="">For SMEs</li>
+              </ul>
+            </div>
+            <div>
+              <VerticalButtonIcon
+                colorclassName="bg-[#E9AB50]"
+                src="/images/desktop-tower.svg"
+                alt="Larven Software"
+              />
+              <h3>Consultation</h3>
+              <ul className="list-disc pl-4">
+                <li className="">Research &amp; Development</li>
+                <li className="">IT Project Management</li>
+                <li className="">Training</li>
+              </ul>
             </div>
           </div>
         </section>
-        {/* carousel section */}
-        <section className="container py-0 px-0 relative overflow-x-hidden h-[800px]">
-          <div
-            className="flex flex-col h-full w-full justify-center p-10 lg:p-20"
-          >
-            <div className="z-[-1]">
-              <img src="images/larven_ring.png" className="m-0 absolute top-[-100px] left-0 h-80 animate-slidein" alt="" />
-              <img src="images/larven_comet.png" className="m-0 absolute bottom-0 left-1/2 h-80 animate-slidein" alt="" />
-            </div>
-            <div className='sm:px-10 sm:border-l-[10px] lg:border-l-[14px] border-primary'>
-              <h2 className="tracking-tight text-gray-900 mt-0">
-                <span className="text-4xl lg:text-6xl block font-extrabold">
-                  Digital Systems Centered on Your Success
-                </span>
-              </h2>
-              <br className='hidden sm:inline' />
-              <p className="text-3xl lg:text-4xl font-medium my-5">
-                We are here to assist you in transforming your business processes and operations so that
-                you can accomplish more in less time while increasing your profitability.
-              </p>
-              <br className='hidden sm:inline' />
-              <br />
-              <div className="mt-8 mb-2 lg:mt-0 lg:flex lg:items-center grid gap-4">
-                <ScrollLink
-                  to="audit"
-                  spy={true}
-                  smooth={true}
-                  offset={-100}
-                  duration={300}
+        {/* how we work section */}
+        <section className="container-fluid !px-0 !mx-0 max-w-none relative overflow-x-hidden">
+          <Image src="/images/left-stripes-decoration.png"
+            className='p-0 m-0 max-h-[800px] object-contain object-left-top z-[-1]'
+            alt=""
+            fill
+          />
+          <div className="container">
+            <h1 className={headingStyles.title}>HOW WE WORK</h1>
+            <h2 className={headingStyles.heading}>
+              Discover The Steps We Take
+              <div className='font-normal'>To Ensure Your Success!</div>
+            </h2>
+            <div
+              className="row md:row-cols-4 gx-0"
+              style={{marginBottom: cardHeight + 12}}
+            >
+              <div>
+                <div ref={cardRef} className={`${cardStyles.card} h-[332px]`}>
+                  <p className={cardStyles.number}>1</p>
+                  <h3 className={cardStyles.heading}>Planning</h3>
+                  <p className={cardStyles.description}>
+                  We define objectives, determine scope and tasks, identify stakeholders, and develop a budget.
+                  </p>
+                </div>
+                <div className="flex items-center w-full mt-3">
+                  <div className="h-[30px] w-[30px] rounded-full bg-primary" />
+                  <div className="h-1 w-full bg-primary" />
+                </div>
+              </div>
+              <div className="relative" style={{top: cardHeight}}>
+                <div className="flex items-center w-full mt-3">
+                  <div className="h-[30px] w-[30px] rounded-full bg-primary" />
+                  <div className="h-1 w-full bg-primary" />
+                </div>
+                <div
+                  className={`${cardStyles.card} ${cardStyles['top-edge']} h-[332px]`}
                 >
-                  <button className="button-primary px-10 py-5 text-xl">
-                      Get Free Audit
-                  </button>
-                </ScrollLink>
-                <Link href="/contacts" >
-                  <button className="button-primary-light px-10 py-5 text-xl">
-                      Brief Us
-                  </button>
-                </Link>
+                  <p className={cardStyles.number}>2</p>
+                  <h3 className={cardStyles.heading}>Build Up</h3>
+                  <p className={cardStyles.description}>
+                We assemble the team, plan assignments, create a schedule, and hold a kickoff meeting!
+                  </p>
+                </div>
+              </div>
+              <div className="">
+                <div className={`${cardStyles.card} h-[332px]`}>
+                  <p className={cardStyles.number}>3</p>
+                  <h3 className={cardStyles.heading}>Implimentation</h3>
+                  <p className={cardStyles.description}>
+                We monitor and control process and budget, report weekly progress in writing, hold weekly team meetings
+                (via video conference)!
+                  </p>
+                </div>
+                <div className="flex items-center w-full mt-3">
+                  <div className="h-[30px] w-[30px] rounded-full bg-primary" />
+                  <div className="h-1 w-full bg-primary" />
+                </div>
+              </div>
+              <div className="relative" style={{top: cardHeight}}>
+                <div className="flex items-center w-full mt-3">
+                  <div className="h-[30px] w-[30px] rounded-full bg-primary" />
+                </div>
+                <div
+                  className={`${cardStyles.card} ${cardStyles['top-edge']} h-[332px]`}
+                >
+                  <p className={cardStyles.number}>4</p>
+                  <h3 className={cardStyles.heading}>Closing</h3>
+                  <p className={cardStyles.description}>
+                We hand over proper documentation, evaluate project performance, close the project, and conduct a team
+                briefing.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
+          <Image src="/images/right-stripes-decoration.png"
+            className='p-0 m-0 max-h-[800px] bottom-0 object-contain object-right-bottom z-[-1]'
+            alt=""
+            fill
+          />
+        </section>
+        {/* who we work with section */}
+        <section className="container-fluid !px-0 !mx-0 max-w-none relative overflow-x-hidden">
+          <div className="container">
+            <div className="row">
+              <div className="md:col-8 lg:col-7">
+                <div className="row md:row-cols-2">
+                  {[
+                    {image: '/images/early-startup.jpeg', caption: 'Early Stage Startups'},
+                    {image: '/images/funded-startup.jpeg', caption: 'Funded Startups'},
+                    {image: '/images/established-business.jpeg', caption: 'Established (Traditional) Businesses'},
+                    {image: '/images/enterprise.jpeg', caption: 'Enterprises'},
+                  ].map(({image, caption}, index) => (<div key={caption}>
+                    <div className="relative h-[300px] overflow-hidden rounded-lg">
+                      <div
+                        className="absolute bottom-2 left-2 capitalize z-10"
+                      >
+                        <button
+                          type="button"
+                          className={`
+                            ${buttonStyles['outline-primary']}
+                            ${buttonStyles.small}
+                            ${index >= 2 && buttonStyles['bottom-edge']}
+                            capitalize
+                          `}
+                        >
+                          {caption}
+                        </button>
+                      </div>
+                      <Image src={image} className="object-cover object-center rounded-lg" alt={caption} fill />
+                    </div>
+                  </div>))}
+                </div>
+              </div>
+              <div className="md:col flex flex-col items-start justify-center">
+                {/* <div className='col-6 flex flex-col items-start justify-center'> */}
+                <h1 className={`${headingStyles.title} text-left !pb-[2rem]`}>WHO WE WORK WITH</h1>
+                <h2 className={`${headingStyles.heading} text-left`}>
+                Discover Who We Work With
+                  <span className='font-normal'> To Achieve Your Goals!</span>
+                </h2>
+                <button type="button" className={`${buttonStyles.primary}`}>Hire Your Technicians</button>
+              </div>
+            </div>
+          </div>
+          <div
+            className="absolute w-[80%] max-w-[1187px] h-full right-0 top-0 bg-primary bg-opacity-5 rounded-br-none rounded-bl-[250px] z-[-1]"
+          />
         </section>
         {/* newsletter section */}
         <Newsletter />
