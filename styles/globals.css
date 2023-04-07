@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* @layer base {
+  html {
+    font-family: Outfit, sans-serif;
+  }
+} */
+
 /* These styles will be purged */
 @layer components {
   html,
@@ -56,9 +62,5 @@
 
   input {
     @apply rounded-md h-14;
-  }
-
-  .menu-button {
-    @apply bg-white rounded-md text-gray-500 inline-flex items-center text-base font-medium no-underline hover:text-gray-900 focus:outline-none !important;
   }
 }
