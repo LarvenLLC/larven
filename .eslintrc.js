@@ -19,7 +19,7 @@ module.exports = {
     'react',
   ],
   'rules': {
-    'max-len': ['error', {'code': 100}],
+    'max-len': ['error', {'code': 120}],
     'react/jsx-uses-react': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/prop-types': 'off',
