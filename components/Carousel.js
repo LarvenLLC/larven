@@ -78,12 +78,12 @@ export default function Carousel() {
           <br className='hidden sm:inline' />
           <br />
           <div className="mt-8 mb-2 lg:mt-0 lg:flex lg:items-center grid gap-4">
-            <Link href="/contacts" passHref>
+            <Link href="/contacts" >
               <button className="button-primary px-10 py-5 text-xl">
                   Get Free Audit
               </button>
             </Link>
-            <Link href="/contacts" passHref>
+            <Link href="/contacts" >
               <button className="button-primary-light px-10 py-5 text-xl">
                   Brief Us
               </button>
