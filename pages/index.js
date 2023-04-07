@@ -82,7 +82,7 @@ export default function Home() {
             </div>
             <div>
               <VerticalButtonIcon
-                colorclassName="bg-[#397DF8]"
+                colorClass="bg-[#397DF8]"
                 src="/images/desktop-tower.svg"
                 alt="Larven Software"
               />
@@ -95,7 +95,7 @@ export default function Home() {
             </div>
             <div>
               <VerticalButtonIcon
-                colorclassName="bg-[#05306A]"
+                colorClass="bg-[#05306A]"
                 src="/images/desktop-tower.svg"
                 alt="Larven Software"
               />
@@ -108,7 +108,7 @@ export default function Home() {
             </div>
             <div>
               <VerticalButtonIcon
-                colorclassName="bg-[#E9AB50]"
+                colorClass="bg-[#E9AB50]"
                 src="/images/desktop-tower.svg"
                 alt="Larven Software"
               />
@@ -162,7 +162,7 @@ export default function Home() {
                   <p className={cardStyles.number}>2</p>
                   <h3 className={cardStyles.heading}>Build Up</h3>
                   <p className={cardStyles.description}>
-                We assemble the team, plan assignments, create a schedule, and hold a kickoff meeting!
+                    We assemble the team, plan assignments, create a schedule, and hold a kickoff meeting!
                   </p>
                 </div>
               </div>
@@ -171,8 +171,8 @@ export default function Home() {
                   <p className={cardStyles.number}>3</p>
                   <h3 className={cardStyles.heading}>Implimentation</h3>
                   <p className={cardStyles.description}>
-                We monitor and control process and budget, report weekly progress in writing, hold weekly team meetings
-                (via video conference)!
+                    We monitor and control process and budget, report weekly progress in writing, hold weekly team
+                    meetings (via video conference)!
                   </p>
                 </div>
                 <div className="flex items-center w-full mt-3">
@@ -190,8 +190,8 @@ export default function Home() {
                   <p className={cardStyles.number}>4</p>
                   <h3 className={cardStyles.heading}>Closing</h3>
                   <p className={cardStyles.description}>
-                We hand over proper documentation, evaluate project performance, close the project, and conduct a team
-                briefing.
+                    We hand over proper documentation, evaluate project performance, close the project,
+                    and conduct a team briefing.
                   </p>
                 </div>
               </div>
@@ -237,10 +237,9 @@ export default function Home() {
                 </div>
               </div>
               <div className="md:col flex flex-col items-start justify-center">
-                {/* <div className='col-6 flex flex-col items-start justify-center'> */}
                 <h1 className={`${headingStyles.title} text-left !pb-[2rem]`}>WHO WE WORK WITH</h1>
                 <h2 className={`${headingStyles.heading} text-left`}>
-                Discover Who We Work With
+                  Discover Who We Work With
                   <span className='font-normal'> To Achieve Your Goals!</span>
                 </h2>
                 <button type="button" className={`${buttonStyles.primary}`}>Hire Your Technicians</button>
@@ -248,7 +247,252 @@ export default function Home() {
             </div>
           </div>
           <div
-            className="absolute w-[80%] max-w-[1187px] h-full right-0 top-0 bg-primary bg-opacity-5 rounded-br-none rounded-bl-[250px] z-[-1]"
+            className="
+              absolute w-[80%] max-w-[1187px] h-full right-0 top-0 bg-primary
+              bg-opacity-5 rounded-br-none rounded-bl-[250px] z-[-1]
+            "
+          />
+        </section>
+        <section
+          className="container-fluid !px-0 !mx-0 max-w-none relative overflow-x-hidden"
+          style={{background: 'linear-gradient(0deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)), #FFFFFF'}}
+        >
+          <div className="container">
+            <h1 className={headingStyles.title}>TESTIMONIAL</h1>
+            <h2 className={headingStyles.heading}>
+              What Our Customers Say
+            </h2>
+            <div className="row md:row-cols-5 text-center">
+              <div>
+                <Image
+                  src="/images/testimonies/c4.jpg"
+                  height={150}
+                  width={150}
+                  className="rounded-full mx-auto"
+                  alt=""
+                />
+              </div>
+              <div>
+                <Image
+                  src="/images/testimonies/c1.jpg"
+                  height={150}
+                  width={150}
+                  className="rounded-full mx-auto"
+                  alt=""
+                />
+              </div>
+              <div>
+                <Image
+                  src="/images/testimonies/c5.jpg"
+                  height={150}
+                  width={150}
+                  className="rounded-full mx-auto"
+                  alt=""
+                />
+              </div>
+              <div>
+                <Image
+                  src="/images/testimonies/c2.jpg"
+                  height={150}
+                  width={150}
+                  className="rounded-full mx-auto"
+                  alt=""
+                />
+              </div>
+              <div>
+                <Image
+                  src="/images/testimonies/c3.jpg"
+                  height={150}
+                  width={150}
+                  className="rounded-full mx-auto"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* case studies section */}
+        <section className="container-fluid !px-0 !mx-0 max-w-none relative overflow-x-hidden">
+          <div className="container">
+            <div className="row">
+              <div className="md:col flex flex-col items-start justify-center">
+                <h1 className={`${headingStyles.title} text-left !pb-[2rem]`}>OUR CASE STUDIES</h1>
+                <h2 className={`${headingStyles.heading} text-left`}>
+                  Our Most Popular Articles
+                </h2>
+                <button type="button" className={`${buttonStyles.primary}`}>See All Articles</button>
+              </div>
+              <div className="md:col-8 lg:col-7">
+                <div className="row md:row-cols-2">
+                  {[
+                    {image: '/images/early-startup.jpeg', caption: 'Early Stage Startups'},
+                    {image: '/images/funded-startup.jpeg', caption: 'Funded Startups'},
+                    {image: '/images/established-business.jpeg', caption: 'Established (Traditional) Businesses'},
+                    {image: '/images/enterprise.jpeg', caption: 'Enterprises'},
+                  ].map(({image, caption}, index) => (<div key={caption}>
+                    <div className="relative h-[300px] overflow-hidden rounded-lg">
+                      <div
+                        className={`
+                          absolute bottom-2 h-[130px] w-[95%] p-3
+                          ${index % 2 ?
+                            'right-0 bg-primary bg-opacity-40 text-white rounded-l-xl' :
+                            'left-0 bg-white bg-opacity-80 rounded-r-xl'}
+                          z-10
+                        `}
+                      >
+                        <h5 className="text-xl font-semibold">Lorem ipsum dolor sit amet consectetur.</h5>
+                        <p
+                          className="m-0"
+                        >
+                          Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.
+                        </p>
+                      </div>
+                      <Image src={image} className="object-cover object-center rounded-lg" alt={caption} fill />
+                    </div>
+                  </div>))}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="
+              absolute w-[80%] max-w-[1187px] h-full left-0 top-0 bg-primary bg-opacity-5
+              rounded-br-[250px] rounded-bl-none z-[-1]
+            "
+          />
+        </section>
+        {/* technologies section */}
+        <section className="container-fluid !px-0 !mx-0 max-w-none relative overflow-x-hidden">
+          <div className="container">
+            <div className="row md:row-cols-2 lg:row-cols-3 gy-3">
+              {[
+                {
+                  title: 'Cloud Computing',
+                  backgroundColor: 'bg-[#000000]',
+                  color: 'text-[#000000]',
+                  icon: (<svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-6 h-6"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z"
+                    />
+                  </svg>
+                  ),
+                },
+                {
+                  title: 'Blockchain Technology',
+                  backgroundColor: 'bg-[#AB4400]',
+                  color: 'text-[#AB4400]',
+                  icon: (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none" viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="w-6 h-6"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244"
+                      />
+                    </svg>),
+                },
+                {
+                  title: 'Software Project Implementation',
+                  backgroundColor: 'bg-[#455A64]',
+                  color: 'text-[#455A64]',
+                  icon: (<svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-6 h-6"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25"
+                    />
+                  </svg>
+                  ),
+                },
+                {
+                  title: 'Cyber Security',
+                  backgroundColor: 'bg-primary',
+                  color: 'text-primary',
+                  icon: (<svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-6 h-6"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"
+                    />
+                  </svg>
+                  ),
+                },
+                {
+                  title: 'Data Analytics',
+                  backgroundColor: 'bg-[#FF9F47]',
+                  color: 'text-[#FF9F47]',
+                  icon: (<svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-6 h-6"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605" />
+                  </svg>
+                  ),
+                },
+              ].map(({backgroundColor, color, icon, caption}) => (<div key={caption}>
+                <div className={`${cardStyles.card}`}>
+                  <p
+                    className={`${cardStyles.number} ${backgroundColor} ${color} bg-opacity-[0.15]`}
+                  >
+                    {icon}
+                  </p>
+                  <h3 className={cardStyles.heading}>Implimentation</h3>
+                  <p className={cardStyles.description}>
+                    We monitor and control process and budget, report weekly progress in writing, hold weekly team
+                    meetings (via video conference)!
+                  </p>
+                </div>
+              </div>))}
+              <div className="flex flex-col items-start justify-center">
+                <h1 className={`${headingStyles.title} text-left !pb-[2rem]`}>WHAT WE DO</h1>
+                <h2 className={`${headingStyles.heading} text-left`}>
+                  Discover What We Can Do
+                  <div className='font-normal'>For You!</div>
+                </h2>
+                <button type="button" className={`${buttonStyles.primary}`}>Explore All</button>
+              </div>
+            </div>
+          </div>
+          <div
+            className="
+              absolute w-[80%] max-w-[1187px] h-full right-0 top-0 bg-primary bg-opacity-5
+              rounded-br-[250px] rounded-bl-none z-[-1]
+            "
           />
         </section>
         {/* newsletter section */}
