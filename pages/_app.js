@@ -4,6 +4,7 @@ import ToastProvider from '../hooks/useToasts';
 import {initializeApp} from 'firebase/app';
 import {getAuth, onAuthStateChanged, signInAnonymously} from 'firebase/auth';
 import {useEffect, useState} from 'react';
+import Outfit from '../styles/font';
 
 /**
  * App component
@@ -52,8 +53,15 @@ export default function MyApp({Component, pageProps}) {
   }, [app]);
 
   return (
-    <ToastProvider>
-      <Component {...pageProps} />
-    </ToastProvider>
+    <main className={`${Outfit.variable} font-sans`}>
+      <ToastProvider>
+        <Component {...pageProps} />
+        {/* <style jsx global>{`
+        html {
+          font-family: ${Outfit.style.fontFamily};
+        }
+      `}</style> */}
+      </ToastProvider>
+    </main>
   );
 }
