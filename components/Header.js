@@ -4,6 +4,8 @@ import {Tab, Transition} from '@headlessui/react';
 import Link from 'next/link';
 import {useRouter} from 'next/router';
 
+import headerStyles from '../styles/Header.module.css';
+
 const navLinks = [
   {href: '/services', label: 'Services'},
   {href: '/about', label: 'About Us'},
@@ -11,12 +13,21 @@ const navLinks = [
   {href: '/careers', label: 'Careers'},
 ];
 
+/**
+ * TabLink Component
+ * @param {object} props
+ * @param {string} props.href
+ * @param {string} props.label
+ * @param {boolean} props.disabled
+ * @return {JSX}
+ */
 function TabLink({href, label, disabled}) {
+  console.log(headerStyles);
   return (
     <Tab disabled={disabled} className="no-underline">
       {({selected}) => (
         <Link href={href}
-          className={`menu-button px-2 mx-1 rounded-none ${selected ? 'border-b-4 text-gray-900' : 'text-gray-500'}`}>
+          className={`${headerStyles.tablink} ${selected && headerStyles.tablinkActive }`}>
           {label}
         </Link>
       )}
@@ -55,7 +66,7 @@ export default function Header() {
             <Link href="/">
               <span className="sr-only">Larven</span>
               <img
-                className="h-8 w-auto sm:h-10 my-3"
+                className="h-10 w-auto sm:h-20 my-3"
                 src="/apple-touch-icon.png"
                 alt="Larven"
               />
