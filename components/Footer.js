@@ -1,5 +1,7 @@
 import {useEffect} from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
+import {RiInstagramFill, RiFacebookCircleFill, RiLinkedinFill, RiTwitterFill} from 'react-icons/ri';
 
 /**
  * Footer component
@@ -8,90 +10,125 @@ import Link from 'next/link';
  */
 export default function Footer() {
   useEffect(() => {
-    // https://www.tawk.to/software/live-chat/
-    var Tawk_API = Tawk_API || {};
-    const Tawk_LoadStart = new Date();
-    (function() {
-      const s1 = document.createElement('script');
-      const s0 = document.getElementsByTagName('script')[0];
-      s1.async = true;
-      s1.src = 'https://embed.tawk.to/6085d1a55eb20e09cf3678b7/1f45bls3g';
-      s1.charset = 'UTF-8';
-      s1.setAttribute('crossorigin', '*');
-      s0.parentNode.insertBefore(s1, s0);
-    })();
+    if (process?.env?.NODE_ENV === 'production') {
+      // https://www.tawk.to/software/live-chat/
+      var Tawk_API = Tawk_API || {};
+      const Tawk_LoadStart = new Date();
+      (function() {
+        const s1 = document.createElement('script');
+        const s0 = document.getElementsByTagName('script')[0];
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/6085d1a55eb20e09cf3678b7/1f45bls3g';
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin', '*');
+        s0.parentNode.insertBefore(s1, s0);
+      })();
+    }
   }, []);
 
   return (
-    <footer className="py-5 divide-y-2 divide-solid flex flex-col items-center">
-      <div>
-        <section className="grid grid-cols-1 md:grid-cols-4 gap-5">
-          <div className="">
-            <h4>Services</h4>
-            <ul className="">
-              <li>Artificial Intelligence</li>
-              <li>Application Services</li>
-              <li>Automations</li>
-              <li>Blockchain Technology</li>
-            </ul>
-          </div>
-          <div className="">
-            <h4>&ensp;</h4>
-            <ul className="">
-              <li>Cloud Computing</li>
-              <li>Customer Experience</li>
-              <li>Cyber Security</li>
-              <li>Data &amp; Analytics</li>
-            </ul>
-          </div>
-          <div className="">
-            <h4>&ensp;</h4>
-            <ul className="">
-              <li>Infrastructure</li>
-              <li>Consulting</li>
-              <li>Training</li>
-            </ul>
-          </div>
-          <div className="">
-            <h4>Larven</h4>
-            <ul className="">
-              <li>
-                <Link href="/contacts" className="no-underline font-normal">Contacts</Link>
-              </li>
-              <li>
-                <Link href="/about" className="no-underline font-normal">About</Link>
-              </li>
-              <li>
-                <Link href="https://hackathons.larven.co.tz"
-                  className="no-underline font-normal">Hackathons</Link>
-              </li>
-              <li>
-                <Link href="/careers" className="no-underline font-normal">Careers</Link>
-              </li>
-              <li>
-                <Link href="/values" className="no-underline font-normal">Core Values</Link>
-              </li>
-              <li>Ecosystem Partners</li>
-            </ul>
-          </div>
-        </section>
-        <Socials />
-        <section className="grid grid-cols-1 md:grid-cols-2 pt-5">
-          <div className="grid grid-flow-col auto-cols-auto md:auto-cols-max gap-5 md:gap-10">
-            <small>
-              <Link href="/privacy">Privacy Statement</Link>
-            </small>
-            <small>
-              <a href="#">Cookie policy</a>
-            </small>
-            <small>
-              <Link href="/terms">Terms &amp; Conditions</Link>
-            </small>
-          </div>
-          <small className="text-center md:text-right">
-            © {new Date().getFullYear()} Larven. All Rights Reserved.
+    <footer className="divide-y-2 divide-solid flex flex-col">
+      <div className="flex items-center justify-between">
+        <Image src="/larven-full.png" width={80} height={80} alt="Larven Logo"/>
+        <div className="flex items-center mt-6">
+          <Link
+            href="https://instagram.com/larvencl/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:bg-primary hover:bg-opacity-40 rounded-full p-2 mr-6"
+          >
+            <RiInstagramFill color="#00AB44" size={24} />
+          </Link>
+          <Link
+            href="https://linkedin.com/company/larven-technologies"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:bg-primary hover:bg-opacity-40 rounded-full p-2 mr-6"
+          >
+            <RiLinkedinFill color="#00AB44" size={24} />
+          </Link>
+          <Link
+            href="https://facebook.com/Larven-Technologies-115543110576262"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:bg-primary hover:bg-opacity-40 rounded-full p-2 mr-6"
+          >
+            <RiFacebookCircleFill color="#00AB44" size={24} />
+          </Link>
+          <Link
+            href="https://twitter.com/larven_tech"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:bg-primary hover:bg-opacity-40 rounded-full p-2"
+          >
+            <RiTwitterFill color="#00AB44" size={24} />
+          </Link>
+        </div>
+      </div>
+      <div className="row md:row-cols-3 no-prose no-padding py-5">
+        <div className="">
+          <h4 className="uppercase mb-4">Larven</h4>
+          <ul className="list-none">
+            <li>
+              <Link href="/services" className="no-underline font-normal">Services</Link>
+            </li>
+            <li>
+              <Link href="/about" className="no-underline font-normal">About</Link>
+            </li>
+            <li>
+              <Link href="https://hackathons.larven.co.tz"
+                className="no-underline font-normal">Hackathons</Link>
+            </li>
+            <li>
+              <Link href="/careers" className="no-underline font-normal">Careers</Link>
+            </li>
+            <li>
+              <Link href="/values" className="no-underline font-normal">Core Values</Link>
+            </li>
+            <li>
+              <Link href="/contacts" className="no-underline font-normal">Contacts</Link>
+            </li>
+            <li>Ecosystem Partners</li>
+          </ul>
+        </div>
+        <div className="">
+          <h4 className="uppercase mb-4">Services</h4>
+          <ul className="list-none">
+            <li>Artificial Intelligence</li>
+            <li>Cloud Computing</li>
+            <li>Customer Experience</li>
+            <li>Application Services</li>
+            <li>Automations</li>
+            <li>Blockchain Technology</li>
+          </ul>
+        </div>
+        <div className="">
+          <h4 className="uppercase mb-4">Services</h4>
+          <ul className="list-none">
+            <li>Cyber Security</li>
+            <li>Data &amp; Analytics</li>
+            <li>Infrastructure</li>
+            <li>Consulting</li>
+            <li>Training</li>
+          </ul>
+        </div>
+      </div>
+      {/* <Socials /> */}
+      <div className="grid grid-cols-1 md:grid-cols-2 pt-8">
+        <div className="grid grid-flow-col auto-cols-auto md:auto-cols-max gap-5 md:gap-10">
+          <small>
+            <Link href="/privacy">Privacy Statement</Link>
           </small>
-        </section>
+          <small>
+            <a href="#">Cookie policy</a>
+          </small>
+          <small>
+            <Link href="/terms">Terms &amp; Conditions</Link>
+          </small>
+        </div>
+        <small className="text-center md:text-right">
+            © {new Date().getFullYear()} Larven. All Rights Reserved.
+        </small>
       </div>
     </footer>
   );
