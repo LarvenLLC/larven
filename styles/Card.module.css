@@ -1,0 +1,28 @@
+@tailwind components;
+
+/* These styles will be purged */
+@layer components {
+  .bottom-edge {
+    @apply rounded-bl-none;
+  }
+
+  .top-edge {
+    @apply rounded-bl-[50px] rounded-tl-none;
+  }
+
+  .card {
+    @apply p-10 bg-white border border-white rounded-[50px] shadow bottom-edge;
+  }
+
+  .number {
+    @apply flex flex-row items-center justify-center font-bold text-xl text-primary p-3 !mt-0 !mb-3 w-14 h-14 bg-primary bg-opacity-10 rounded;
+  }
+
+  .heading {
+    @apply !text-lg font-semibold capitalize !mb-3;
+  }
+
+  .description {
+    @apply text-base font-normal text-[#595969] !m-0;
+  }
+}
