@@ -8,8 +8,8 @@ import Head from 'next/head';
 export default function GoogleAnalytics() {
   return (
     <Head>
-      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179309954-1" />
-      <script
+      {/* <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179309954-1" /> */}
+      {/* <script
         dangerouslySetInnerHTML={{
           __html: `
             window.dataLayer = window.dataLayer || [];
@@ -18,7 +18,7 @@ export default function GoogleAnalytics() {
             gtag('config', 'UA-179309954-1');
             `,
         }}
-      />
+      /> */}
     </Head>
   );
 }
