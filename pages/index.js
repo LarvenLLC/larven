@@ -52,7 +52,7 @@ export default function Home() {
                       Get Free Audit
                   </button>
                 </ScrollLink>
-                <Link href="/contacts" passHref>
+                <Link href="/contacts" >
                   <button className="button-primary-light px-10 py-5 text-xl">
                       Brief Us
                   </button>
@@ -298,7 +298,7 @@ export default function Home() {
             </h2>
             <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
               <div className="inline-flex rounded-md shadow">
-                <Link href="/contacts" passHref>
+                <Link href="/contacts" >
                   <button className="button-primary">
                     Contact Us
                   </button>
