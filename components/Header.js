@@ -59,7 +59,7 @@ export default function Header() {
   }
 
   return (
-    <div className="sticky top-0 relative bg-white z-10 shadow">
+    <div className="sticky top-0 relative bg-white z-20 shadow">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex justify-between items-center md:space-x-10">
           <div className="flex justify-start">
