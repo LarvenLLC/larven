@@ -56,29 +56,20 @@ export default function Footer() {
             <h4>Larven</h4>
             <ul className="">
               <li>
-                <Link href="/contacts">
-                  <a className="no-underline font-normal">Contacts</a>
-                </Link>
+                <Link href="/contacts" className="no-underline font-normal">Contacts</Link>
               </li>
               <li>
-                <Link href="/about">
-                  <a className="no-underline font-normal">About</a>
-                </Link>
+                <Link href="/about" className="no-underline font-normal">About</Link>
               </li>
               <li>
-                <Link href="https://hackathons.larven.co.tz">
-                  <a className="no-underline font-normal">Hackathons</a>
-                </Link>
+                <Link href="https://hackathons.larven.co.tz"
+                  className="no-underline font-normal">Hackathons</Link>
               </li>
               <li>
-                <Link href="/careers">
-                  <a className="no-underline font-normal">Careers</a>
-                </Link>
+                <Link href="/careers" className="no-underline font-normal">Careers</Link>
               </li>
               <li>
-                <Link href="/values">
-                  <a className="no-underline font-normal">Core Values</a>
-                </Link>
+                <Link href="/values" className="no-underline font-normal">Core Values</Link>
               </li>
               <li>Ecosystem Partners</li>
             </ul>
@@ -88,13 +79,13 @@ export default function Footer() {
         <section className="grid grid-cols-1 md:grid-cols-2 pt-5">
           <div className="grid grid-flow-col auto-cols-auto md:auto-cols-max gap-5 md:gap-10">
             <small>
-              <Link href="/privacy"><a>Privacy Statement</a></Link>
+              <Link href="/privacy">Privacy Statement</Link>
             </small>
             <small>
               <a href="#">Cookie policy</a>
             </small>
             <small>
-              <Link href="/terms"><a>Terms &amp; Conditions</a></Link>
+              <Link href="/terms">Terms &amp; Conditions</Link>
             </small>
           </div>
           <small className="text-center md:text-right">
