@@ -1,6 +1,8 @@
 import {useEffect, useRef, useState} from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import {CarouselProvider} from 'pure-react-carousel';
+import {XCircleIcon, CheckCircleIcon} from '@heroicons/react/24/solid';
 
 import Layout from '../components/Layout';
 import Newsletter from '../components/Newsletter';
@@ -10,6 +12,7 @@ import buttonStyles from '../styles/Button.module.css';
 import cardStyles from '../styles/Card.module.css';
 import headingStyles from '../styles/Heading.module.css';
 import VerticalButtonIcon from '../components/VerticalButtonIcon';
+import Testimonials from '../components/Testimonials';
 
 /**
  * Index page
@@ -123,7 +126,7 @@ export default function Home() {
         </section>
         {/* how we work section */}
         <section className="container-fluid !px-0 !mx-0 max-w-none relative overflow-x-hidden">
-          <Image src="/images/left-stripes-decoration.png"
+          <Image src="/images/left-stripes-decoration.svg"
             className='p-0 m-0 max-h-[800px] object-contain object-left-top z-[-1]'
             alt=""
             fill
@@ -253,62 +256,102 @@ export default function Home() {
             "
           />
         </section>
+        {/* larven vs others section */}
+        <section
+          className="container-fluid !px-0 !mx-0 max-w-none relative overflow-x-hidden bg-[#F5F5F5]"
+        >
+          <div className="container">
+            <h1 className={headingStyles.title}>LARVEN VS OTHERS</h1>
+            <table className="border-collapse table-auto w-full text-xl rounded-t-none rounded-b-[50px] shadow">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>LARVEN</th>
+                  <th>OTHERS</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  {
+                    comparison: 'COST',
+                    larven: 'Relative to your needs',
+                    others: 'Enterprise costs for everyone',
+                  },
+                  {
+                    comparison: 'PROCESS',
+                    larven: 'Clear and documented',
+                    others: 'Full of surprises',
+                  },
+                  {
+                    comparison: 'SCALE',
+                    larven: 'At your own pace, your own way',
+                    others: 'Vetting is necessary but costly in time, money, and efficiency',
+                  },
+                  {
+                    comparison: 'HAND OVER STRATEGY',
+                    larven: 'Each client set-up to fly on its own',
+                    others: 'Create vendor dependency',
+                  },
+                  {
+                    comparison: 'PRIVACY & SECURITY',
+                    larven: 'Secure and dependable for clients',
+                    others: 'Exploiting business data and involving third parties',
+                  },
+                  {
+                    comparison: 'TEAM',
+                    larven: 'A recommended team based on needs of the project',
+                    others: 'Take what you are given without questions',
+                  },
+                  {
+                    comparison: 'PROJECT MANAGEMENT',
+                    larven: 'Flexible and based on project needs',
+                    others: 'Biased towards own preference',
+                  },
+                ].map(({comparison, larven, others}, index) => {
+                  const isOdd = index % 2;
+                  return (<tr key={comparison}>
+                    <th className={`px-8 py-8 ${isOdd ? 'bg-primary bg-opacity-5' : ''}`}>{comparison}</th>
+                    <td className={`px-8 py-8 text-white bg-primary ${isOdd ? '' : 'bg-opacity-50'}`}>
+                      <div className="flex items-center ">
+                        <span className="w-[24px] h-[24px] mr-2">
+                          <CheckCircleIcon height={24} width={24} className="text-white" />
+                        </span> {larven}
+                      </div>
+                    </td>
+                    <td className={`px-8 py-8 ${isOdd ? 'bg-primary bg-opacity-5' : ''}`}>
+                      <div className="flex items-center ">
+                        <span className="w-[24px] h-[24px] mr-2">
+                          <XCircleIcon height={24} width={24} className="text-primary" />
+                        </span> {others}
+                      </div>
+                    </td>
+                  </tr>);
+                })}
+              </tbody>
+            </table>
+          </div>
+        </section>
+        {/* testimonials section */}
         <section
           className="container-fluid !px-0 !mx-0 max-w-none relative overflow-x-hidden"
           style={{background: 'linear-gradient(0deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)), #FFFFFF'}}
         >
           <div className="container">
-            <h1 className={headingStyles.title}>TESTIMONIAL</h1>
+            <h1 className={headingStyles.title}>TESTIMONIALS</h1>
             <h2 className={headingStyles.heading}>
               What Our Customers Say
             </h2>
-            <div className="row md:row-cols-5 text-center">
-              <div>
-                <Image
-                  src="/images/testimonies/c4.jpg"
-                  height={150}
-                  width={150}
-                  className="rounded-full mx-auto"
-                  alt=""
-                />
-              </div>
-              <div>
-                <Image
-                  src="/images/testimonies/c1.jpg"
-                  height={150}
-                  width={150}
-                  className="rounded-full mx-auto"
-                  alt=""
-                />
-              </div>
-              <div>
-                <Image
-                  src="/images/testimonies/c5.jpg"
-                  height={150}
-                  width={150}
-                  className="rounded-full mx-auto"
-                  alt=""
-                />
-              </div>
-              <div>
-                <Image
-                  src="/images/testimonies/c2.jpg"
-                  height={150}
-                  width={150}
-                  className="rounded-full mx-auto"
-                  alt=""
-                />
-              </div>
-              <div>
-                <Image
-                  src="/images/testimonies/c3.jpg"
-                  height={150}
-                  width={150}
-                  className="rounded-full mx-auto"
-                  alt=""
-                />
-              </div>
-            </div>
+            <CarouselProvider
+              isPlaying
+              infinite
+              naturalSlideWidth={100}
+              naturalSlideHeight={50}
+              totalSlides={5}
+              isIntrinsicHeight
+              className="relative no-prose"
+            >
+              <Testimonials />
+            </CarouselProvider>
           </div>
         </section>
         {/* case studies section */}
