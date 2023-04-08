@@ -5,7 +5,6 @@ import {RiInstagramFill, RiFacebookCircleFill, RiLinkedinFill, RiTwitterFill} fr
 
 import axios from '../pages/api';
 import {useToasts} from '../hooks/useToasts';
-import buttonStyles from '../styles/Button.module.css';
 import headingStyles from '../styles/Heading.module.css';
 import BarLink from './BarLink';
 
