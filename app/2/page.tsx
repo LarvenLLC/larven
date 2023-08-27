@@ -1,8 +1,8 @@
 "use client";
 
-import React from "react";
+import React, { useContext } from "react";
 import Image from "next/image";
-import Link from "next/link";
+// import Link from "next/link";
 
 const NavBar = () => {
   return (
@@ -58,39 +58,6 @@ const NavBar = () => {
     </div>
   );
 };
-
-const servicesData = [
-  {
-    id: 1,
-    title: "Cloud Computing",
-    description:
-      "wuaiwb iabwuah ua owwuaoniawiawjoaiwjoi aw awbwab aibwu abibaaowhuwa huaw huawhauw wbywa hwiaw iaybdwhab.",
-  },
-  {
-    id: 2,
-    title: "Cloud Computing",
-    description:
-      "wuaiwb iabwuah ua owwuaoniawiawjoaiwjoi aw awbwab aibwu abibaaowhuwa huaw huawhauw wbywa hwiaw iaybdwhab.",
-  },
-  {
-    id: 3,
-    title: "Cloud Computing",
-    description:
-      "wuaiwb iabwuah ua owwuaoniawiawjoaiwjoi aw awbwab aibwu abibaaowhuwa huaw huawhauw wbywa hwiaw iaybdwhab.",
-  },
-  {
-    id: 4,
-    title: "Cloud Computing",
-    description:
-      "wuaiwb iabwuah ua owwuaoniawiawjoaiwjoi aw awbwab aibwu abibaaowhuwa huaw huawhauw wbywa hwiaw iaybdwhab.",
-  },
-  {
-    id: 5,
-    title: "Cloud Computing",
-    description:
-      "wuaiwb iabwuah ua owwuaoniawiawjoaiwjoi aw awbwab aibwu abibaaowhuwa huaw huawhauw wbywa hwiaw iaybdwhab.",
-  },
-];
 
 const Homepage = () => {
   return (
@@ -196,17 +163,40 @@ const Homepage = () => {
           <h2 className="font-bold text-3xl max-w-md">
             Browse through our list of services
           </h2>
+          {/* <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}>
+            {[1, 2, 3, 4, 5, 6, 7].map((_, i) => (
+              <p className="w-fit space-y-6 px-5 py-4 bg-neutral-50" key={i}>
+                <div className="p-2">
+                  <Image
+                    src="/images/graphics/clip.svg"
+                    className="w-7"
+                    alt="Larven logo"
+                    width={0}
+                    height={0}
+                    sizes="100vw"
+                  />
+                </div>
+                <div>
+                  <h3 className="font-bold">Blockchain Technology</h3>
+                  <p>
+                    Arcu viverra ut quis gravida luctus. Scelerisque elit massa
+                    purus morbi pellentesque tincidunt nulla.
+                  </p>
+                </div>
+              </p>
+            ))}
+          </ScrollMenu> */}
           <ul className="flex gap-x-5 overflow-x-scroll">
             <li className="w-full space-y-6 px-5 py-4 bg-neutral-50">
               <div className="p-2">
-              <Image
-                src="/images/graphics/clip.svg"
-                className="w-7"
-                alt="Larven logo"
-                width={0}
-                height={0}
-                sizes="100vw"
-              />
+                <Image
+                  src="/images/graphics/clip.svg"
+                  className="w-7"
+                  alt="Larven logo"
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                />
               </div>
               <div>
                 <h3 className="font-bold">Blockchain Technology</h3>
@@ -218,14 +208,14 @@ const Homepage = () => {
             </li>
             <li className="w-full space-y-6 px-5 py-4 bg-neutral-50">
               <div className="p-2">
-              <Image
-                src="/images/graphics/clip.svg"
-                className="w-7"
-                alt="Larven logo"
-                width={0}
-                height={0}
-                sizes="100vw"
-              />
+                <Image
+                  src="/images/graphics/clip.svg"
+                  className="w-7"
+                  alt="Larven logo"
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                />
               </div>
               <div>
                 <h3 className="font-bold">Blockchain Technology</h3>
@@ -237,14 +227,14 @@ const Homepage = () => {
             </li>
             <li className="w-full space-y-6 px-5 py-4 bg-neutral-50">
               <div className="p-2">
-              <Image
-                src="/images/graphics/clip.svg"
-                className="w-7"
-                alt="Larven logo"
-                width={0}
-                height={0}
-                sizes="100vw"
-              />
+                <Image
+                  src="/images/graphics/clip.svg"
+                  className="w-7"
+                  alt="Larven logo"
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                />
               </div>
               <div>
                 <h3 className="font-bold">Blockchain Technology</h3>
@@ -254,17 +244,17 @@ const Homepage = () => {
                 </p>
               </div>
             </li>
-           
+
             <li className="w-full space-y-6 px-5 py-4 bg-neutral-50">
               <div className="p-2">
-              <Image
-                src="/images/graphics/clip.svg"
-                className="w-7"
-                alt="Larven logo"
-                width={0}
-                height={0}
-                sizes="100vw"
-              />
+                <Image
+                  src="/images/graphics/clip.svg"
+                  className="w-7"
+                  alt="Larven logo"
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                />
               </div>
               <div>
                 <h3 className="font-bold">Blockchain Technology</h3>
@@ -277,8 +267,65 @@ const Homepage = () => {
           </ul>
         </div>
       </section>
+      <section className="bg-white">
+        <div className="mx-auto w-[90%] ">
+          <Image
+            src="/images/Section.png"
+            alt="hellopic"
+            width={0}
+            height={0}
+            sizes="100vw"
+            className="w-full"
+          />
+        </div>
+      </section>
+      <section className="bg-white h-[70vh] flex justify-center items-center">
+        <div className="flex items-center justify-evenly w-[80%] mx-auto">
+          <div className="space-y-5 w-[40%]">
+            <h1 className="font-bold text-3xl">
+              We'll help you to unlock the{" "}
+              <span className="text-green-haze-500">potentials</span>
+            </h1>
+            <p>
+            [description goes in here] lorem 
+            ipsum is a placeholder text to 
+            demonstrate the visual form of
+             a typeface without relying 
+             on very meaningful content 
+             like this one for example.
+            </p>
+            <button
+              type="button"
+              className="px-5 py-3 text-xs text-white rounded-r-full rounded-bl-full bg-green-haze-500 "
+            >
+              Get In Touch
+            </button>
+            <div className="flex items-center w-3/4 justify-between">
+              <div>
+                <h2 className="font-bold text-xl text-green-haze-500">56</h2>
+                <p>Projects</p>
+              </div>
+              <div>
+                <h2 className="font-bold text-xl text-green-haze-500">80.5%</h2>
+                <p>Description here</p>
+              </div>
+            </div>
+          </div>
+          <div className="w-1/2 relative">
+            <Image
+              src="/images/Rectangle 10.png"
+              alt="hellopic"
+              width={0}
+              height={0}
+              sizes="100vw"
+              className="w-1/2 mx-auto"
+            />
+            <div className="absolute top-0 right-0 w-56 h-64 border-4 z-10 -translate-y-10 border-green-haze-600" />
+          </div>
+        </div>
+      </section>
 
-        {/* <section className="h-[60vh]">
+      {/* <section className="h-[60vh]">
           <div className="w-[80%] mx-auto space-y-5">
             <div className="flex justify-between items-center space-x-14 w-fit">
               <Link href="/" className="cursor-pointer">
