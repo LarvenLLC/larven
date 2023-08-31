@@ -6,7 +6,7 @@ import Link from "next/link"
 
 const NavBar = () => {
   return (
-    <div className="flex items-center px-10 py-2">
+    <div className="flex items-center px-10 py-2 drop-shadow-xl">
       <div className="flex items-center space-x-14 w-fit">
         <Image
           src="/larven-logo.png"
@@ -16,9 +16,24 @@ const NavBar = () => {
           height={0}
           sizes="100vw"
         />
-        <ul className="flex space-x-7">
+        <ul className="flex space-x-7 text-xs">
           <li>
-            <a href="https://www.google.com">SERVICES</a>
+          <p className="flex cursor-pointer">
+                <span>SERVICES</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="ml-1"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
+                  />
+                </svg>
+              </p>
           </li>
           <li>
             <a href="https://www.google.com">ABOUT</a>
@@ -93,7 +108,7 @@ const Homepage = () => {
             <br />
             with Digital Solutions
           </h1>
-          <p>
+          <p> 
             We are here to assist you in transforming your business processes
             and operations so that you can accomplish more in less time while
             increasing your profitability.
@@ -105,14 +120,38 @@ const Homepage = () => {
             Hire Your Technicians
           </button>
         </div>
-        <div>
+        <div className="w-1/2 h-full relative overflow-hidden">
           <Image
-            src="/images/strip2.png"
+            src="/images/1/team.png"
             alt="hellopic"
             width={0}
             height={0}
             sizes="100vw"
-            className="w-[50%]"
+            className="w-1/2 top-0 bottom-0 my-auto absolute z-50"
+          />
+          <Image
+            src="/images/1/strip1.png"
+            alt="hellopic"
+            width={0}
+            height={0}
+            sizes="100vw"
+            className="w-3/4 absolute -translate-y-20"
+          />
+          <Image
+            src="/images/1/strip2.png"
+            alt="hellopic"
+            width={0}
+            height={0}
+            sizes="100vw"
+            className="w-full absolute right-0 -translate-y-44"
+          />
+          <Image
+            src="/images/1/strip3.png"
+            alt="hellopic"
+            width={0}
+            height={0}
+            sizes="100vw"
+            className="w-1/2 absolute translate-y-32 right-0 bottom-0"
           />
         </div>
       </section>

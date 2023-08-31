@@ -4,40 +4,41 @@ import React, { useContext } from "react";
 import Image from "next/image";
 import Link from "next/link";
 // @ts-ignore
-import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu';
-import 'react-horizontal-scrolling-menu/dist/styles.css'
-
+import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
+import "react-horizontal-scrolling-menu/dist/styles.css";
 
 const NavBar = () => {
   return (
-    <div className="flex items-center px-10 py-2 bg-black">
+    <div
+      className="flex items-center px-10 py-2 bg-transparent relative z-50"
+    >
       <div className="flex items-center space-x-14 w-fit">
         <Image
           src="/larven-logo.png"
-          className="w-[5.5%]"
+          className="w-[5.5%] "
           alt="Larven logo"
           width={0}
           height={0}
           sizes="100vw"
         />
-        <ul className="flex space-x-7 text-white">
+        <ul className="flex space-x-7 text-xs text-white">
           <li>
-          <p className="flex cursor-pointer">
-                <span>SERVICES</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="ml-1"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
-                  />
-                </svg>
-              </p>
+            <p className="flex cursor-pointer">
+              <span>SERVICES</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="ml-1"
+                width="16"
+                height="16"
+                fill="currentColor"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
+                />
+              </svg>
+            </p>
           </li>
           <li>
             <a href="https://www.google.com">ABOUT</a>
@@ -53,9 +54,9 @@ const NavBar = () => {
           </li>
         </ul>
       </div>
-      <div className="w-[20%] ">
+      <div className="w-[60%]">
         {/* Wrap the button with an anchor tag */}
-        <ul className="flex space-x-7 ">
+        <ul className="flex space-x-7 w-fit ml-auto">
           <li>
             <button
               type="button"
@@ -81,9 +82,19 @@ const NavBar = () => {
 const Homepage = () => {
   return (
     <div className="bg-neutral-100">
-      <NavBar />
-
-      <section className="h-screen w-full flex items-center bg-black relative">
+      <section className="bg-black relative">
+        <NavBar />
+        <div className="absolute top-10 right-0">
+          <Image
+            src="/images/Background Lines.png"
+            alt="hellopic"
+            width={0}
+            height={0}
+            sizes="100vw"
+            className="w-full z-10"
+          />
+        </div>
+        <div className="h-screen w-full flex items-center">
         <div className="w-[50%] ml-40 h-full flex flex-col justify-center py-2 gap-y-5">
           <h1 className="text-5xl font-bold text-white">
             Unlock Your <span className="text-green-haze-500">Potential</span>{" "}
@@ -120,15 +131,6 @@ const Homepage = () => {
             className="w-full"
           />
         </div>
-        <div className="absolute right-0 ">
-          <Image
-            src="/images/Background Lines.png"
-            alt="hellopic"
-            width={0}
-            height={0}
-            sizes="100vw"
-            className="w-full"
-          />
         </div>
       </section>
 
@@ -184,7 +186,10 @@ const Homepage = () => {
           </h2>
           <ScrollMenu>
             {[1, 2, 3, 4, 5, 6, 7].map((_, i) => (
-              <p className="w-[300px] mr-2 space-y-6 px-5 py-4 bg-neutral-50" key={i}>
+              <p
+                className="w-[300px] mr-2 space-y-6 px-5 py-4 bg-neutral-50"
+                key={i}
+              >
                 <div className="p-2">
                   <Image
                     src="/images/graphics/clip.svg"
@@ -367,7 +372,9 @@ const Homepage = () => {
 
       <section className="h-[85vh]  items-center bg-white">
         <div className="text-center">
-          <h1 className="font-normal text-xl text-green-haze-10">OUR PROJECTS</h1>
+          <h1 className="font-normal text-xl text-green-haze-10">
+            OUR PROJECTS
+          </h1>
           <p className="font-extrabold text-4xl font-serif">
             Recent Project we have <br></br> designed & Implement
           </p>
@@ -418,12 +425,9 @@ const Homepage = () => {
 
       <section className="flex justify-center my-20 h-[50vh] ">
         <div className="relative flex justify-center items-center w-full bg-black text-white px-10 overflow-hidden">
-        
           <div className="w-[50%] mx-auto space-y-4 z-10">
             <p className="text-xs">REACH OUT TO US</p>
-            <h3 className="font-bold text-3xl">
-              Get a free consult
-            </h3>
+            <h3 className="font-bold text-3xl">Get a free consult</h3>
             <p>
               Arcu viverra ut quis gravida luctus. Scelerisque elit massa purus
               morbi pellentesque tincidunt nulla
@@ -444,16 +448,16 @@ const Homepage = () => {
               </button>
             </form>
           </div>
-        <div className="absolute right-0">
-          <Image
-            src="/images/Background Lines.png"
-            alt="hellopic"
-            width={0}
-            height={0}
-            sizes="100vw"
-            className="w-full"
-          />
-        </div>
+          <div className="absolute right-0">
+            <Image
+              src="/images/Background Lines.png"
+              alt="hellopic"
+              width={0}
+              height={0}
+              sizes="100vw"
+              className="w-full"
+            />
+          </div>
         </div>
       </section>
 

@@ -4,8 +4,6 @@ import React, { useContext } from "react";
 import Image from "next/image";
 import Link from "next/link";
 // @ts-ignore
-import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
-import "react-horizontal-scrolling-menu/dist/styles.css";
 
 const NavBar = () => {
   return (
@@ -248,89 +246,59 @@ const Homepage = () => {
         </div>
       </section>
 
-      <section className="h-[80vh] bg-white flex justify-center items-center">
+      {/* optimised */}
+      <section className="h-[80vh] bg-white flex justify-center items-center mx-10">
         <div className="space-y-10">
-          <h1 className="flex justify-center font-extrabold text-4xl ">
+          <h1 className="flex justify-center font-extrabold text-4xl">
             Unlock The Potential
           </h1>
           <ul className="flex gap-x-5">
-            <li className="w-full space-y-6 px-5 py-4 bg-neutral-50">
-              <div className="p-3 rounded bg-neutral-200 w-fit">
-                <Image
-                  src="/images/graphics/chat.svg"
-                  className="w-7"
-                  alt="Larven logo"
-                  width={0}
-                  height={0}
-                  sizes="100vw"
-                />
-              </div>
-              <div>
-                <h3 className="font-bold mb-1">Blockchain Technology</h3>
-                <p>
-                  Arcu viverra ut quis gravida luctus. Scelerisque elit massa
-                  purus morbi pellentesque tincidunt nulla.
-                </p>
-              </div>
-            </li>
-            <li className="w-full space-y-6 px-5 py-4 bg-neutral-50">
-            <div className="p-3 rounded bg-neutral-200 w-fit">
-                <Image
-                  src="/images/graphics/clip.svg"
-                  className="w-7"
-                  alt="Larven logo"
-                  width={0}
-                  height={0}
-                  sizes="100vw"
-                />
-              </div>
-              <div>
-                <h3 className="font-bold mb-1">Blockchain Technology</h3>
-                <p>
-                  Arcu viverra ut quis gravida luctus. Scelerisque elit massa
-                  purus morbi pellentesque tincidunt nulla.
-                </p>
-              </div>
-            </li>
-            <li className="w-full space-y-6 px-5 py-4 bg-neutral-50">
-            <div className="p-3 rounded bg-neutral-200 w-fit">
-                <Image
-                  src="/images/graphics/settings.svg"
-                  className="w-7"
-                  alt="Larven logo"
-                  width={0}
-                  height={0}
-                  sizes="100vw"
-                />
-              </div>
-              <div>
-                <h3 className="font-bold mb-1">Blockchain Technology</h3>
-                <p>
-                  Arcu viverra ut quis gravida luctus. Scelerisque elit massa
-                  purus morbi pellentesque tincidunt nulla.
-                </p>
-              </div>
-            </li>
-
-            <li className="w-full space-y-6 px-5 py-4 bg-neutral-50">
-            <div className="p-3 rounded bg-neutral-200 w-fit">
-                <Image
-                  src="/images/graphics/cloud.svg"
-                  className="w-7"
-                  alt="Larven logo"
-                  width={0}
-                  height={0}
-                  sizes="100vw"
-                />
-              </div>
-              <div>
-                <h3 className="font-bold mb-1">Blockchain Technology</h3>
-                <p>
-                  Arcu viverra ut quis gravida luctus. Scelerisque elit massa
-                  purus morbi pellentesque tincidunt nulla.
-                </p>
-              </div>
-            </li>
+            {[
+              {
+                icon: "/images/graphics/chat.svg",
+                title: "Blockchain Technology",
+                description:
+                  "Arcu viverra ut quis gravida luctus. Scelerisque elit massa purus morbi pellentesque tincidunt nulla.",
+              },
+              {
+                icon: "/images/graphics/clip.svg",
+                title: "Blockchain Technology",
+                description:
+                  "Arcu viverra ut quis gravida luctus. Scelerisque elit massa purus morbi pellentesque tincidunt nulla.",
+              },
+              {
+                icon: "/images/graphics/settings.svg",
+                title: "Blockchain Technology",
+                description:
+                  "Arcu viverra ut quis gravida luctus. Scelerisque elit massa purus morbi pellentesque tincidunt nulla.",
+              },
+              {
+                icon: "/images/graphics/cloud.svg",
+                title: "Blockchain Technology",
+                description:
+                  "Arcu viverra ut quis gravida luctus. Scelerisque elit massa purus morbi pellentesque tincidunt nulla.",
+              },
+            ].map((item, index) => (
+              <li
+                key={index}
+                className="w-full space-y-6 px-5 py-4 bg-neutral-50"
+              >
+                <div className="p-3 rounded bg-neutral-200 w-fit">
+                  <Image
+                    src={item.icon}
+                    className="w-7"
+                    alt="Larven logo"
+                    width={0}
+                    height={0}
+                    sizes="100vw"
+                  />
+                </div>
+                <div>
+                  <h3 className="font-bold mb-1">{item.title}</h3>
+                  <p>{item.description}</p>
+                </div>
+              </li>
+            ))}
           </ul>
         </div>
       </section>
