@@ -10,7 +10,7 @@ import "react-horizontal-scrolling-menu/dist/styles.css";
 const NavBar = () => {
   return (
     <div
-      className="flex items-center px-10 py-2 bg-transparent relative z-50"
+      className="flex flex-col md:flex-row items-center px-10 py-2 bg-transparent relative z-50"
     >
       <div className="flex items-center space-x-14 w-fit">
         <Image
@@ -95,18 +95,18 @@ const Homepage = () => {
           />
         </div>
         <div className="h-screen w-full flex items-center">
-        <div className="w-[50%] ml-40 h-full flex flex-col justify-center py-2 gap-y-5">
-          <h1 className="text-5xl font-bold text-white">
+        <div className="w-full md:w-[50%] md:ml-40 h-full flex flex-col justify-center py-2 gap-y-5">
+          <h1 className="text-5xl text-center md:text-start font-bold text-white">
             Unlock Your <span className="text-green-haze-500">Potential</span>{" "}
             <br />
             with Digital Solutions
           </h1>
-          <p className="text-md text-white">
+          <p className="text-md text-center md:text-start text-white">
             We are here to assist you in transforming your business processes
             and operations so that you can accomplish more in less time while
             increasing your profitability.
           </p>
-          <div className="space-x-10 mb-10">
+          <div className="space-x-10 mb-10 w-fit mx-auto md:w-full">
             <button
               type="button"
               className="px-5 py-3 mt-5 text-xs text-white rounded-r-full rounded-bl-full bg-green-haze-500 w-fit"
@@ -121,7 +121,7 @@ const Homepage = () => {
             </button>
           </div>
         </div>
-        <div className="absolute w-[72%] right-0 left-0 mx-auto bottom-0 z-50 translate-y-44">
+        <div className="absolute w-full md:w-[72%] right-0 left-0 mx-auto bottom-0 z-50 translate-y-44">
           <Image
             src="/images/people.png"
             alt="hellopic"
@@ -135,7 +135,7 @@ const Homepage = () => {
       </section>
 
       <section className="py-10 mt-44 bg-white">
-        <ul className="flex justify-evenly my-2 ml-16 py-10 bg-neutral-100">
+        <ul className="flex justify-evenly my-2 md: ml-16 py-10 bg-neutral-100">
           <li className="bg-white p-2">
             <Image
               src="/images/logos/logoipsum1.svg"
@@ -180,7 +180,7 @@ const Homepage = () => {
       </section>
 
       <section className="bg-white w-full py-20">
-        <div className="w-[80%] ml-auto space-y-4">
+        <div className="w-full md:w-[80%] mx-2 md:ml-auto space-y-4">
           <h2 className="font-bold text-3xl max-w-md">
             Browse through our list of services
           </h2>
@@ -227,8 +227,8 @@ const Homepage = () => {
       </section>
 
       <section className="bg-white h-[70vh] flex justify-center items-center">
-        <div className="flex items-center justify-evenly w-[80%] mx-auto">
-          <div className="space-y-5 w-[40%]">
+        <div className="flex flex-row md:flex-col items-center justify-evenly w-full md:w-[80%] mx-auto">
+          <div className="space-y-5 w-full mx-3 md:w-[40%]">
             <h1 className="font-bold text-3xl">
               We'll help you to unlock the{" "}
               <span className="text-green-haze-500">potentials</span>
@@ -255,21 +255,21 @@ const Homepage = () => {
               </div>
             </div>
           </div>
-          <div className="w-1/2 relative">
+          <div className="hidden md:block w-1/2 relative">
             <Image
               src="/images/Rectangle 10.png"
               alt="hellopic"
               width={0}
               height={0}
               sizes="100vw"
-              className="w-1/2 mx-auto z-50 relative "
+              className="hidden md:block w-1/2 mx-auto z-50 relative "
             />
             <div className="absolute top-2 right-20 w-56 h-64 border-4 z-0 -translate-y-10 border-green-haze-600" />
           </div>
         </div>
       </section>
 
-      <section className=" bg-white ">
+      <section className="bg-white ">
         <div className="w-full relative h-full mt-20 bg-white flex flex-col">
           <Image
             src="/images/Frame 138.png"
@@ -287,9 +287,9 @@ const Homepage = () => {
             <div className="grid grid-cols-2 gap-4">
               <div className="relative">
                 <div className="border mb-10 min-h-[300px] bg-neutral-50 absolute w-full -z-10" />
-                <div className="p-10 z-30 space-y-4">
+                <div className="p-5 md:p-10 z-30 space-y-4">
                   <h3 className="font-bold">Blockchain Technology</h3>
-                  <p>
+                  <p className="text-sm md:text-base">
                     Arcu viverra ut quis gravida luctus. Scelerisque elit massa
                     purus morbi pellentesque tincidunt nulla.
                   </p>
@@ -307,9 +307,9 @@ const Homepage = () => {
               </div>
               <div className="relative">
                 <div className="border mb-10 min-h-[300px] bg-neutral-50 absolute w-full -z-10" />
-                <div className="p-10 z-30 space-y-4">
+                <div className="p-5 md:p-10 z-30 space-y-4">
                   <h3 className="font-bold">Blockchain Technology</h3>
-                  <p>
+                  <p className="text-sm md:text-base">
                     Arcu viverra ut quis gravida luctus. Scelerisque elit massa
                     purus morbi pellentesque tincidunt nulla.
                   </p>
@@ -327,13 +327,13 @@ const Homepage = () => {
               </div>
               <div className="relative">
                 <div className="border mb-10 min-h-[300px] bg-neutral-50 absolute w-full -z-10" />
-                <div className="p-10 z-30 space-y-4">
+                <div className="p-5 md:p-10 z-30 space-y-4">
                   <h3 className="font-bold">Blockchain Technology</h3>
-                  <p>
+                  <p className="text-sm md:text-base">
                     Arcu viverra ut quis gravida luctus. Scelerisque elit massa
                     purus morbi pellentesque tincidunt nulla.
                   </p>
-                  <div className="">
+                  <div>
                     <Image
                       src="/images/space 3.png"
                       className="w-full"
@@ -347,13 +347,13 @@ const Homepage = () => {
               </div>
               <div className="relative">
                 <div className="border mb-10 min-h-[300px] bg-neutral-50 absolute w-full -z-10" />
-                <div className="p-10 z-30 space-y-4">
+                <div className="p-5 md:p-10 z-30 space-y-4">
                   <h3 className="font-bold">Blockchain Technology</h3>
-                  <p>
+                  <p className="text-sm md:text-base">
                     Arcu viverra ut quis gravida luctus. Scelerisque elit massa
                     purus morbi pellentesque tincidunt nulla.
                   </p>
-                  <div className="">
+                  <div>
                     <Image
                       src="/images/space 4.png"
                       className="w-full"
@@ -370,16 +370,16 @@ const Homepage = () => {
         </div>
       </section>
 
-      <section className="h-[85vh]  items-center bg-white">
+      <section className="h-[85vh] items-center bg-white">
         <div className="text-center">
-          <h1 className="font-normal text-xl text-green-haze-10">
+          <h1 className="font-normal text-xl pt-10 md:pt-0 text-green-haze-10">
             OUR PROJECTS
           </h1>
           <p className="font-extrabold text-4xl font-serif">
             Recent Project we have <br></br> designed & Implement
           </p>
         </div>
-        <div className="flex w-3/4 mx-auto">
+        <div className="flex flex-col md:flex-row w-[90%] md:w-3/4 mx-auto">
           <div className="relative">
             <div className="border mb-10 min-h-[300px] bg-neutral-50 absolute w-full -z-10" />
             <div className="p-10 z-30 space-y-4">
@@ -424,8 +424,8 @@ const Homepage = () => {
       </section>
 
       <section className="flex justify-center my-20 h-[50vh] ">
-        <div className="relative flex justify-center items-center w-full bg-black text-white px-10 overflow-hidden">
-          <div className="w-[50%] mx-auto space-y-4 z-10">
+        <div className="relative flex flex-col md:flex-row justify-center space-y-5 md:space-y-0 items-center w-full bg-black text-white px-10 overflow-hidden">
+          <div className="w-full md:w-[50%] mx-auto space-y-4 z-10">
             <p className="text-xs">REACH OUT TO US</p>
             <h3 className="font-bold text-3xl">Get a free consult</h3>
             <p>
@@ -433,7 +433,7 @@ const Homepage = () => {
               morbi pellentesque tincidunt nulla
             </p>
           </div>
-          <div className="w-[40%] mx-auto z-10">
+          <div className="w-full md:w-[40%] mx-auto z-10">
             <form className="flex items-center gap-x-4">
               <input
                 type="email"
@@ -461,13 +461,13 @@ const Homepage = () => {
         </div>
       </section>
 
-      <section className="h-[60vh] my-10">
+      <section className="h-[60vh] bg-white py-10">
         <div className="w-[80%] mx-auto space-y-5">
           <div className="flex justify-between items-center space-x-14 w-fit">
             <Link href="/" className="cursor-pointer">
               <Image
                 src="/larven-logo.png"
-                className="w-[5.5%]"
+                className="w-[20%] md:w-[5.5%]"
                 alt="Larven logo"
                 width={0}
                 height={0}
@@ -526,7 +526,7 @@ const Homepage = () => {
             </ul>
           </div>
           <hr />
-          <div className="flex justify-between">
+          <div className="grid grid-cols-2 md:grid-cols-3 justify-between">
             <ul className="space-y-3">
               <li className="text-lg font-bold">Larven</li>
               <li>Services</li>

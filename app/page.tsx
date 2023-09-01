@@ -101,8 +101,8 @@ const Homepage = () => {
     <>
       <NavBar />
 
-      <section className="h-[85vh] flex items-center">
-        <div className="w-1/2 bg-green-haze-50 rounded-br-[150px] h-full flex flex-col justify-center px-10 py-2 gap-y-5">
+      <section className="h-[85vh] w-full flex flex-col md:flex-row items-center">
+        <div className="w-full md:w-1/2 bg-green-haze-50 rounded-br-[150px] h-full flex flex-col justify-center px-10 py-2 gap-y-5">
           <h1 className="text-4xl font-bold">
             Unlock Your <span className="text-green-haze-500">Potential</span>{" "}
             <br />
@@ -158,7 +158,7 @@ const Homepage = () => {
 
       <section className="relative h-screen py-20">
         <div className="absolute -z-10 w-[80%] right-0 h-[85%] bg-green-haze-50 rounded-br-[150px]" />
-        <div className="grid grid-cols-3 gap-7 w-[90%] ml-10 py-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-7 w-[90%] ml-10 py-20">
           {servicesData.map((service, index) => (
             <div
               className="p-5 space-y-2 bg-white shadow-md w-fit "
@@ -197,8 +197,8 @@ const Homepage = () => {
         </div>
       </section>
 
-      <section className="relative my-10 overflow-hidden">
-        <div className="absolute -z-10">
+      <section className="relative my-10 overflow-hidden hidden md:block">
+        <div className="hidden md:block absolute -z-10">
           <Image
             src="/images/deco1.png"
             alt="vidole decoration"
@@ -209,7 +209,7 @@ const Homepage = () => {
           />
         </div>
 
-        <div className="absolute bottom-0 right-0 -z-10">
+        <div className="hidden md:block absolute bottom-0 right-0 -z-10">
           <Image
             src="/images/deco2.png"
             alt="vidole decoration"
@@ -331,7 +331,7 @@ const Homepage = () => {
         </div>
       </section>
 
-      <section className="flex items-center h-screen">
+      <section className="hidden md:flex items-center h-screen">
         <div className="absolute -z-10 w-[80%] h-[85%] bg-green-haze-50 rounded-bl-[150px]" />
         <div className="flex flex-col justify-center w-1/4 h-full px-10 py-2 gap-y-2">
           <h3 className="text-sm font-bold text-green-haze-600">
