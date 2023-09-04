@@ -488,7 +488,7 @@ const Homepage = () => {
               width={0}
               height={0}
               sizes="100vw"
-              className="w-32 h-32 rounded-full"
+              className="w-32"
               src="/images/c4.png"
               alt="just pic"
             />
@@ -498,7 +498,7 @@ const Homepage = () => {
               width={0}
               height={0}
               sizes="100vw"
-              className="w-32 h-32 rounded-full"
+              className="w-32"
               src="/images/c1.png"
               alt="just pic"
             />
@@ -509,7 +509,7 @@ const Homepage = () => {
                 width={0}
                 height={0}
                 sizes="100vw"
-                className="w-32 h-32 rounded-full"
+                className="w-32"
                 src="/images/c5.png"
                 alt="just pic"
               />
@@ -535,7 +535,7 @@ const Homepage = () => {
               width={0}
               height={0}
               sizes="100vw"
-              className="w-32 h-32 rounded-full"
+              className="w-32"
               src="/images/c2.png"
               alt="just pic"
             />
@@ -545,7 +545,7 @@ const Homepage = () => {
               width={0}
               height={0}
               sizes="100vw"
-              className="w-32 h-32 rounded-full"
+              className="w-32"
               src="/images/c3.png"
               alt="just pic"
             />
@@ -559,8 +559,8 @@ const Homepage = () => {
           Our Most Popular Articles
         </h1>
 
-        <div className="flex justify-evenly">
-          <div className="w-[40%] space-y-10 shadow-lg rounded-lg">
+        <div className="flex flex-col md:flex-row justify-evenly">
+          <div className="w-full md:w-[40%] space-y-10 shadow-lg rounded-lg">
             <Image
               src="/images/Frame 18.png"
               alt="UTOPOLO"

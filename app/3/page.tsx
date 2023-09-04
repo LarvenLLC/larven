@@ -8,11 +8,11 @@ import Link from "next/link";
 const NavBar = () => {
   return (
     <>
-      <div className="flex items-center px-10 py-3 bg-white">
+      <div className="flex items-center flex-col md:flex-row px-10 py-3 bg-white">
         <div className="flex items-center space-x-14 w-fit">
           <Image
             src="/larven-logo.png"
-            className="w-[5.5%]"
+            className="w-[10%] md:w-[5.5%]"
             alt="Larven logo"
             width={0}
             height={0}
@@ -50,8 +50,9 @@ const NavBar = () => {
               <a href="https://www.larven.co.tz/">HACKATHONS</a>
             </li>
           </ul>
+
         </div>
-        <div className="w-[60%]">
+        <div className="w-full md:w-[60%]">
           {/* Wrap the button with an anchor tag */}
           <ul className="flex space-x-7 w-fit ml-auto">
             <li>
@@ -83,9 +84,9 @@ const Homepage = () => {
     <div className="bg-neutral-100">
       <NavBar />
 
-      <section className="h-[85vh] flex items-center bg-white">
-        <div className="w-[60%] bg-white h-full flex flex-col justify-center px-10 py-2 gap-y-5">
-          <h1 className="text-5xl font-bold">
+      <section className="h-[85vh] flex flex-col md:flex-row items-center bg-white">
+        <div className="w-full md:w-[60%] bg-white h-full flex flex-col justify-center px-10 py-2 gap-y-5">
+          <h1 className="text-3xl md:text-5xl font-bold">
             Unlock Your Potential with
             <br />
             Digital Solutions
@@ -114,7 +115,7 @@ const Homepage = () => {
             </li>
           </ul>
         </div>
-        <div className="mr-10">
+        <div className="md:mr-10">
           <Image
             src="/images/Digital transformation-bro 1.png"
             alt="hellopic"
