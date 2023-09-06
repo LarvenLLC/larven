@@ -26,6 +26,8 @@ module.exports = {
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-bootstrap-grid')(),
+  ],
 }
 

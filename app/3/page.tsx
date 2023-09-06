@@ -84,7 +84,7 @@ const Homepage = () => {
     <div className="bg-neutral-100">
       <NavBar />
 
-      <section className="h-[85vh] flex flex-col md:flex-row items-center bg-white">
+      <section className="flex flex-col md:flex-row items-center bg-white">
         <div className="w-full md:w-[60%] bg-white h-full flex flex-col justify-center px-10 py-2 gap-y-5">
           <h1 className="text-3xl md:text-5xl font-bold">
             Unlock Your Potential with
@@ -147,16 +147,16 @@ const Homepage = () => {
           />
         </div>
 
-        <div className="flex justify-evenly items-center mt-20">
+        <div className="justify-evenly grid md:grid-cols-2 items-center mt-20">
           <Image
             src="/images/p3 img/graphic 1.png"
             alt="hellopic"
-            width={0}
-            height={0}
+            width={599}
+            height={383}
             sizes="100vw"
-            className="w-[40%]"
+            className=""
           />
-          <div className="w-[40%] space-y-5">
+          <div className="space-y-5">
             <h3 className="font-bold text-2xl">Custom Software Development</h3>
             <p>
               Lorem ipsum dolor sit amet consectetur. Nisl dictum non odio velit
@@ -171,16 +171,16 @@ const Homepage = () => {
             </button>
           </div>
         </div>
-        <div className="flex flex-row-reverse justify-evenly items-center mt-20">
+        <div className="flex-row-reverse grid md:grid-cols-2 justify-evenly items-center mt-20">
           <Image
             src="/images/p3 img/graphic 2.png"
             alt="hellopic"
-            width={0}
-            height={0}
+            width={553}
+            height={467}
             sizes="100vw"
-            className="w-[40%]"
+            className=""
           />
-          <div className="w-[40%] space-y-5">
+          <div className="space-y-5">
             <h3 className="font-bold text-2xl">Application Service</h3>
             <p>
               Lorem ipsum dolor sit amet consectetur. Nisl dictum non odio velit
