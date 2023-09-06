@@ -195,16 +195,16 @@ const Homepage = () => {
             </button>
           </div>
         </div>
-        <div className="flex justify-evenly items-center mt-20">
+        <div className="grid md:grid-cols-2  justify-evenly items-center mt-20">
           <Image
             src="/images/p3 img/graphic 3.png"
             alt="hellopic"
-            width={0}
-            height={0}
+            width={584}
+            height={402}
             sizes="100vw"
-            className="w-[40%]"
+            className=""
           />
-          <div className="w-[40%] space-y-5 ">
+          <div className="space-y-5 ">
             <h3 className="font-bold text-2xl">
               Artificial intelligence & Data analytics
             </h3>
@@ -221,16 +221,16 @@ const Homepage = () => {
             </button>
           </div>
         </div>
-        <div className="flex flex-row-reverse justify-evenly items-center mb-20 mt-20">
+        <div className="grid md:grid-cols-2 flex-row-reverse justify-evenly items-center mb-20 mt-20">
           <Image
             src="/images/p3 img/graphic 4.png"
             alt="hellopic"
-            width={0}
-            height={0}
+            width={582}
+            height={489}
             sizes="100vw"
-            className="w-[40%]"
+            className=""
           />
-          <div className="w-[40%] space-y-5">
+          <div className="space-y-5">
             <h3 className="font-bold text-2xl">Cyber Security</h3>
             <p>
               Lorem ipsum dolor sit amet consectetur. Nisl dictum non odio velit
