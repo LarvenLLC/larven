@@ -414,7 +414,7 @@ const Homepage = () => {
             <p className="text-3xl font-bold">
               Providing solutions that meet your needs.
             </p>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="relative">
                 <div className="border mb-10 min-h-[300px] bg-neutral-50 absolute w-full -z-10" />
                 <div className="p-5 md:p-10 z-30 space-y-4">
@@ -591,16 +591,16 @@ const Homepage = () => {
         </div>
       </section>
 
-      <section className="py-10">
-        <div className="w-[80%] mx-auto space-y-5">
-          <div className="flex justify-between items-center space-x-14 w-full">
+      <section className="py-10 md:px-28">
+        <div className="mx-auto space-y-5">
+          <div className="flex justify-between items-center space-x-14">
             <Link href="/" className="cursor-pointer">
               <Image
                 src="/larven-logo.png"
-                className="w-10"
+                className=""
                 alt="Larven logo"
-                width={0}
-                height={0}
+                width={1531/15}
+                height={1678/15}
                 sizes="100vw"
               />
             </Link>
@@ -657,8 +657,8 @@ const Homepage = () => {
           </div>
           <hr />
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-5 justify-between">
-            <ul className="space-y-3 list-disc">
-              <p className="text-lg font-bold">Larven</p>
+            <ul className="space-y-3">
+              <li className="text-lg font-bold">Larven</li>
               <li>Services</li>
               <li>About</li>
               <li>Hackathons</li>
@@ -666,8 +666,8 @@ const Homepage = () => {
               <li>Core values</li>
               <li>Ecosystem Partners</li>
             </ul>
-            <ul className="space-y-3 list-disc">
-              <p className="text-lg font-bold">SERVICES</p>
+            <ul className="space-y-3">
+              <li className="text-lg font-bold">Technologies</li>
               <li>Artificial Intelligence</li>
               <li>Cloud Computing</li>
               <li>Computer Experience</li>
@@ -675,8 +675,8 @@ const Homepage = () => {
               <li>Automations</li>
               <li>Blockchain Technology</li>
             </ul>
-            <ul className="space-y-3 list-disc">
-              <p className="text-lg font-bold">SERVICES</p>
+            <ul className="space-y-3">
+              <li className="text-lg font-bold">Servises</li>
               <li>Cyber Security</li>
               <li>Data & analytics</li>
               <li>Infrastructure</li>

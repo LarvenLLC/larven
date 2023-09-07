@@ -470,7 +470,7 @@ const Homepage = () => {
         </div>
       </section>
 
-      <section className="py-10">
+      <section className="py-10 md:px-28">
         <div className="mx-auto space-y-5">
           <div className="flex justify-between items-center space-x-14">
             <Link href="/" className="cursor-pointer">
@@ -537,7 +537,7 @@ const Homepage = () => {
           <hr />
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-5 justify-between">
             <ul className="space-y-3">
-              <p className="text-lg font-bold">Larven</p>
+              <li className="text-lg font-bold">Larven</li>
               <li>Services</li>
               <li>About</li>
               <li>Hackathons</li>
@@ -546,7 +546,7 @@ const Homepage = () => {
               <li>Ecosystem Partners</li>
             </ul>
             <ul className="space-y-3">
-              <p className="text-lg font-bold">SERVICES</p>
+              <li className="text-lg font-bold">Technologies</li>
               <li>Artificial Intelligence</li>
               <li>Cloud Computing</li>
               <li>Computer Experience</li>
@@ -555,7 +555,7 @@ const Homepage = () => {
               <li>Blockchain Technology</li>
             </ul>
             <ul className="space-y-3">
-              <p className="text-lg font-bold">SERVICES</p>
+              <li className="text-lg font-bold">Servises</li>
               <li>Cyber Security</li>
               <li>Data & analytics</li>
               <li>Infrastructure</li>

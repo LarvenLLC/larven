@@ -217,9 +217,9 @@ const Homepage = () => {
     <>
       <NavBar />
 
-      <section className="w-full flex flex-col md:flex-row items-center">
-        <div className="w-full md:w-1/2 bg-green-haze-50 rounded-br-[150px] flex flex-col justify-center px-10 py-2 gap-y-5">
-          <h1 className="text-4xl font-bold">
+      <section className="w-full grid md:grid-cols-2 flex-col md:flex-row items-center">
+        <div className="bg-green-haze-50 rounded-br-[150px] justify-center px-10 py-20 gap-y-5">
+          <h1 className="text-4xl font-bold mb-10">
             Unlock Your <span className="text-green-haze-500">Potential</span>{" "}
             <br />
             with Digital Solutions
@@ -236,14 +236,14 @@ const Homepage = () => {
             Hire Your Technicians
           </button>
         </div>
-        <div className="w-1/2 relative">
+        {/* <div className="relative">
           <Image
             src="/images/1/team.png"
             alt="hellopic"
-            width={0}
-            height={0}
+            width={397}
+            height={195}
             sizes="100vw"
-            className="w-1/2 top-0 bottom-0 my-auto absolute z-50"
+            className="top-0 w-full bottom-0 my-auto absolute z-50"
           />
           <Image
             src="/images/1/strip1.png"
@@ -251,7 +251,7 @@ const Homepage = () => {
             width={0}
             height={0}
             sizes="100vw"
-            className="w-3/4 absolute -translate-y-20"
+            className="absolute -translate-y-20"
           />
           <Image
             src="/images/1/strip2.png"
@@ -259,7 +259,7 @@ const Homepage = () => {
             width={0}
             height={0}
             sizes="100vw"
-            className="w-full absolute right-0 -translate-y-44"
+            className="absolute right-0 -translate-y-44"
           />
           <Image
             src="/images/1/strip3.png"
@@ -267,9 +267,19 @@ const Homepage = () => {
             width={0}
             height={0}
             sizes="100vw"
-            className="w-1/2 absolute translate-y-32 right-0 bottom-0"
+            className="absolute translate-y-32 right-0 bottom-0"
           />
-        </div>
+        </div> */}
+        <div className="">
+                <Image
+                  src="/images/right.png"
+                  className="w-full"
+                  alt="Team Of People"
+                  width={752}
+                  height={960}
+                  sizes="100vw"
+                />
+              </div>
       </section>
 
       <section className="relative py-20 ">
@@ -775,7 +785,7 @@ const Homepage = () => {
         </div>
       </section>
 
-      <section className="flex justify-center my-20">
+      <section className="flex justify-center my-3">
         <div className="relative justify-center py-16 grid md:grid-cols-2 items-center w-full bg-black text-white px-10 overflow-hidden">
           <div className="z-1 absolute h-20 left-0 bottom-32 -rotate-45 rounded-r-full -translate-x-[100px] w-[300px] bg-green-haze-500/50" />
           <div className="z-1 absolute h-20 left-0 bottom-0 -rotate-45 rounded-r-full -translate-x-[100px] w-[300px] bg-green-haze-500/50" />
@@ -809,16 +819,16 @@ const Homepage = () => {
         </div>
       </section>
 
-      <section className="my-10 mx-auto space-y-5 px-20">
-        
-          <div className="flex justify-between items-center space-x-14 w-fit">
+      <section className="py-10 md:px-28">
+        <div className="mx-auto space-y-5">
+          <div className="flex justify-between items-center space-x-14">
             <Link href="/" className="cursor-pointer">
               <Image
                 src="/larven-logo.png"
-                className="w-[5.5%]"
+                className=""
                 alt="Larven logo"
-                width={0}
-                height={0}
+                width={1531/15}
+                height={1678/15}
                 sizes="100vw"
               />
             </Link>
@@ -874,7 +884,7 @@ const Homepage = () => {
             </ul>
           </div>
           <hr />
-          <div className="flex justify-between">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-5 justify-between">
             <ul className="space-y-3">
               <li className="text-lg font-bold">Larven</li>
               <li>Services</li>
@@ -885,7 +895,7 @@ const Homepage = () => {
               <li>Ecosystem Partners</li>
             </ul>
             <ul className="space-y-3">
-              <li className="text-lg font-bold">SERVICES</li>
+              <li className="text-lg font-bold">Technologies</li>
               <li>Artificial Intelligence</li>
               <li>Cloud Computing</li>
               <li>Computer Experience</li>
@@ -894,7 +904,7 @@ const Homepage = () => {
               <li>Blockchain Technology</li>
             </ul>
             <ul className="space-y-3">
-              <li className="text-lg font-bold">SERVICES</li>
+              <li className="text-lg font-bold">Servises</li>
               <li>Cyber Security</li>
               <li>Data & analytics</li>
               <li>Infrastructure</li>
@@ -903,7 +913,7 @@ const Homepage = () => {
               <li>System Auditing</li>
             </ul>
           </div>
-       
+        </div>
       </section>
     </>
   );
