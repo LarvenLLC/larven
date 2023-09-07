@@ -1,27 +1,54 @@
 "use client";
 
-import React, { useContext } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 // @ts-ignore
-import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
+import { ScrollMenu } from "react-horizontal-scrolling-menu";
 import "react-horizontal-scrolling-menu/dist/styles.css";
 
 const NavBar = () => {
+  const [openMenu, setopenMenu] = useState(false);
   return (
-    <div
-      className="flex flex-col md:flex-row items-center px-10 py-2 bg-transparent relative z-50"
-    >
+    <div className="flex items-center justify-between px-10 py-2 bg-transparent relative z-50">
       <div className="flex items-center space-x-14 w-fit">
         <Image
           src="/larven-logo.png"
-          className="w-[5.5%] "
+          className="w-8 md:w-12"
           alt="Larven logo"
           width={0}
           height={0}
           sizes="100vw"
         />
-        <ul className="flex space-x-7 text-xs text-white">
+      </div>
+
+      {/* <!-- Mobile Menu Icon (top-right on small screens) --> */}
+      <div className="md:hidden flex items-center ">
+        <button
+        type="button"
+          onClick={() => setopenMenu(!openMenu)}
+          className="text-xl text-white"
+        >
+          {/* <!-- Add your SVG icon here --> */}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="currentColor"
+            className="bi bi-list"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+            />
+          </svg>
+        </button>
+      </div>
+
+      {/* <!-- Navigation (center) --> */}
+      <nav className="hidden md:flex justify-center items-center w-full text-white">
+        <ul className="flex space-x-7 text-xs">
           <li>
             <p className="flex cursor-pointer">
               <span>SERVICES</span>
@@ -50,32 +77,135 @@ const NavBar = () => {
             <a href="https://www.google.com">CAREERS</a>
           </li>
           <li>
-            <a href="https://www.larven.co.tz/">HACKATHONS</a>
-          </li>
+              <a href="https://www.larven.co.tz/">HACKATHONS</a>
+            </li>
         </ul>
-      </div>
-      <div className="w-[60%]">
-        {/* Wrap the button with an anchor tag */}
-        <ul className="flex space-x-7 w-fit ml-auto">
+      </nav>
+
+      {/* <div className="hidden md:flex"> */}
+        <div className="hidden md:block w-full md:w-[60%]">
+          <ul className="flex space-x-7 w-fit ml-auto">
+            <li>
+              <button
+                type="button"
+                className="px-5 py-2 text-xs text-white rounded-r-full rounded-bl-full bg-green-haze-500 "
+              >
+                Get free audit
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                className="px-5 py-2 text-xs text-green-haze-500 rounded-r-full rounded-bl-full bg-white border border-green-600 "
+              >
+                Brief Us
+              </button>
+            </li>
+          </ul>
+        </div>
+      {/* </div> */}
+      <nav className={`${!openMenu ? "hidden" : "md:hidden block"} absolute top-12 left-0 p-4 px-10 bg-white w-full`}>
+        <ul className="space-y-7 text-sm font-bold underline">
           <li>
-            <button
-              type="button"
-              className="px-5 py-3 text-xs text-white rounded-r-full rounded-bl-full bg-green-haze-500 "
-            >
-              Get free audit
-            </button>
+            <p className="flex cursor-pointer">
+              <span>SERVICES</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="ml-1"
+                width="16"
+                height="16"
+                fill="currentColor"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
+                />
+              </svg>
+            </p>
           </li>
           <li>
-            <button
-              type="button"
-              className="px-5 py-3 text-xs text-green-haze-500 rounded-r-full rounded-bl-full bg-green-haze-50 "
-            >
-              Brief Us
-            </button>
+            <a href="https://www.google.com">ABOUT</a>
           </li>
+          <li>
+            <a href="https://www.google.com">CONTACT</a>
+          </li>
+          <li>
+            <a href="https://www.google.com">CAREERS</a>
+          </li>
+          <li>
+              <a href="https://www.larven.co.tz/">HACKATHONS</a>
+            </li>
         </ul>
-      </div>
+      </nav>
     </div>
+    // <div
+    //   className="flex flex-col md:flex-row items-center px-10 py-2 bg-transparent relative z-50"
+    // >
+    //   <div className="flex items-center space-x-14 w-fit">
+    //     <Image
+    //       src="/larven-logo.png"
+    //       className="w-[5.5%] "
+    //       alt="Larven logo"
+    //       width={0}
+    //       height={0}
+    //       sizes="100vw"
+    //     />
+    //     <ul className="flex space-x-7 text-xs text-white">
+    //       <li>
+    //         <p className="flex cursor-pointer">
+    //           <span>SERVICES</span>
+    //           <svg
+    //             xmlns="http://www.w3.org/2000/svg"
+    //             className="ml-1"
+    //             width="16"
+    //             height="16"
+    //             fill="currentColor"
+    //             viewBox="0 0 16 16"
+    //           >
+    //             <path
+    //               fill-rule="evenodd"
+    //               d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
+    //             />
+    //           </svg>
+    //         </p>
+    //       </li>
+    //       <li>
+    //         <a href="https://www.google.com">ABOUT</a>
+    //       </li>
+    //       <li>
+    //         <a href="https://www.google.com">CONTACT</a>
+    //       </li>
+    //       <li>
+    //         <a href="https://www.google.com">CAREERS</a>
+    //       </li>
+    //       <li>
+    //         <a href="https://www.larven.co.tz/">HACKATHONS</a>
+    //       </li>
+    //     </ul>
+    //   </div>
+    //   <div className="w-[60%]">
+    //     {/* Wrap the button with an anchor tag */}
+    //     <ul className="flex space-x-7 w-fit ml-auto">
+    //       <li>
+    //         <button
+    //           type="button"
+    //           className="px-5 py-3 text-xs text-white rounded-r-full rounded-bl-full bg-green-haze-500 "
+    //         >
+    //           Get free audit
+    //         </button>
+    //       </li>
+    //       <li>
+    //         <button
+    //           type="button"
+    //           className="px-5 py-3 text-xs text-green-haze-500 rounded-r-full rounded-bl-full bg-green-haze-50 "
+    //         >
+    //           Brief Us
+    //         </button>
+    //       </li>
+    //     </ul>
+    //   </div>
+    // </div>
   );
 };
 
@@ -96,12 +226,12 @@ const Homepage = () => {
         </div>
         <div className="h-screen w-full flex items-center">
         <div className="w-full md:w-[50%] md:ml-40 h-full flex flex-col justify-center py-2 gap-y-5">
-          <h1 className="text-5xl text-center md:text-start font-bold text-white">
+          <h1 className="text-4xl md:text-5xl text-center md:text-start font-bold text-white">
             Unlock Your <span className="text-green-haze-500">Potential</span>{" "}
             <br />
             with Digital Solutions
           </h1>
-          <p className="text-md text-center md:text-start text-white">
+          <p className="text-sm md:text-base text-center md:text-start text-white">
             We are here to assist you in transforming your business processes
             and operations so that you can accomplish more in less time while
             increasing your profitability.
@@ -135,7 +265,7 @@ const Homepage = () => {
       </section>
 
       <section className="py-10 mt-44 bg-white">
-        <ul className="flex justify-evenly my-2 md: ml-16 py-10 bg-neutral-100">
+        <ul className="flex justify-evenly my-2 ml-0 md:ml-16 py-10 bg-neutral-100">
           <li className="bg-white p-2">
             <Image
               src="/images/logos/logoipsum1.svg"
@@ -226,9 +356,9 @@ const Homepage = () => {
         </div>
       </section>
 
-      <section className="bg-white h-[70vh] flex justify-center items-center">
-        <div className="flex flex-row md:flex-col items-center justify-evenly w-full md:w-[80%] mx-auto">
-          <div className="space-y-5 w-full mx-3 md:w-[40%]">
+      <section className="bg-white flex justify-center items-center py-20">
+        <div className="flex flex-col md:flex-row items-center justify-evenly w-full space-y-14 md:w-[80%] mx-10">
+          <div className="space-y-5 w-full md:w-[40%]">
             <h1 className="font-bold text-3xl">
               We'll help you to unlock the{" "}
               <span className="text-green-haze-500">potentials</span>
@@ -255,14 +385,14 @@ const Homepage = () => {
               </div>
             </div>
           </div>
-          <div className="hidden md:block w-1/2 relative">
+          <div className="w-1/2 md:mt-0 relative">
             <Image
               src="/images/Rectangle 10.png"
               alt="hellopic"
               width={0}
               height={0}
               sizes="100vw"
-              className="hidden md:block w-1/2 mx-auto z-50 relative "
+              className="w-full md:w-1/2 mx-auto z-50 relative "
             />
             <div className="absolute top-2 right-20 w-56 h-64 border-4 z-0 -translate-y-10 border-green-haze-600" />
           </div>
@@ -270,7 +400,7 @@ const Homepage = () => {
       </section>
 
       <section className="bg-white ">
-        <div className="w-full relative h-full mt-20 bg-white flex flex-col">
+        <div className="w-full relative h-full bg-white flex flex-col">
           <Image
             src="/images/Frame 138.png"
             alt="hellopic"
@@ -370,23 +500,23 @@ const Homepage = () => {
         </div>
       </section>
 
-      <section className="h-[85vh] items-center bg-white">
+      <section className="items-center bg-white">
         <div className="text-center">
           <h1 className="font-normal text-xl pt-10 md:pt-0 text-green-haze-10">
             OUR PROJECTS
           </h1>
-          <p className="font-extrabold text-4xl font-serif">
+          <p className="font-extrabold text-3xl md:text-4xl font-serif">
             Recent Project we have <br></br> designed & Implement
           </p>
         </div>
-        <div className="flex flex-col md:flex-row w-[90%] md:w-3/4 mx-auto">
+        <div className="flex flex-col md:flex-row  md:w-3/4 mx-auto">
           <div className="relative">
             <div className="border mb-10 min-h-[300px] bg-neutral-50 absolute w-full -z-10" />
             <div className="p-10 z-30 space-y-4">
               <div className="">
                 <Image
                   src="/images/iMac 24 inch.png"
-                  className="w-fit"
+                  className="w-full"
                   alt="Larven logo"
                   width={0}
                   height={0}
@@ -406,7 +536,7 @@ const Homepage = () => {
               <div className="">
                 <Image
                   src="/images/MacBook Pro 16.png"
-                  className="w-fit"
+                  className="w-full"
                   alt="Larven logo"
                   width={0}
                   height={0}
@@ -423,12 +553,12 @@ const Homepage = () => {
         </div>
       </section>
 
-      <section className="flex justify-center my-20 h-[50vh] ">
-        <div className="relative flex flex-col md:flex-row justify-center space-y-5 md:space-y-0 items-center w-full bg-black text-white px-10 overflow-hidden">
+      <section className="flex justify-center">
+        <div className="relative flex flex-col md:flex-row justify-center space-y-5 md:space-y-0 items-center w-full bg-black text-white px-4 py-6 md:px-10 md:py-20 overflow-hidden">
           <div className="w-full md:w-[50%] mx-auto space-y-4 z-10">
             <p className="text-xs">REACH OUT TO US</p>
-            <h3 className="font-bold text-3xl">Get a free consult</h3>
-            <p>
+            <h3 className="font-bold text-2xl md:text-3xl">Get a free consult</h3>
+            <p className="text-sm md:text-base">
               Arcu viverra ut quis gravida luctus. Scelerisque elit massa purus
               morbi pellentesque tincidunt nulla
             </p>
@@ -461,13 +591,13 @@ const Homepage = () => {
         </div>
       </section>
 
-      <section className="h-[60vh] bg-white py-10">
+      <section className="py-10">
         <div className="w-[80%] mx-auto space-y-5">
-          <div className="flex justify-between items-center space-x-14 w-fit">
+          <div className="flex justify-between items-center space-x-14 w-full">
             <Link href="/" className="cursor-pointer">
               <Image
                 src="/larven-logo.png"
-                className="w-[20%] md:w-[5.5%]"
+                className="w-10"
                 alt="Larven logo"
                 width={0}
                 height={0}
@@ -526,9 +656,9 @@ const Homepage = () => {
             </ul>
           </div>
           <hr />
-          <div className="grid grid-cols-2 md:grid-cols-3 justify-between">
-            <ul className="space-y-3">
-              <li className="text-lg font-bold">Larven</li>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-5 justify-between">
+            <ul className="space-y-3 list-disc">
+              <p className="text-lg font-bold">Larven</p>
               <li>Services</li>
               <li>About</li>
               <li>Hackathons</li>
@@ -536,8 +666,8 @@ const Homepage = () => {
               <li>Core values</li>
               <li>Ecosystem Partners</li>
             </ul>
-            <ul className="space-y-3">
-              <li className="text-lg font-bold">SERVICES</li>
+            <ul className="space-y-3 list-disc">
+              <p className="text-lg font-bold">SERVICES</p>
               <li>Artificial Intelligence</li>
               <li>Cloud Computing</li>
               <li>Computer Experience</li>
@@ -545,8 +675,8 @@ const Homepage = () => {
               <li>Automations</li>
               <li>Blockchain Technology</li>
             </ul>
-            <ul className="space-y-3">
-              <li className="text-lg font-bold">SERVICES</li>
+            <ul className="space-y-3 list-disc">
+              <p className="text-lg font-bold">SERVICES</p>
               <li>Cyber Security</li>
               <li>Data & analytics</li>
               <li>Infrastructure</li>

@@ -1,10 +1,11 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 const NavBar = () => {
+  const [openMenu, setopenMenu] = useState(false);
   return (
     // <div className="flex items-center px-10 py-2 drop-shadow-xl">
     //   <div className="items-center space-x-14 w-fit md:flex">
@@ -61,11 +62,11 @@ const NavBar = () => {
     //   </div>
     // </div>
 
-    <div className="flex items-center px-10 py-2 drop-shadow-xl">
-      <div className="items-center space-x-14 w-fit md:flex">
+    <div className="flex items-center justify-between px-10 py-2 drop-shadow-xl relative">
+      <div className="md:w-fit">
         <Image
           src="/larven-logo.png"
-          className="w-[5.5%] md:w-[5.5%]"
+          className="w-8 md:w-12"
           alt="Larven logo"
           width={0}
           height={0}
@@ -74,17 +75,16 @@ const NavBar = () => {
       </div>
 
       {/* <!-- Mobile Menu Icon (top-right on small screens) --> */}
-      <div className="lg:hidden col-span-1 flex justify-end items-center">
+      <div className="md:hidden flex items-center ">
         <button
-          type="button"
-          id="menu-button" // Add an ID for JavaScript interaction
+          onClick={() => setopenMenu(!openMenu)}
           className="text-xl text-gray-600"
         >
           {/* <!-- Add your SVG icon here --> */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
+            width="24"
+            height="24"
             fill="currentColor"
             className="bi bi-list"
             viewBox="0 0 16 16"
@@ -98,8 +98,8 @@ const NavBar = () => {
       </div>
 
       {/* <!-- Navigation (center) --> */}
-      <nav className="col-span-2 md:col-span-1 lg:col-span-2 flex justify-center items-center">
-        <ul id="nav-links" className="hidden lg:flex space-x-7 text-xs">
+      <nav className="hidden md:flex justify-center items-center w-full">
+        <ul className="flex space-x-7 text-xs">
           <li>
             <p className="flex cursor-pointer">
               <span>SERVICES</span>
@@ -133,7 +133,7 @@ const NavBar = () => {
         </ul>
       </nav>
 
-      <div className="hidden lg:block col-span-1">
+      <div className="hidden md:flex">
         <button
           type="button"
           className="px-5 py-3 text-xs text-white rounded-r-full rounded-bl-full bg-green-haze-500"
@@ -141,6 +141,40 @@ const NavBar = () => {
           Hire Your Technicians
         </button>
       </div>
+      <nav className={`${!openMenu ? "hidden" : "md:hidden block"} absolute top-12 left-0 p-4 px-10 bg-white w-full`}>
+        <ul className="space-y-7 text-sm font-bold underline">
+          <li>
+            <p className="flex cursor-pointer">
+              <span>SERVICES</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="ml-1"
+                width="16"
+                height="16"
+                fill="currentColor"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
+                />
+              </svg>
+            </p>
+          </li>
+          <li>
+            <a href="https://www.google.com">ABOUT</a>
+          </li>
+          <li>
+            <a href="https://www.google.com">CONTACT</a>
+          </li>
+          <li>
+            <a href="https://www.google.com">CAREERS</a>
+          </li>
+          <li>
+            <a href="https://www.larven.co.tz/">CASE STUDIES</a>
+          </li>
+        </ul>
+      </nav>
     </div>
   );
 };
@@ -183,8 +217,8 @@ const Homepage = () => {
     <>
       <NavBar />
 
-      <section className="h-[85vh] w-full flex flex-col md:flex-row items-center">
-        <div className="w-full md:w-1/2 bg-green-haze-50 rounded-br-[150px] h-full flex flex-col justify-center px-10 py-2 gap-y-5">
+      <section className="w-full flex flex-col md:flex-row items-center">
+        <div className="w-full md:w-1/2 bg-green-haze-50 rounded-br-[150px] flex flex-col justify-center px-10 py-2 gap-y-5">
           <h1 className="text-4xl font-bold">
             Unlock Your <span className="text-green-haze-500">Potential</span>{" "}
             <br />
@@ -202,7 +236,7 @@ const Homepage = () => {
             Hire Your Technicians
           </button>
         </div>
-        <div className="w-1/2 h-full relative overflow-hidden">
+        <div className="w-1/2 relative">
           <Image
             src="/images/1/team.png"
             alt="hellopic"
@@ -486,7 +520,7 @@ const Homepage = () => {
         </div>
       </section>
 
-      <section>
+      <section className="overflow-scroll">
         <table className="h-screen w-full table-auto bg-white">
           <thead>
             <tr className="cursor-pointer bg-green-100 duration-300 hover:bg-green-200 py-6">
@@ -559,7 +593,7 @@ const Homepage = () => {
         </table>
       </section>
 
-      <section className="h-screen w-full flex flex-col justify-center bg-gray-100">
+      <section className="w-full flex flex-col justify-center bg-gray-100">
         <h4 className="text-center font-bold text-green-500">TESTIMONIAL</h4>
         <h1 className="text-center font-bold text-black text-3xl">
           What Our customer Says
@@ -635,14 +669,14 @@ const Homepage = () => {
         </div>
       </section>
 
-      <section className="h-screen my-5 space-y-5">
+      <section className="my-5 space-y-5">
         <h4 className="text-center font-bold text-green-500">STORIES</h4>
         <h1 className="text-center font-bold text-black text-3xl">
           Our Most Popular Articles
         </h1>
 
-        <div className="flex flex-col md:flex-row justify-evenly">
-          <div className="w-full md:w-[40%] space-y-10 shadow-lg rounded-lg">
+        <div className="grid md:grid-cols-2 flex-col md:flex-row justify-evenly">
+          <div className="space-y-10 shadow-lg rounded-lg">
             <Image
               src="/images/Frame 18.png"
               alt="UTOPOLO"
@@ -674,7 +708,7 @@ const Homepage = () => {
             </div>
           </div>
 
-          <div className="w-[40%] space-y-10">
+          <div className="space-y-10 p-5">
             <div className="flex items-center gap-x-5 ">
               <Image
                 src="/images/Frame 11.png"
@@ -741,13 +775,13 @@ const Homepage = () => {
         </div>
       </section>
 
-      <section className="flex justify-center my-20 h-[60vh]">
-        <div className="relative flex justify-center items-center w-full bg-black text-white px-10 overflow-hidden">
+      <section className="flex justify-center my-20">
+        <div className="relative justify-center py-16 grid md:grid-cols-2 items-center w-full bg-black text-white px-10 overflow-hidden">
           <div className="z-1 absolute h-20 left-0 bottom-32 -rotate-45 rounded-r-full -translate-x-[100px] w-[300px] bg-green-haze-500/50" />
           <div className="z-1 absolute h-20 left-0 bottom-0 -rotate-45 rounded-r-full -translate-x-[100px] w-[300px] bg-green-haze-500/50" />
           <div className="z-1 absolute h-20 -rotate-45 rounded-l-full right-0 top-10 translate-x-[100px] w-[300px] bg-neutral-900" />
           <div className="z-1 absolute h-20 -rotate-45 rounded-l-full right-0 top-30 translate-x-[100px] w-[300px] bg-neutral-900" />
-          <div className="w-[50%] mx-auto space-y-4 z-10">
+          <div className="mx-auto space-y-4 z-10">
             <p className="text-xs">REACH OUT TO US</p>
             <h3 className="font-bold text-3xl">
               Want to Hire Great Technicians <br /> today!
@@ -757,7 +791,7 @@ const Homepage = () => {
               morbi pellentesque tincidunt nulla
             </p>
           </div>
-          <div className="w-[40%] mx-auto z-10">
+          <div className="mx-auto z-10">
             <form className="flex items-center gap-x-4">
               <input
                 type="email"
@@ -775,8 +809,8 @@ const Homepage = () => {
         </div>
       </section>
 
-      <section className="h-[60vh] my-10">
-        <div className="w-[80%] mx-auto space-y-5">
+      <section className="my-10 mx-auto space-y-5 px-20">
+        
           <div className="flex justify-between items-center space-x-14 w-fit">
             <Link href="/" className="cursor-pointer">
               <Image
@@ -869,7 +903,7 @@ const Homepage = () => {
               <li>System Auditing</li>
             </ul>
           </div>
-        </div>
+       
       </section>
     </>
   );

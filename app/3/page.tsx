@@ -1,14 +1,143 @@
 "use client";
 
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 // @ts-ignore
 
 const NavBar = () => {
+  const [openMenu, setopenMenu] = useState(false);
   return (
     <>
-      <div className="flex items-center flex-col md:flex-row px-10 py-3 bg-white">
+    <div className="flex items-center justify-between px-10 py-2 bg-white relative">
+      <div className="md:w-fit">
+        <Image
+          src="/larven-logo.png"
+          className="w-8 md:w-12"
+          alt="Larven logo"
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
+      </div>
+
+      {/* <!-- Mobile Menu Icon (top-right on small screens) --> */}
+      <div className="md:hidden flex items-center ">
+        <button
+          onClick={() => setopenMenu(!openMenu)}
+          className="text-xl text-gray-600"
+        >
+          {/* <!-- Add your SVG icon here --> */}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="currentColor"
+            className="bi bi-list"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+            />
+          </svg>
+        </button>
+      </div>
+
+      {/* <!-- Navigation (center) --> */}
+      <nav className="hidden md:flex justify-center items-center w-full">
+        <ul className="flex space-x-7 text-xs">
+          <li>
+            <p className="flex cursor-pointer">
+              <span>SERVICES</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="ml-1"
+                width="16"
+                height="16"
+                fill="currentColor"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
+                />
+              </svg>
+            </p>
+          </li>
+          <li>
+            <a href="https://www.google.com">ABOUT</a>
+          </li>
+          <li>
+            <a href="https://www.google.com">CONTACT</a>
+          </li>
+          <li>
+            <a href="https://www.google.com">CAREERS</a>
+          </li>
+          <li>
+              <a href="https://www.larven.co.tz/">HACKATHONS</a>
+            </li>
+        </ul>
+      </nav>
+
+      {/* <div className="hidden md:flex"> */}
+        <div className="hidden md:block w-full md:w-[60%]">
+          <ul className="flex space-x-7 w-fit ml-auto">
+            <li>
+              <button
+                type="button"
+                className="px-5 py-2 text-xs text-white rounded-r-full rounded-bl-full bg-green-haze-500 "
+              >
+                Get free audit
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                className="px-5 py-2 text-xs text-green-haze-500 rounded-r-full rounded-bl-full bg-white border border-green-600 "
+              >
+                Brief Us
+              </button>
+            </li>
+          </ul>
+        </div>
+      {/* </div> */}
+      <nav className={`${!openMenu ? "hidden" : "md:hidden block"} absolute top-12 left-0 p-4 px-10 bg-white w-full`}>
+        <ul className="space-y-7 text-sm font-bold underline">
+          <li>
+            <p className="flex cursor-pointer">
+              <span>SERVICES</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="ml-1"
+                width="16"
+                height="16"
+                fill="currentColor"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
+                />
+              </svg>
+            </p>
+          </li>
+          <li>
+            <a href="https://www.google.com">ABOUT</a>
+          </li>
+          <li>
+            <a href="https://www.google.com">CONTACT</a>
+          </li>
+          <li>
+            <a href="https://www.google.com">CAREERS</a>
+          </li>
+          <li>
+              <a href="https://www.larven.co.tz/">HACKATHONS</a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+      {/* <div className="flex items-center flex-col md:flex-row px-10 py-3 bg-white">
         <div className="flex items-center space-x-14 w-fit">
           <Image
             src="/larven-logo.png"
@@ -53,7 +182,6 @@ const NavBar = () => {
 
         </div>
         <div className="w-full md:w-[60%]">
-          {/* Wrap the button with an anchor tag */}
           <ul className="flex space-x-7 w-fit ml-auto">
             <li>
               <button
@@ -74,7 +202,7 @@ const NavBar = () => {
           </ul>
         </div>
       </div>
-      <hr className="border border-green-haze-500" />
+      <hr className="border border-green-haze-500" /> */}
     </>
   );
 };
@@ -127,7 +255,7 @@ const Homepage = () => {
         </div>
       </section>
 
-      <section>
+      <section className="px-5">
         <div className="w-1/2 py-3 mx-auto bg-green-haze-700 flex justify-evenly -translate-y-8">
           <Image
             src="/images/logos/logoipsum1.svg"
@@ -248,12 +376,12 @@ const Homepage = () => {
       </section>
 
       {/* optimised */}
-      <section className="h-[80vh] bg-white flex justify-center items-center mx-10">
+      <section className="bg-white justify-center items-center py-10 px-4 md:px-10 md:py-20">
         <div className="space-y-10">
-          <h1 className="flex justify-center font-extrabold text-4xl">
+          <h1 className="flex justify-center font-extrabold text-2xl md:text-4xl">
             Unlock The Potential
           </h1>
-          <ul className="flex gap-x-5">
+          <ul className="grid md:grid-cols-4  gap-x-5">
             {[
               {
                 icon: "/images/graphics/chat.svg",
@@ -304,22 +432,22 @@ const Homepage = () => {
         </div>
       </section>
 
-      <section className="flex justify-center h-[50vh] ">
-        <div className="relative flex justify-center items-center w-full bg-black text-white px-10 overflow-hidden">
-          <div className="w-[50%] mx-auto space-y-4 z-10">
+      <section className="flex justify-center">
+        <div className="relative flex flex-col md:flex-row justify-center items-center w-full gap-y-10 md:gap-y-0 bg-black text-white px-4 py-6 md:px-10 md:py-20 overflow-hidden">
+          <div className="w-full md:w-[50%] mx-auto space-y-4 z-10">
             <p className="text-xs">REACH OUT TO US</p>
-            <h3 className="font-bold text-3xl">Get a free consult</h3>
-            <p>
+            <h3 className="font-bold text-xl md:text-3xl">Get a free consult</h3>
+            <p className="text-sm md:text-base">
               Arcu viverra ut quis gravida luctus. Scelerisque elit massa purus
               morbi pellentesque tincidunt nulla
             </p>
           </div>
-          <div className="w-[40%] mx-auto z-10">
-            <form className="flex items-center gap-x-4">
+          <div className="w-full md:w-[40%] mx-auto z-10">
+            <form className="flex flex-col md:flex-row items-center gap-y-5 md:gap-y-0 gap-x-4">
               <input
                 type="email"
                 placeholder="Email Address"
-                className="grow p-2 rounded text-black outline-none text-sm"
+                className="grow p-2 rounded text-black outline-none text-sm w-full"
               />
               <button
                 type="submit"
@@ -342,16 +470,16 @@ const Homepage = () => {
         </div>
       </section>
 
-      <section className="h-[60vh] my-10">
-        <div className="w-[80%] mx-auto space-y-5">
-          <div className="flex justify-between items-center space-x-14 w-fit">
+      <section className="py-10">
+        <div className="mx-auto space-y-5">
+          <div className="flex justify-between items-center space-x-14">
             <Link href="/" className="cursor-pointer">
               <Image
                 src="/larven-logo.png"
-                className="w-[5.5%]"
+                className=""
                 alt="Larven logo"
-                width={0}
-                height={0}
+                width={1531/15}
+                height={1678/15}
                 sizes="100vw"
               />
             </Link>
@@ -407,9 +535,9 @@ const Homepage = () => {
             </ul>
           </div>
           <hr />
-          <div className="flex justify-between">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-5 justify-between">
             <ul className="space-y-3">
-              <li className="text-lg font-bold">Larven</li>
+              <p className="text-lg font-bold">Larven</p>
               <li>Services</li>
               <li>About</li>
               <li>Hackathons</li>
@@ -418,7 +546,7 @@ const Homepage = () => {
               <li>Ecosystem Partners</li>
             </ul>
             <ul className="space-y-3">
-              <li className="text-lg font-bold">SERVICES</li>
+              <p className="text-lg font-bold">SERVICES</p>
               <li>Artificial Intelligence</li>
               <li>Cloud Computing</li>
               <li>Computer Experience</li>
@@ -427,7 +555,7 @@ const Homepage = () => {
               <li>Blockchain Technology</li>
             </ul>
             <ul className="space-y-3">
-              <li className="text-lg font-bold">SERVICES</li>
+              <p className="text-lg font-bold">SERVICES</p>
               <li>Cyber Security</li>
               <li>Data & analytics</li>
               <li>Infrastructure</li>
