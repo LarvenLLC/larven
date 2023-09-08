@@ -141,7 +141,11 @@ const NavBar = () => {
           Hire Your Technicians
         </button>
       </div>
-      <nav className={`${!openMenu ? "hidden" : "md:hidden block"} absolute top-12 left-0 p-4 px-10 bg-white w-full`}>
+      <nav
+        className={`${
+          !openMenu ? "hidden" : "md:hidden block"
+        } absolute top-12 left-0 p-4 px-10 bg-white w-full`}
+      >
         <ul className="space-y-7 text-sm font-bold underline">
           <li>
             <p className="flex cursor-pointer">
@@ -217,8 +221,8 @@ const Homepage = () => {
     <>
       <NavBar />
 
-      <section className="w-full grid md:grid-cols-2 flex-col md:flex-row items-center">
-        <div className="bg-green-haze-50 rounded-br-[150px] justify-center px-10 py-20 gap-y-5">
+      <section className="w-full grid md:grid-cols-2 flex-col md:flex-row">
+        <div className="bg-green-haze-50 rounded-br-[150px] flex flex-col justify-center px-10 py-20 gap-y-5">
           <h1 className="text-4xl font-bold mb-10">
             Unlock Your <span className="text-green-haze-500">Potential</span>{" "}
             <br />
@@ -270,16 +274,16 @@ const Homepage = () => {
             className="absolute translate-y-32 right-0 bottom-0"
           />
         </div> */}
-        <div className="">
-                <Image
-                  src="/images/right.png"
-                  className="w-full"
-                  alt="Team Of People"
-                  width={752}
-                  height={960}
-                  sizes="100vw"
-                />
-              </div>
+        <div>
+          <Image
+            src="/images/right.png"
+            className=""
+            alt="Team Of People"
+            width={752}
+            height={960}
+            sizes="100vw"
+          />
+        </div>
       </section>
 
       <section className="relative py-20 ">
@@ -323,8 +327,8 @@ const Homepage = () => {
         </div>
       </section>
 
-      <section className="relative my-10 overflow-hidden hidden md:block">
-        <div className="hidden md:block absolute -z-10">
+      <section className="relative my-10">
+        <div className="absolute -z-10">
           <Image
             src="/images/deco1.png"
             alt="vidole decoration"
@@ -335,7 +339,7 @@ const Homepage = () => {
           />
         </div>
 
-        <div className="hidden md:block absolute bottom-0 right-0 -z-10">
+        <div className="absolute bottom-0 right-0 -z-10">
           <Image
             src="/images/deco2.png"
             alt="vidole decoration"
@@ -365,7 +369,7 @@ const Homepage = () => {
         </h2>
         <h3 className="text-xl text-center">To Ensure Your Success</h3>
 
-        <div className="grid w-[90%] grid-cols-6 my-3 mx-auto gap-y-6">
+        <div className="grid w-[90%] grid-cols-4 md:grid-cols-6 md:my-3 mx-auto gap-y-6">
           <div className="p-5 col-start-1 space-y-2 bg-white shadow-md w-[300px] rounded-r-3xl rounded-tl-3xl">
             <div className="p-2 bg-orange-200 w-fit">
               <svg
@@ -793,7 +797,7 @@ const Homepage = () => {
           <div className="z-1 absolute h-20 -rotate-45 rounded-l-full right-0 top-30 translate-x-[100px] w-[300px] bg-neutral-900" />
           <div className="mx-auto space-y-4 z-10">
             <p className="text-xs">REACH OUT TO US</p>
-            <h3 className="font-bold text-3xl">
+            <h3 className="font-bold text-2xl md:text-3xl">
               Want to Hire Great Technicians <br /> today!
             </h3>
             <p>
@@ -801,8 +805,8 @@ const Homepage = () => {
               morbi pellentesque tincidunt nulla
             </p>
           </div>
-          <div className="mx-auto z-10">
-            <form className="flex items-center gap-x-4">
+          <div className="mx-auto z-10 w-full mt-10 md:mt-0">
+            <form className="items-center gap-x-4 grid md:grid-cols-2 space-y-3 md:space-y-0">
               <input
                 type="email"
                 placeholder="Email Address"
@@ -810,7 +814,7 @@ const Homepage = () => {
               />
               <button
                 type="submit"
-                className="px-5 py-3 text-xs text-white rounded-r-full rounded-bl-full bg-green-haze-500 w-fit"
+                className="px-5 py-3 text-xs text-white rounded-r-full rounded-bl-full bg-green-haze-500 w-fit ml-auto md:ml-0"
               >
                 Get on the list
               </button>
@@ -820,15 +824,15 @@ const Homepage = () => {
       </section>
 
       <section className="py-10 md:px-28">
-        <div className="mx-auto space-y-5">
+        <div className="md:mx-auto space-y-5 mx-3">
           <div className="flex justify-between items-center space-x-14">
             <Link href="/" className="cursor-pointer">
               <Image
                 src="/larven-logo.png"
                 className=""
                 alt="Larven logo"
-                width={1531/15}
-                height={1678/15}
+                width={1531 / 15}
+                height={1678 / 15}
                 sizes="100vw"
               />
             </Link>

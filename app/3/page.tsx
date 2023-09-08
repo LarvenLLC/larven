@@ -471,7 +471,7 @@ const Homepage = () => {
       </section>
 
       <section className="py-10 md:px-28">
-        <div className="mx-auto space-y-5">
+        <div className="md:mx-auto space-y-5 mx-3">
           <div className="flex justify-between items-center space-x-14">
             <Link href="/" className="cursor-pointer">
               <Image
