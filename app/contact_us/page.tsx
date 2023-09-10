@@ -68,7 +68,7 @@ const NavBar = () => {
             <a href="https://www.google.com">ABOUT</a>
           </li>
           <li>
-            <a href="https://www.google.com">CONTACT</a>
+            <Link href="/contact_us">CONTACT</Link>
           </li>
           <li>
             <a href="https://www.google.com">CAREERS</a>

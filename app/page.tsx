@@ -3,65 +3,11 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Dropdown from "@/components/dropdown";
 
 const NavBar = () => {
   const [openMenu, setopenMenu] = useState(false);
   return (
-    // <div className="flex items-center px-10 py-2 drop-shadow-xl">
-    //   <div className="items-center space-x-14 w-fit md:flex">
-    //     <Image
-    //       src="/larven-logo.png"
-    //       className="w-[10%] md:w-[5.5%]"
-    //       alt="Larven logo"
-    //       width={0}
-    //       height={0}
-    //       sizes="100vw"
-    //     />
-    //     <ul className="flex space-x-7 text-xs md:flex">
-    //       <li>
-    //       <p className="flex cursor-pointer">
-    //             <span>SERVICES</span>
-    //             <svg
-    //               xmlns="http://www.w3.org/2000/svg"
-    //               className="ml-1"
-    //               width="16"
-    //               height="16"
-    //               fill="currentColor"
-    //               viewBox="0 0 16 16"
-    //             >
-    //               <path
-    //                 fill-rule="evenodd"
-    //                 d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
-    //               />
-    //             </svg>
-    //           </p>
-    //       </li>
-    //       <li>
-    //         <a href="https://www.google.com">ABOUT</a>
-    //       </li>
-    //       <li>
-    //         <a href="https://www.google.com">CONTACT</a>
-    //       </li>
-    //       <li>
-    //         <a href="https://www.google.com">CAREERS</a>
-    //       </li>
-    //       <li>
-    //         <a href="https://www.larven.co.tz/">CASE STUDIES</a>
-    //       </li>
-    //     </ul>
-    //   </div>
-    //   <div className="w-[20%]">
-    //     {/* Wrap the button with an anchor tag */}
-
-    //     <button
-    //       type="button"
-    //       className="px-5 py-3 text-xs text-white rounded-r-full rounded-bl-full bg-green-haze-500 "
-    //     >
-    //       Hire Your Technicians
-    //     </button>
-    //   </div>
-    // </div>
-
     <div className="flex items-center justify-between px-10 py-2 drop-shadow-xl relative">
       <div className="md:w-fit">
         <Image
@@ -101,28 +47,37 @@ const NavBar = () => {
       <nav className="hidden md:flex justify-center items-center w-full">
         <ul className="flex space-x-7 text-xs">
           <li>
-            <p className="flex cursor-pointer">
-              <span>SERVICES</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="ml-1"
-                width="16"
-                height="16"
-                fill="currentColor"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
-                />
-              </svg>
-            </p>
+            <Dropdown content={
+              <ul className="bg-white w-full text-base">
+                <li className="cursor-pointer p-3 hover:bg-neutral-50">Software Project Implemantation</li>
+                <li className="cursor-pointer p-3 hover:bg-neutral-50">Project Digitization</li>
+                <li className="cursor-pointer p-3 hover:bg-neutral-50">Staff Augumentation</li>
+                <li className="cursor-pointer p-3 hover:bg-neutral-50">Consultation</li>
+              </ul>
+            }>
+              <p className="flex cursor-pointer">
+                <span>SERVICES</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="ml-1"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
+                  />
+                </svg>
+              </p>
+            </Dropdown>
           </li>
           <li>
             <a href="https://www.google.com">ABOUT</a>
           </li>
           <li>
-            <a href="https://www.google.com">CONTACT</a>
+            <Link href="/contact_us">CONTACT</Link>
           </li>
           <li>
             <a href="https://www.google.com">CAREERS</a>
@@ -142,9 +97,8 @@ const NavBar = () => {
         </button>
       </div>
       <nav
-        className={`${
-          !openMenu ? "hidden" : "md:hidden block"
-        } absolute top-12 left-0 p-4 px-10 bg-white w-full`}
+        className={`${!openMenu ? "hidden" : "md:hidden block"
+          } absolute top-12 left-0 p-4 px-10 bg-white w-full`}
       >
         <ul className="space-y-7 text-sm font-bold underline">
           <li>
@@ -169,7 +123,7 @@ const NavBar = () => {
             <a href="https://www.google.com">ABOUT</a>
           </li>
           <li>
-            <a href="https://www.google.com">CONTACT</a>
+            <Link href="/contact_us">CONTACT</Link>
           </li>
           <li>
             <a href="https://www.google.com">CAREERS</a>
