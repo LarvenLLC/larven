@@ -3,7 +3,7 @@ import React from 'react'
 
 function ServiceNav() {
     return (
-        <div className='bg-white p-4 w-[90vh] rounded'>
+        <div className='bg-white text-black p-4 w-[90vh] rounded'>
             <div className='flex items-center justify-between py-3'>
                 <h2 className='text-lg text-neutral-400'>SERVICES</h2>
                 <button

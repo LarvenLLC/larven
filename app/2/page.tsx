@@ -1,219 +1,17 @@
-"use client";
+"use client"
 
-import React, { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
+import NavBar from "@/components/navbar";
+import "react-horizontal-scrolling-menu/dist/styles.css";
 // @ts-ignore
 import { ScrollMenu } from "react-horizontal-scrolling-menu";
-import "react-horizontal-scrolling-menu/dist/styles.css";
-
-const NavBar = () => {
-  const [openMenu, setopenMenu] = useState(false);
-  return (
-    <div className="flex items-center justify-between px-10 py-2 bg-transparent relative z-50">
-      <div className="flex items-center space-x-14 w-fit">
-        <Image
-          src="/larven-logo.png"
-          className="w-8 md:w-12"
-          alt="Larven logo"
-          width={0}
-          height={0}
-          sizes="100vw"
-        />
-      </div>
-
-      {/* <!-- Mobile Menu Icon (top-right on small screens) --> */}
-      <div className="md:hidden flex items-center ">
-        <button
-        type="button"
-          onClick={() => setopenMenu(!openMenu)}
-          className="text-xl text-white"
-        >
-          {/* <!-- Add your SVG icon here --> */}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            fill="currentColor"
-            className="bi bi-list"
-            viewBox="0 0 16 16"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
-            />
-          </svg>
-        </button>
-      </div>
-
-      {/* <!-- Navigation (center) --> */}
-      <nav className="hidden md:flex justify-center items-center w-full text-white">
-        <ul className="flex space-x-7 text-xs">
-          <li>
-            <p className="flex cursor-pointer">
-              <span>SERVICES</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="ml-1"
-                width="16"
-                height="16"
-                fill="currentColor"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
-                />
-              </svg>
-            </p>
-          </li>
-          <li>
-            <a href="https://www.google.com">ABOUT</a>
-          </li>
-          <li>
-            <a href="https://www.google.com">CONTACT</a>
-          </li>
-          <li>
-            <a href="https://www.google.com">CAREERS</a>
-          </li>
-          <li>
-              <a href="https://www.larven.co.tz/">HACKATHONS</a>
-            </li>
-        </ul>
-      </nav>
-
-      {/* <div className="hidden md:flex"> */}
-        <div className="hidden md:block w-full md:w-[60%]">
-          <ul className="flex space-x-7 w-fit ml-auto">
-            <li>
-              <button
-                type="button"
-                className="px-5 py-2 text-xs text-white rounded-r-full rounded-bl-full bg-green-haze-500 "
-              >
-                Get free audit
-              </button>
-            </li>
-            <li>
-              <button
-                type="button"
-                className="px-5 py-2 text-xs text-green-haze-500 rounded-r-full rounded-bl-full bg-white border border-green-600 "
-              >
-                Brief Us
-              </button>
-            </li>
-          </ul>
-        </div>
-      {/* </div> */}
-      <nav className={`${!openMenu ? "hidden" : "md:hidden block"} absolute top-12 left-0 p-4 px-10 bg-white w-full`}>
-        <ul className="space-y-7 text-sm font-bold underline">
-          <li>
-            <p className="flex cursor-pointer">
-              <span>SERVICES</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="ml-1"
-                width="16"
-                height="16"
-                fill="currentColor"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
-                />
-              </svg>
-            </p>
-          </li>
-          <li>
-            <a href="https://www.google.com">ABOUT</a>
-          </li>
-          <li>
-            <a href="https://www.google.com">CONTACT</a>
-          </li>
-          <li>
-            <a href="https://www.google.com">CAREERS</a>
-          </li>
-          <li>
-              <a href="https://www.larven.co.tz/">HACKATHONS</a>
-            </li>
-        </ul>
-      </nav>
-    </div>
-    // <div
-    //   className="flex flex-col md:flex-row items-center px-10 py-2 bg-transparent relative z-50"
-    // >
-    //   <div className="flex items-center space-x-14 w-fit">
-    //     <Image
-    //       src="/larven-logo.png"
-    //       className="w-[5.5%] "
-    //       alt="Larven logo"
-    //       width={0}
-    //       height={0}
-    //       sizes="100vw"
-    //     />
-    //     <ul className="flex space-x-7 text-xs text-white">
-    //       <li>
-    //         <p className="flex cursor-pointer">
-    //           <span>SERVICES</span>
-    //           <svg
-    //             xmlns="http://www.w3.org/2000/svg"
-    //             className="ml-1"
-    //             width="16"
-    //             height="16"
-    //             fill="currentColor"
-    //             viewBox="0 0 16 16"
-    //           >
-    //             <path
-    //               fill-rule="evenodd"
-    //               d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
-    //             />
-    //           </svg>
-    //         </p>
-    //       </li>
-    //       <li>
-    //         <a href="https://www.google.com">ABOUT</a>
-    //       </li>
-    //       <li>
-    //         <a href="https://www.google.com">CONTACT</a>
-    //       </li>
-    //       <li>
-    //         <a href="https://www.google.com">CAREERS</a>
-    //       </li>
-    //       <li>
-    //         <a href="https://www.larven.co.tz/">HACKATHONS</a>
-    //       </li>
-    //     </ul>
-    //   </div>
-    //   <div className="w-[60%]">
-    //     {/* Wrap the button with an anchor tag */}
-    //     <ul className="flex space-x-7 w-fit ml-auto">
-    //       <li>
-    //         <button
-    //           type="button"
-    //           className="px-5 py-3 text-xs text-white rounded-r-full rounded-bl-full bg-green-haze-500 "
-    //         >
-    //           Get free audit
-    //         </button>
-    //       </li>
-    //       <li>
-    //         <button
-    //           type="button"
-    //           className="px-5 py-3 text-xs text-green-haze-500 rounded-r-full rounded-bl-full bg-green-haze-50 "
-    //         >
-    //           Brief Us
-    //         </button>
-    //       </li>
-    //     </ul>
-    //   </div>
-    // </div>
-  );
-};
 
 const Homepage = () => {
   return (
     <div className="bg-neutral-100">
       <section className="bg-black relative">
-        <NavBar />
+        <NavBar hackathon page={2} />
         <div className="absolute top-10 right-0">
           <Image
             src="/images/Background Lines.png"
@@ -225,42 +23,42 @@ const Homepage = () => {
           />
         </div>
         <div className="h-screen w-full flex items-center">
-        <div className="w-full md:w-[50%] md:ml-40 h-full flex flex-col justify-center py-2 gap-y-5">
-          <h1 className="text-4xl md:text-5xl text-center md:text-start font-bold text-white">
-            Unlock Your <span className="text-green-haze-500">Potential</span>{" "}
-            <br />
-            with Digital Solutions
-          </h1>
-          <p className="text-sm md:text-base text-center md:text-start text-white">
-            We are here to assist you in transforming your business processes
-            and operations so that you can accomplish more in less time while
-            increasing your profitability.
-          </p>
-          <div className="space-x-10 mb-10 w-fit mx-auto md:w-full">
-            <button
-              type="button"
-              className="px-5 py-3 mt-5 text-xs text-white rounded-r-full rounded-bl-full bg-green-haze-500 w-fit"
-            >
-              Hire Your Technicians
-            </button>
-            <button
-              type="button"
-              className="px-5 py-3 mt-5 text-xs text-green-haze-500 rounded-r-full rounded-bl-full border border-green-haze-500 w-fit"
-            >
-              Hire Your Technicians
-            </button>
+          <div className="w-full md:w-[50%] md:ml-40 h-full flex flex-col justify-center py-2 gap-y-5">
+            <h1 className="text-4xl md:text-5xl text-center md:text-start font-bold text-white">
+              Unlock Your <span className="text-green-haze-500">Potential</span>{" "}
+              <br />
+              with Digital Solutions
+            </h1>
+            <p className="text-sm md:text-base text-center md:text-start text-white">
+              We are here to assist you in transforming your business processes
+              and operations so that you can accomplish more in less time while
+              increasing your profitability.
+            </p>
+            <div className="space-x-10 mb-10 w-fit mx-auto md:w-full">
+              <button
+                type="button"
+                className="px-5 py-3 mt-5 text-xs text-white rounded-r-full rounded-bl-full bg-green-haze-500 w-fit"
+              >
+                Hire Your Technicians
+              </button>
+              <button
+                type="button"
+                className="px-5 py-3 mt-5 text-xs text-green-haze-500 rounded-r-full rounded-bl-full border border-green-haze-500 w-fit"
+              >
+                Hire Your Technicians
+              </button>
+            </div>
           </div>
-        </div>
-        <div className="absolute w-full md:w-[72%] right-0 left-0 mx-auto bottom-0 z-50 translate-y-44">
-          <Image
-            src="/images/people.png"
-            alt="hellopic"
-            width={0}
-            height={0}
-            sizes="100vw"
-            className="w-full"
-          />
-        </div>
+          <div className="absolute w-full md:w-[72%] right-0 left-0 mx-auto bottom-0 z-50 translate-y-44">
+            <Image
+              src="/images/people.png"
+              alt="hellopic"
+              width={0}
+              height={0}
+              sizes="100vw"
+              className="w-full"
+            />
+          </div>
         </div>
       </section>
 
@@ -599,8 +397,8 @@ const Homepage = () => {
                 src="/larven-logo.png"
                 className=""
                 alt="Larven logo"
-                width={1531/15}
-                height={1678/15}
+                width={1531 / 15}
+                height={1678 / 15}
                 sizes="100vw"
               />
             </Link>

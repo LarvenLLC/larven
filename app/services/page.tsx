@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
+import { useState } from "react";
 import Dropdown from "@/components/dropdown";
 
 const NavBar = () => {
