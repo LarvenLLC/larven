@@ -138,16 +138,17 @@ const Homepage = () => {
         <>
             <NavBar />
 
+            <h2 className="text-center text-lg text-green-haze-700 my-10 uppercase">Services</h2>
+
             <section>
-                <div id="software_project" className="grid md:grid-cols-2 items-center p-16">
-                    <div className="">
+                <div id="software_project" className="grid md:grid-cols-2 items-center px-16 pb-16">
+                    <div >
                         <Image
                             src="/images/services/1.png"
                             alt="Hands on a computer"
                             width={599}
                             height={383}
                             sizes="100vw"
-                            className=""
                         />
                     </div>
                     <div className="space-y-5">
@@ -233,7 +234,6 @@ const Homepage = () => {
                     </div>
                 </div>
             </section>
-
 
 
             {/* footer */}
