@@ -138,8 +138,8 @@ const Homepage = () => {
         <>
             <NavBar />
 
-            <section className="">
-                <div className="grid md:grid-cols-2 items-center p-16">
+            <section>
+                <div id="software_project" className="grid md:grid-cols-2 items-center p-16">
                     <div className="">
                         <Image
                             src="/images/services/1.png"
@@ -162,7 +162,7 @@ const Homepage = () => {
                     </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 items-center p-16 flex-cols-reverse">
+                <div id="process_digitization" className="grid md:grid-cols-2 items-center p-16 flex-cols-reverse">
                     <div className="space-y-5">
                         <h1 className="text-5xl font-bold">
                             Process <br /> Digitization
@@ -188,7 +188,7 @@ const Homepage = () => {
 
 
 
-                <div className="grid md:grid-cols-2 items-center p-16">
+                <div id="staff_augmentation" className="grid md:grid-cols-2 items-center p-16">
                     <div className="">
                         <Image
                             src="/images/services/3.png"
@@ -210,7 +210,7 @@ const Homepage = () => {
                     </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 items-center p-16">
+                <div id="consultation" className="grid md:grid-cols-2 items-center p-16">
 
                     <div className="space-y-5">
                         <h1 className="text-5xl font-bold">
