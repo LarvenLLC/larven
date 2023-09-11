@@ -129,7 +129,7 @@ const NavBar = (props: PropsType) => {
       {/* Nav on mobile */}
       <nav
         className={`${!openMenu ? "hidden" : "md:hidden block"
-          } absolute top - 12 left - 0 p - 4 px - 10 bg - white w - full`}
+          } absolute top-12 left-0 p-4 px-10 bg-white w-full drop-shadow-lg`}
       >
         <ul className="space-y-7 text-sm font-bold underline">
           <li>
