@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Dropdown from "@/components/dropdown";
+import ServiceNav from "@/components/service_nav";
 
 const NavBar = () => {
   const [openMenu, setopenMenu] = useState(false);
@@ -48,12 +49,7 @@ const NavBar = () => {
         <ul className="flex space-x-7 text-xs">
           <li>
             <Dropdown content={
-              <ul className="bg-white w-full text-base">
-                <li className="cursor-pointer p-3 hover:bg-neutral-50">Software Project Implemantation</li>
-                <li className="cursor-pointer p-3 hover:bg-neutral-50">Project Digitization</li>
-                <li className="cursor-pointer p-3 hover:bg-neutral-50">Staff Augumentation</li>
-                <li className="cursor-pointer p-3 hover:bg-neutral-50">Consultation</li>
-              </ul>
+              <ServiceNav />
             }>
               <p className="flex cursor-pointer">
                 <span>SERVICES</span>
