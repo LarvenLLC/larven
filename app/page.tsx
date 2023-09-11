@@ -626,13 +626,13 @@ const Homepage = () => {
         </div>
       </section>
 
-      <section className="my-5 space-y-5">
+      <section className="my-20">
         <h4 className="text-center font-bold text-green-500">STORIES</h4>
-        <h1 className="text-center font-bold text-black text-3xl">
+        <h1 className="text-center font-bold text-black text-3xl mb-10">
           Our Most Popular Articles
         </h1>
 
-        <div className="grid md:grid-cols-2 flex-col md:flex-row justify-evenly">
+        <div className="grid md:grid-cols-2 gap-10 mx-20">
           <div className="space-y-10 shadow-lg rounded-lg">
             <Image
               src="/images/Frame 18.png"
@@ -642,7 +642,7 @@ const Homepage = () => {
               className="w-full rounded-lg"
               sizes="100vw"
             />
-            <div className="px-3 space-y-5">
+            <div className="p-3 space-y-5">
               <h3 className="px-3 font-bold">
                 Lorem ipsum dolor sit amet consectetur.
               </h3>
@@ -665,14 +665,14 @@ const Homepage = () => {
             </div>
           </div>
 
-          <div className="space-y-10 p-5">
+          <div className="space-y-10 px-5">
             <div className="flex items-center gap-x-5 ">
               <Image
                 src="/images/Frame 11.png"
                 alt="UTOPOLO"
                 width={0}
                 height={0}
-                className="w-[300px] rounded-lg"
+                className="w-[250px] rounded-lg"
                 sizes="100vw"
               />
               <div className="space-y-3">
@@ -693,7 +693,7 @@ const Homepage = () => {
                 alt="UTOPOLO"
                 width={0}
                 height={0}
-                className="w-[300px] rounded-lg"
+                className="w-[250px] rounded-lg"
                 sizes="100vw"
               />
               <div className="space-y-3">
@@ -714,7 +714,7 @@ const Homepage = () => {
                 alt="UTOPOLO"
                 width={0}
                 height={0}
-                className="w-[300px] rounded-lg"
+                className="w-[250px] rounded-lg"
                 sizes="100vw"
               />
               <div className="space-y-3">
