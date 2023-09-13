@@ -43,18 +43,116 @@ const Homepage = () => {
 
       <h2 className="text-center text-lg text-green-haze-700 my-4 uppercase">case studies</h2>
       <p className="text-center text-4xl text-black font-bold my-4" >Case Studies and Articles</p>
-      <section className="relative p-16">
-        <Image
-          src="/images/case studies/robotcars.png"
-          alt="Robot cars"
-          width={0}
-          height={0}
-          sizes="100vw"
-          className="w-full"
-        />
+      <section className="p-16">
+        <div className="relative h-96 p-8 grid md:grid-cols-3">
+          <Image
+            src="/images/case studies/robotcars.png"
+            alt="Robot cars"
+            fill
+            className="object-cover rounded-2xl -z-10"
+          />
+
+          <div className="p-3 space-y-5 border border-white bg-white flex flex-col justify-between">
+            <div>
+              <h1 className="text-neutral-200">FEATURED</h1>
+              <h3 className="px-3 font-bold">
+                Lorem ipsum dolor sit amet consectetur.
+              </h3>
+              <p className="px-3">
+                Sed ut perspiciatis unde omnis iste natus error sit volue uptatem accusantium doloremque laudanugit...
+              </p>
+            </div>
+
+            <div className="flex w-full justify-between items-center space-x-1 text-neutral-400 my-6">
+              <p>
+                4, March 2022
+              </p>
+              <Link href={"/"} className="text-green-haze-700 ">Read</Link>
+            </div>
+          </div>
+
+        </div>
+
+
       </section>
+
+      <section className="grid md:grid-cols-3 p-16 md:space-x-8 space-y-5">
+        <div className="space-y-10 rounded-lg p-6 border">
+          <Image
+            src="/images/case studies/img.png"
+            alt="UTOPOLO"
+            width={352}
+            height={240}
+            className="rounded-lg"
+            sizes="100vw"
+          />
+          <div className="p-3 space-y-5">
+            <h3 className="px-3 font-bold">
+              Lorem ipsum dolor sit amet consectetur.
+            </h3>
+            <p className="px-3">
+              Sed ut perspiciatis unde omnis iste natus error sit volue uptatem accusantium doloremque laudanugit...
+            </p>
+            <div className="flex w-full justify-between items-center space-x-1 text-neutral-400">
+              <p>
+                4, March 2022
+              </p>
+              <Link href={"/"} className="text-green-haze-700 ">Read</Link>
+            </div>
+          </div>
+        </div>
+        <div className="space-y-10 shadow-lg rounded-lg p-6 border ">
+          <Image
+            src="/images/case studies/img (1).png"
+            alt="UTOPOLO"
+            width={352}
+            height={240}
+            className="rounded-lg"
+            sizes="100vw"
+          />
+          <div className="p-3 space-y-5">
+            <h3 className="px-3 font-bold">
+              Lorem ipsum dolor sit amet consectetur.
+            </h3>
+            <p className="px-3">
+              Sed ut perspiciatis unde omnis iste natus error sit volue uptatem accusantium doloremque laudanugit...
+            </p>
+            <div className="flex w-full justify-between items-center space-x-1 text-neutral-400">
+              <p>
+                4, March 2022
+              </p>
+              <Link href={"/"} className="text-green-haze-700 ">Read</Link>
+            </div>
+          </div>
+        </div>
+        <div className="space-y-10 rounded-lg p-6 border">
+          <Image
+            src="/images/case studies/img (2).png"
+            alt="UTOPOLO"
+            width={352}
+            height={240}
+            className="rounded-lg"
+            sizes="100vw"
+          />
+          <div className="p-3 space-y-5">
+            <h3 className="px-3 font-bold">
+              Lorem ipsum dolor sit amet consectetur.
+            </h3>
+            <p className="px-3">
+              Sed ut perspiciatis unde omnis iste natus error sit volue uptatem accusantium doloremque laudanugit...
+            </p>
+            <div className="flex w-full justify-between items-center space-x-1 text-neutral-400">
+              <p>
+                4, March 2022
+              </p>
+              <Link href={"/"} className="text-green-haze-700 ">Read</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="grid md:grid-cols-3 p-16 space-x-8">
-        <div className="space-y-10 rounded-lg p-6 border border-black">
+        <div className="space-y-10 rounded-lg p-6 border">
           <Image
             src="/images/case studies/img.png"
             alt="UTOPOLO"
@@ -68,24 +166,17 @@ const Homepage = () => {
               Lorem ipsum dolor sit amet consectetur.
             </h3>
             <p className="px-3">
-              Lorem ipsum dolor sit amet consectetur. Elementum nec dictumst
-              habitasse bibendum sit ut varius .Lorem ipsum dolor sit amet
-              consectetur. Elementum .
+              Sed ut perspiciatis unde omnis iste natus error sit volue uptatem accusantium doloremque laudanugit...
             </p>
-            <div className="flex w-fit ml-auto items-center space-x-1 ">
-              <Image
-                src="/images/Ellipse 1 (1).png"
-                alt="UTOPOLO"
-                width={0}
-                height={0}
-                className="w-fit rounded-full "
-                sizes="100vw"
-              />
-              <p className="text-xs">Olivia Geroud</p>
+            <div className="flex w-full justify-between items-center space-x-1 text-neutral-400">
+              <p>
+                4, March 2022
+              </p>
+              <Link href={"/"} className="text-green-haze-700 ">Read</Link>
             </div>
           </div>
         </div>
-        <div className="space-y-10 shadow-lg rounded-lg p-6 border border-black">
+        <div className="space-y-10 shadow-lg rounded-lg p-6 border ">
           <Image
             src="/images/case studies/img (1).png"
             alt="UTOPOLO"
@@ -99,24 +190,17 @@ const Homepage = () => {
               Lorem ipsum dolor sit amet consectetur.
             </h3>
             <p className="px-3">
-              Lorem ipsum dolor sit amet consectetur. Elementum nec dictumst
-              habitasse bibendum sit ut varius .Lorem ipsum dolor sit amet
-              consectetur. Elementum .
+              Sed ut perspiciatis unde omnis iste natus error sit volue uptatem accusantium doloremque laudanugit...
             </p>
-            <div className="flex w-fit ml-auto items-center space-x-1 ">
-              <Image
-                src="/images/Ellipse 1 (1).png"
-                alt="UTOPOLO"
-                width={0}
-                height={0}
-                className="w-fit rounded-full "
-                sizes="100vw"
-              />
-              <p className="text-xs">Olivia Geroud</p>
+            <div className="flex w-full justify-between items-center space-x-1 text-neutral-400">
+              <p>
+                4, March 2022
+              </p>
+              <Link href={"/"} className="text-green-haze-700 ">Read</Link>
             </div>
           </div>
         </div>
-        <div className="space-y-10 rounded-lg p-6 border border-black">
+        <div className="space-y-10 rounded-lg p-6 border">
           <Image
             src="/images/case studies/img (2).png"
             alt="UTOPOLO"
@@ -130,20 +214,13 @@ const Homepage = () => {
               Lorem ipsum dolor sit amet consectetur.
             </h3>
             <p className="px-3">
-              Lorem ipsum dolor sit amet consectetur. Elementum nec dictumst
-              habitasse bibendum sit ut varius .Lorem ipsum dolor sit amet
-              consectetur. Elementum .
+              Sed ut perspiciatis unde omnis iste natus error sit volue uptatem accusantium doloremque laudanugit...
             </p>
-            <div className="flex w-fit ml-auto items-center space-x-1 ">
-              <Image
-                src="/images/Ellipse 1 (1).png"
-                alt="UTOPOLO"
-                width={0}
-                height={0}
-                className="w-fit rounded-full "
-                sizes="100vw"
-              />
-              <p className="text-xs">Olivia Geroud</p>
+            <div className="flex w-full justify-between items-center space-x-1 text-neutral-400">
+              <p>
+                4, March 2022
+              </p>
+              <Link href={"/"} className="text-green-haze-700 ">Read</Link>
             </div>
           </div>
         </div>
