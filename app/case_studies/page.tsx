@@ -52,10 +52,10 @@ const Homepage = () => {
             className="object-cover rounded-2xl -z-10"
           />
 
-          <div className="p-3 space-y-5 border border-white bg-white flex flex-col justify-between">
+          <div className="p-5 space-y-5 border border-white bg-white flex flex-col justify-between rounded-2xl ">
             <div>
-              <h1 className="text-neutral-200">FEATURED</h1>
-              <h3 className="px-3 font-bold">
+              <h1 className="text-neutral-200 p-5">FEATURED</h1>
+              <h3 className="px-3 font-bold text-2xl p-1">
                 Lorem ipsum dolor sit amet consectetur.
               </h3>
               <p className="px-3">
@@ -76,11 +76,11 @@ const Homepage = () => {
 
       </section>
 
-      <section className="grid md:grid-cols-3 p-16 md:space-x-8 space-y-5">
+      <section className="grid md:grid-cols-3 p-16 md:space-x-8 ">
         <div className="space-y-10 rounded-lg p-6 border">
           <Image
             src="/images/case studies/img.png"
-            alt="UTOPOLO"
+            alt="Blog Pictures"
             width={352}
             height={240}
             className="rounded-lg"
@@ -97,14 +97,15 @@ const Homepage = () => {
               <p>
                 4, March 2022
               </p>
-              <Link href={"/"} className="text-green-haze-700 ">Read</Link>
+              <Link href={"/blogs"} className="text-green-haze-700 ">Read</Link>
             </div>
           </div>
         </div>
-        <div className="space-y-10 shadow-lg rounded-lg p-6 border ">
+
+        <div className="space-y-5 shadow-lg rounded-lg p-6 border ">
           <Image
             src="/images/case studies/img (1).png"
-            alt="UTOPOLO"
+            alt="Blog Pictures"
             width={352}
             height={240}
             className="rounded-lg"
@@ -121,14 +122,14 @@ const Homepage = () => {
               <p>
                 4, March 2022
               </p>
-              <Link href={"/"} className="text-green-haze-700 ">Read</Link>
+              <Link href={"/blogs"} className="text-green-haze-700 ">Read</Link>
             </div>
           </div>
         </div>
-        <div className="space-y-10 rounded-lg p-6 border">
+        <div className="space-y-5 rounded-lg p-6 border">
           <Image
             src="/images/case studies/img (2).png"
-            alt="UTOPOLO"
+            alt="Blog Pictures"
             width={352}
             height={240}
             className="rounded-lg"
@@ -145,20 +146,20 @@ const Homepage = () => {
               <p>
                 4, March 2022
               </p>
-              <Link href={"/"} className="text-green-haze-700 ">Read</Link>
+              <Link href={"/blogs"} className="text-green-haze-700 ">Read</Link>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="grid md:grid-cols-3 p-16 space-x-8">
+      <section className="grid md:grid-cols-3 p-16 md:space-x-8 ">
         <div className="space-y-10 rounded-lg p-6 border">
           <Image
             src="/images/case studies/img.png"
-            alt="UTOPOLO"
-            width={0}
-            height={0}
-            className="w-full rounded-lg"
+            alt="Blog Pictures"
+            width={352}
+            height={240}
+            className="rounded-lg"
             sizes="100vw"
           />
           <div className="p-3 space-y-5">
@@ -172,17 +173,18 @@ const Homepage = () => {
               <p>
                 4, March 2022
               </p>
-              <Link href={"/"} className="text-green-haze-700 ">Read</Link>
+              <Link href={"/blogs"} className="text-green-haze-700 ">Read</Link>
             </div>
           </div>
         </div>
-        <div className="space-y-10 shadow-lg rounded-lg p-6 border ">
+
+        <div className="space-y-5 shadow-lg rounded-lg p-6 border ">
           <Image
-            src="/images/case studies/img (1).png"
-            alt="UTOPOLO"
-            width={0}
-            height={0}
-            className="w-full rounded-lg"
+            src="/images/case studies/img.png"
+            alt="Blog Pictures"
+            width={352}
+            height={240}
+            className="rounded-lg"
             sizes="100vw"
           />
           <div className="p-3 space-y-5">
@@ -196,17 +198,17 @@ const Homepage = () => {
               <p>
                 4, March 2022
               </p>
-              <Link href={"/"} className="text-green-haze-700 ">Read</Link>
+              <Link href={"/blogs"} className="text-green-haze-700 ">Read</Link>
             </div>
           </div>
         </div>
-        <div className="space-y-10 rounded-lg p-6 border">
+        <div className="space-y-5 rounded-lg p-6 border">
           <Image
             src="/images/case studies/img (2).png"
-            alt="UTOPOLO"
-            width={0}
-            height={0}
-            className="w-full rounded-lg"
+            alt="Blog Pictures"
+            width={352}
+            height={240}
+            className="rounded-lg"
             sizes="100vw"
           />
           <div className="p-3 space-y-5">
@@ -220,7 +222,7 @@ const Homepage = () => {
               <p>
                 4, March 2022
               </p>
-              <Link href={"/"} className="text-green-haze-700 ">Read</Link>
+              <Link href={"/blogs"} className="text-green-haze-700 ">Read</Link>
             </div>
           </div>
         </div>
