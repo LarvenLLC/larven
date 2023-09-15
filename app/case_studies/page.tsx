@@ -3,40 +3,52 @@ import Link from "next/link";
 import Image from "next/image";
 import NavBar from "@/components/navbar";
 
-const servicesData = [
+export const blogs = [
   {
     id: 1,
-    title: "Cloud Computing",
-    description:
-      "wuaiwb iabwuah ua owwuaoniawiawjoaiwjoi aw awbwab aibwu abibaaowhuwa huaw huawhauw wbywa hwiaw iaybdwhab.",
+    title: "What do you know about AI, it has the potential to change your life completely.",
+    content: "Sed ut perspiciatis unde omnis iste natus error sit volue uptatem accusantium doloremque laudanugit...",
+    image: "/images/case studies/img.png",
+    date: "4, March 2022"
   },
   {
     id: 2,
-    title: "Cloud Computing",
-    description:
-      "wuaiwb iabwuah ua owwuaoniawiawjoaiwjoi aw awbwab aibwu abibaaowhuwa huaw huawhauw wbywa hwiaw iaybdwhab.",
+    title: "Lorem ipsum dolor sit amet consectetur.",
+    content: "Sed ut perspiciatis unde omnis iste natus error sit volue uptatem accusantium doloremque laudanugit...",
+    image: "/images/case studies/img (1).png",
+    date: "4, March 2022"
   },
   {
     id: 3,
-    title: "Cloud Computing",
-    description:
-      "wuaiwb iabwuah ua owwuaoniawiawjoaiwjoi aw awbwab aibwu abibaaowhuwa huaw huawhauw wbywa hwiaw iaybdwhab.",
+    title: "Lorem ipsum dolor sit amet consectetur.",
+    content: "Sed ut perspiciatis unde omnis iste natus error sit volue uptatem accusantium doloremque laudanugit...",
+    image: "/images/case studies/img (2).png",
+    date: "4, March 2022"
   },
   {
     id: 4,
-    title: "Cloud Computing",
-    description:
-      "wuaiwb iabwuah ua owwuaoniawiawjoaiwjoi aw awbwab aibwu abibaaowhuwa huaw huawhauw wbywa hwiaw iaybdwhab.",
+    title: "Lorem ipsum dolor sit amet consectetur.",
+    content: "Sed ut perspiciatis unde omnis iste natus error sit volue uptatem accusantium doloremque laudanugit...",
+    image: "/images/case studies/img.png",
+    date: "4, March 2022"
   },
   {
     id: 5,
-    title: "Cloud Computing",
-    description:
-      "wuaiwb iabwuah ua owwuaoniawiawjoaiwjoi aw awbwab aibwu abibaaowhuwa huaw huawhauw wbywa hwiaw iaybdwhab.",
+    title: "Lorem ipsum dolor sit amet consectetur.",
+    content: "Sed ut perspiciatis unde omnis iste natus error sit volue uptatem accusantium doloremque laudanugit...",
+    image: "/images/case studies/img (1).png",
+    date: "4, March 2022"
   },
-];
+  {
+    id: 6,
+    title: "Lorem ipsum dolor sit amet consectetur.",
+    content: "Sed ut perspiciatis unde omnis iste natus error sit volue uptatem accusantium doloremque laudanugit...",
+    image: "/images/case studies/img (2).png",
+    date: "4, March 2022"
+  },
+]
 
-const Homepage = () => {
+const CaseStudy = () => {
   return (
     <>
       <NavBar page={1} hackathon={false} />
@@ -76,156 +88,35 @@ const Homepage = () => {
 
       </section>
 
-      <section className="grid md:grid-cols-3 p-16 md:space-x-8 ">
-        <div className="space-y-10 rounded-lg p-6 border">
-          <Image
-            src="/images/case studies/img.png"
-            alt="Blog Pictures"
-            width={352}
-            height={240}
-            className="rounded-lg"
-            sizes="100vw"
-          />
-          <div className="p-3 space-y-5">
-            <h3 className="px-3 font-bold">
-              Lorem ipsum dolor sit amet consectetur.
-            </h3>
-            <p className="px-3">
-              Sed ut perspiciatis unde omnis iste natus error sit volue uptatem accusantium doloremque laudanugit...
-            </p>
-            <div className="flex w-full justify-between items-center space-x-1 text-neutral-400">
-              <p>
-                4, March 2022
-              </p>
-              <Link href={"/blogs"} className="text-green-haze-700 ">Read</Link>
+      <section className="grid md:grid-cols-3 gap-x-4 gap-y-10 p-16">
+        {
+          blogs.map(blog => (
+            <div className="space-y-5 rounded-lg border hover:shadow-lg" key={blog.id}>
+              <Image
+                src={blog.image}
+                alt="Blog Pictures"
+                width={0}
+                height={0}
+                className="w-full rounded-t-lg"
+                sizes="100vw"
+              />
+              <div className="py-3 px-4 space-y-5">
+                <h3 className="text-xl font-bold">
+                  {blog.title}
+                </h3>
+                <p>
+                  {blog.content}
+                </p>
+                <div className="flex w-full justify-between items-center space-x-1 text-neutral-400">
+                  <p>
+                    {blog.date}
+                  </p>
+                  <Link href={`/case_studies/${blog.id}`} className="text-green-haze-700">Read</Link>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-
-        <div className="space-y-5 shadow-lg rounded-lg p-6 border ">
-          <Image
-            src="/images/case studies/img (1).png"
-            alt="Blog Pictures"
-            width={352}
-            height={240}
-            className="rounded-lg"
-            sizes="100vw"
-          />
-          <div className="p-3 space-y-5">
-            <h3 className="px-3 font-bold">
-              Lorem ipsum dolor sit amet consectetur.
-            </h3>
-            <p className="px-3">
-              Sed ut perspiciatis unde omnis iste natus error sit volue uptatem accusantium doloremque laudanugit...
-            </p>
-            <div className="flex w-full justify-between items-center space-x-1 text-neutral-400">
-              <p>
-                4, March 2022
-              </p>
-              <Link href={"/blogs"} className="text-green-haze-700 ">Read</Link>
-            </div>
-          </div>
-        </div>
-        <div className="space-y-5 rounded-lg p-6 border">
-          <Image
-            src="/images/case studies/img (2).png"
-            alt="Blog Pictures"
-            width={352}
-            height={240}
-            className="rounded-lg"
-            sizes="100vw"
-          />
-          <div className="p-3 space-y-5">
-            <h3 className="px-3 font-bold">
-              Lorem ipsum dolor sit amet consectetur.
-            </h3>
-            <p className="px-3">
-              Sed ut perspiciatis unde omnis iste natus error sit volue uptatem accusantium doloremque laudanugit...
-            </p>
-            <div className="flex w-full justify-between items-center space-x-1 text-neutral-400">
-              <p>
-                4, March 2022
-              </p>
-              <Link href={"/blogs"} className="text-green-haze-700 ">Read</Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="grid md:grid-cols-3 p-16 md:space-x-8 ">
-        <div className="space-y-10 rounded-lg p-6 border">
-          <Image
-            src="/images/case studies/img.png"
-            alt="Blog Pictures"
-            width={352}
-            height={240}
-            className="rounded-lg"
-            sizes="100vw"
-          />
-          <div className="p-3 space-y-5">
-            <h3 className="px-3 font-bold">
-              Lorem ipsum dolor sit amet consectetur.
-            </h3>
-            <p className="px-3">
-              Sed ut perspiciatis unde omnis iste natus error sit volue uptatem accusantium doloremque laudanugit...
-            </p>
-            <div className="flex w-full justify-between items-center space-x-1 text-neutral-400">
-              <p>
-                4, March 2022
-              </p>
-              <Link href={"/blogs"} className="text-green-haze-700 ">Read</Link>
-            </div>
-          </div>
-        </div>
-
-        <div className="space-y-5 shadow-lg rounded-lg p-6 border ">
-          <Image
-            src="/images/case studies/img.png"
-            alt="Blog Pictures"
-            width={352}
-            height={240}
-            className="rounded-lg"
-            sizes="100vw"
-          />
-          <div className="p-3 space-y-5">
-            <h3 className="px-3 font-bold">
-              Lorem ipsum dolor sit amet consectetur.
-            </h3>
-            <p className="px-3">
-              Sed ut perspiciatis unde omnis iste natus error sit volue uptatem accusantium doloremque laudanugit...
-            </p>
-            <div className="flex w-full justify-between items-center space-x-1 text-neutral-400">
-              <p>
-                4, March 2022
-              </p>
-              <Link href={"/blogs"} className="text-green-haze-700 ">Read</Link>
-            </div>
-          </div>
-        </div>
-        <div className="space-y-5 rounded-lg p-6 border">
-          <Image
-            src="/images/case studies/img (2).png"
-            alt="Blog Pictures"
-            width={352}
-            height={240}
-            className="rounded-lg"
-            sizes="100vw"
-          />
-          <div className="p-3 space-y-5">
-            <h3 className="px-3 font-bold">
-              Lorem ipsum dolor sit amet consectetur.
-            </h3>
-            <p className="px-3">
-              Sed ut perspiciatis unde omnis iste natus error sit volue uptatem accusantium doloremque laudanugit...
-            </p>
-            <div className="flex w-full justify-between items-center space-x-1 text-neutral-400">
-              <p>
-                4, March 2022
-              </p>
-              <Link href={"/blogs"} className="text-green-haze-700 ">Read</Link>
-            </div>
-          </div>
-        </div>
+          ))
+        }
       </section>
 
       <section className="p-10 md:px-28">
@@ -328,4 +219,4 @@ const Homepage = () => {
   );
 };
 
-export default Homepage;
+export default CaseStudy;

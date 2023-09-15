@@ -88,7 +88,7 @@ const NavBar = (props: PropsType) => {
             <a href="https://www.google.com">CAREERS</a>
           </li>
           <li>
-            <a href="https://www.larven.co.tz/">CASE STUDIES</a>
+            <Link href="/case_studies">CASE STUDIES</Link>
           </li>
         </ul>
       </nav>
