@@ -1,5 +1,4 @@
 @tailwind base;
-@tailwind preflight;
 @tailwind components;
 @tailwind utilities;
 
@@ -17,7 +16,3 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
-
-
-
-

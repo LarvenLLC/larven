@@ -36,7 +36,7 @@ const NavBar = () => {
             viewBox="0 0 16 16"
           >
             <path
-              fill-rule="evenodd"
+              fillRule="evenodd"
               d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
             />
           </svg>
@@ -58,7 +58,7 @@ const NavBar = () => {
                 viewBox="0 0 16 16"
               >
                 <path
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                   d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
                 />
               </svg>
@@ -88,9 +88,8 @@ const NavBar = () => {
         </button>
       </div>
       <nav
-        className={`${
-          !openMenu ? "hidden" : "md:hidden block"
-        } absolute top-12 left-0 p-4 px-10 bg-white w-full`}
+        className={`${!openMenu ? "hidden" : "md:hidden block"
+          } absolute top-12 left-0 p-4 px-10 bg-white w-full`}
       >
         <ul className="space-y-7 text-sm font-bold underline">
           <li>
@@ -105,7 +104,7 @@ const NavBar = () => {
                 viewBox="0 0 16 16"
               >
                 <path
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                   d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
                 />
               </svg>
