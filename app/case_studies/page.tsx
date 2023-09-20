@@ -2,53 +2,63 @@
 import Link from "next/link";
 import Image from "next/image";
 import NavBar from "@/components/navbar";
+import Text from "@/components/text";
+import { getDatabase } from "@/components/notion"
 
-export const blogs = [
-  {
-    id: 1,
-    title: "What do you know about AI, it has the potential to change your life completely.",
-    content: "Sed ut perspiciatis unde omnis iste natus error sit volue uptatem accusantium doloremque laudanugit...",
-    image: "/images/case studies/img.png",
-    date: "4, March 2022"
-  },
-  {
-    id: 2,
-    title: "Lorem ipsum dolor sit amet consectetur.",
-    content: "Sed ut perspiciatis unde omnis iste natus error sit volue uptatem accusantium doloremque laudanugit...",
-    image: "/images/case studies/img (1).png",
-    date: "4, March 2022"
-  },
-  {
-    id: 3,
-    title: "Lorem ipsum dolor sit amet consectetur.",
-    content: "Sed ut perspiciatis unde omnis iste natus error sit volue uptatem accusantium doloremque laudanugit...",
-    image: "/images/case studies/img (2).png",
-    date: "4, March 2022"
-  },
-  {
-    id: 4,
-    title: "Lorem ipsum dolor sit amet consectetur.",
-    content: "Sed ut perspiciatis unde omnis iste natus error sit volue uptatem accusantium doloremque laudanugit...",
-    image: "/images/case studies/img.png",
-    date: "4, March 2022"
-  },
-  {
-    id: 5,
-    title: "Lorem ipsum dolor sit amet consectetur.",
-    content: "Sed ut perspiciatis unde omnis iste natus error sit volue uptatem accusantium doloremque laudanugit...",
-    image: "/images/case studies/img (1).png",
-    date: "4, March 2022"
-  },
-  {
-    id: 6,
-    title: "Lorem ipsum dolor sit amet consectetur.",
-    content: "Sed ut perspiciatis unde omnis iste natus error sit volue uptatem accusantium doloremque laudanugit...",
-    image: "/images/case studies/img (2).png",
-    date: "4, March 2022"
-  },
-]
+// export const blogs = [
+//   {
+//     id: 1,
+//     title: "What do you know about AI, it has the potential to change your life completely.",
+//     content: "Sed ut perspiciatis unde omnis iste natus error sit volue uptatem accusantium doloremque laudanugit...",
+//     image: "/images/case studies/img.png",
+//     date: "4, March 2022"
+//   },
+//   {
+//     id: 2,
+//     title: "Lorem ipsum dolor sit amet consectetur.",
+//     content: "Sed ut perspiciatis unde omnis iste natus error sit volue uptatem accusantium doloremque laudanugit...",
+//     image: "/images/case studies/img (1).png",
+//     date: "4, March 2022"
+//   },
+//   {
+//     id: 3,
+//     title: "Lorem ipsum dolor sit amet consectetur.",
+//     content: "Sed ut perspiciatis unde omnis iste natus error sit volue uptatem accusantium doloremque laudanugit...",
+//     image: "/images/case studies/img (2).png",
+//     date: "4, March 2022"
+//   },
+//   {
+//     id: 4,
+//     title: "Lorem ipsum dolor sit amet consectetur.",
+//     content: "Sed ut perspiciatis unde omnis iste natus error sit volue uptatem accusantium doloremque laudanugit...",
+//     image: "/images/case studies/img.png",
+//     date: "4, March 2022"
+//   },
+//   {
+//     id: 5,
+//     title: "Lorem ipsum dolor sit amet consectetur.",
+//     content: "Sed ut perspiciatis unde omnis iste natus error sit volue uptatem accusantium doloremque laudanugit...",
+//     image: "/images/case studies/img (1).png",
+//     date: "4, March 2022"
+//   },
+//   {
+//     id: 6,
+//     title: "Lorem ipsum dolor sit amet consectetur.",
+//     content: "Sed ut perspiciatis unde omnis iste natus error sit volue uptatem accusantium doloremque laudanugit...",
+//     image: "/images/case studies/img (2).png",
+//     date: "4, March 2022"
+//   },
+// ]
 
-const CaseStudy = () => {
+async function getPosts() {
+  const database = await getDatabase();
+  // console.log(database?.[2])
+
+  return database;
+}
+
+const CaseStudy = async () => {
+  const posts = await getPosts();
   return (
     <>
       <NavBar page={1} hackathon={false} />
@@ -88,12 +98,14 @@ const CaseStudy = () => {
 
       </section>
 
-      <section className="grid md:grid-cols-3 gap-x-4 gap-y-10 p-16">
+      <section
+        className="grid md:grid-cols-3 gap-x-4 gap-y-10 p-16"
+      >
         {
-          blogs.map(blog => (
+          posts && posts.length > 0 && posts.map(blog => (
             <div className="space-y-5 rounded-lg border hover:shadow-lg" key={blog.id}>
               <Image
-                src={blog.image}
+                src="/robotcars.png"
                 alt="Blog Pictures"
                 width={0}
                 height={0}
@@ -101,17 +113,30 @@ const CaseStudy = () => {
                 sizes="100vw"
               />
               <div className="py-3 px-4 space-y-5">
-                <h3 className="text-xl font-bold">
-                  {blog.title}
+                {/* @ts-ignore */}
+                <Text title={blog.properties?.Title?.title} />
+                {/* <h3 className="text-xl font-bold">
+                  {blog.properties?.Title?.title}
                 </h3>
                 <p>
-                  {blog.content}
-                </p>
+                  {blog.properties?.Title?.title}
+                </p> */}
                 <div className="flex w-full justify-between items-center space-x-1 text-neutral-400">
                   <p>
-                    {blog.date}
+                    {
+                      // @ts-ignore
+                      new Date(blog.last_edited_time).toLocaleString(
+                        'en-US',
+                        {
+                          month: 'short',
+                          day: '2-digit',
+                          year: 'numeric',
+                        },
+                      )
+                    }
                   </p>
-                  <Link href={`/case_studies/${blog.id}`} className="text-green-haze-700">Read</Link>
+                  {/* <Link href={`/case_studies/${blog.id}`} className="text-green-haze-700">Read</Link> */}
+                  <Link href={`/${blog?.id}`} className="text-green-haze-700">Read</Link>
                 </div>
               </div>
             </div>
