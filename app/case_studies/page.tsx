@@ -136,7 +136,7 @@ const CaseStudy = async () => {
                     }
                   </p>
                   {/* <Link href={`/case_studies/${blog.id}`} className="text-green-haze-700">Read</Link> */}
-                  <Link href={`/${blog?.id}`} className="text-green-haze-700">Read</Link>
+                  <Link href={`/case_studies/${blog?.id}`} className="text-green-haze-700">Read</Link>
                 </div>
               </div>
             </div>

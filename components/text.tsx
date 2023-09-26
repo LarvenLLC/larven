@@ -1,4 +1,4 @@
-import styles from '../styles/post.module.css';
+import styles from './post.module.css';
 
 type TextType = {
   annotations: {
@@ -30,7 +30,7 @@ export default function Text({ title }: { title: TextType[] }) {
     } = value;
     return (
       <span
-        className={`text-xl font-bold ${[
+        className={` ${[
           bold ? styles.bold : '',
           code ? styles.code : '',
           italic ? styles.italic : '',

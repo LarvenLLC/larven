@@ -5,7 +5,7 @@ import NavBar from "@/components/navbar";
 const Homepage = () => {
   return (
     <div className="bg-neutral-100">
-      <NavBar hackathon page={3} />
+      <NavBar hackathon={true} page={3} />
 
       <section className="flex flex-col md:flex-row items-center bg-white">
         <div className="w-full md:w-[60%] bg-white h-full flex flex-col justify-center px-10 py-2 gap-y-5">

@@ -55,7 +55,7 @@ const NavBar = (props: PropsType) => {
 
       {/* <!-- Navigation (center) --> */}
       <nav className={`hidden md:flex justify - center items - center w - full ${props.page === 2 && "text-white"} `}>
-        <ul className="flex space-x-7 text-xs">
+        <ul className="flex space-x-7 text-xs font-bold">
           <li>
             <Dropdown content={
               <ServiceNav />
@@ -79,13 +79,14 @@ const NavBar = (props: PropsType) => {
             </Dropdown>
           </li>
           <li>
-            <a href="https://www.google.com">ABOUT</a>
+            <Link href="/contact_us">ABOUT</Link>
           </li>
           <li>
             <Link href="/contact_us">CONTACT</Link>
           </li>
           <li>
-            <a href="https://www.google.com">CAREERS</a>
+            <Link href="/">CAREERS</Link>
+
           </li>
           <li>
             <Link href="/case_studies">CASE STUDIES</Link>
@@ -147,7 +148,7 @@ const NavBar = (props: PropsType) => {
             <Link href="https://www.google.com">CAREERS</Link>
           </li>
           <li>
-            <Link href="https://www.larven.co.tz/">CASE STUDIES</Link>
+            <Link href="/case_studies">CASE STUDIES</Link>
           </li>
         </ul>
       </nav>
