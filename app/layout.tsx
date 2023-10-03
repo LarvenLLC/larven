@@ -7,7 +7,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
 // Local imports
-import AuthProvider, { useAuth } from "./contexts/AuthProvider"
+import AuthProvider, { useAuth } from "@/contexts/authProvider"
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -43,6 +43,7 @@ export default function RootLayout({
 
         {/* <!--Start of Tawk.to Script--> */}
         <Script
+          id="tawk_to"
           type="text/javascript"
           dangerouslySetInnerHTML={{
             __html: `
