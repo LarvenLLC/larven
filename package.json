@@ -12,6 +12,7 @@
     "@heroicons/react": "^2.0.18",
     "@mailchimp/mailchimp_marketing": "^3.0.80",
     "@notionhq/client": "^2.2.13",
+    "@tailwindcss/typography": "^0.5.10",
     "@types/node": "20.4.7",
     "@types/react": "18.2.18",
     "@types/react-dom": "18.2.7",
@@ -33,6 +34,7 @@
     "typescript": "5.1.6"
   },
   "devDependencies": {
+    "encoding": "^0.1.13",
     "tailwind-bootstrap-grid": "^5.0.1"
   }
 }
