@@ -105,19 +105,18 @@ const Homepage = () => {
         </div>
       </section>
 
-      <section className="relative py-20 ">
-        <div className="absolute -z-10 w-[80%] right-0 h-[85%] bg-green-haze-50 rounded-br-[150px]" />
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-7 py-20">
+      <section className="container-fluid relative overflow-hidden">
+        <div className="container grid grid-cols-1 md:grid-cols-3 gap-8">
           {servicesData.map((service, index) => (
             <div
-              className="p-5 space-y-2 bg-white shadow-md w-fit "
+              className="p-8 space-y-2 bg-white shadow rounded-md"
               key={index}
             >
               <div className="p-2 bg-orange-200 w-fit">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
+                  width="20"
+                  height="20"
                   fill="currentColor"
                   viewBox="0 0 16 16"
                 >
@@ -133,53 +132,40 @@ const Homepage = () => {
               WHAT WE DO
             </h3>
             <h2 className="my-2 text-2xl font-bold ">
-              Discover What We Can Do <br />
-              <span className="text-lg font-normal">For You!</span>
+              Discover What We Can Do
+              <span className="block text-lg font-normal">For You!</span>
             </h2>
             <button
               type="button"
-              className="px-5 py-3 mt-5 text-xs text-white rounded-r-full rounded-bl-full bg-green-haze-500 w-fit"
+              className="px-5 py-3 mt-5 text-xs text-white rounded-r-full rounded-bl-full bg-green-haze-500 font-bold"
             >
               Explore All
             </button>
           </div>
         </div>
+        <svg width="1187" height="800" viewBox="0 0 1187 800" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute -z-10 bottom-0 right-0">
+          <path d="M0 0H1187V550C1187 688.071 1075.07 800 937 800H0V0Z" fill="#00AB44" fill-opacity="0.05"/>
+        </svg>
       </section>
 
-      <section className="relative my-10">
-        <div className="absolute -z-10">
-          <Image
-            src="/images/deco1.png"
-            alt="vidole decoration"
-            width={0}
-            height={0}
-            sizes="100vw"
-            className="w-full"
-          />
-        </div>
-
-        <div className="absolute bottom-0 right-0 -z-10">
-          <Image
-            src="/images/deco2.png"
-            alt="vidole decoration"
-            width={0}
-            height={0}
-            sizes="100vw"
-            className="w-full"
-          />
-        </div>
-        {/* <div className="absolute h-24 rotate-45 rounded-r-full top-32 -translate-x-[150px] w-[600px] bg-neutral-900/25 -z-10" />
-        <div className="absolute h-24 rotate-45 rounded-r-full top-[256px] -translate-x-[230px] w-[600px] bg-green-haze-500/25 -z-10" />
-        <div className="absolute h-24 -rotate-[140deg] rounded-r-full right-0 bottom-32 translate-x-[150px] w-[600px] bg-neutral-900/25 -z-10" />
-        <div className="absolute h-24 -rotate-[140deg] rounded-r-full right-0 bottom-[256px] translate-x-[230px] w-[600px] bg-green-haze-500/25 -z-10" /> */}
-        {/* <Image
-          src="/images/strip3.png"
-          alt="hellopic"
-          width={0}
-          height={0}
+      <section className="container-fluid relative overflow-hidden">
+        <Image
+          src="/images/deco1.png"
+          alt=""
+          width={534}
+          height={858}
           sizes="100vw"
-          className="absolute w-[20%] -z-10"
-        /> */}
+          className="absolute -top-10 left-0 -z-10"
+        />
+        <Image
+          src="/images/deco2.png"
+          alt=""
+          width={536}
+          height={858}
+          sizes="100vw"
+          className="absolute -bottom-10 right-0 -z-10"
+        />
+        <div className="container">
         <h4 className="font-bold text-center text-green-haze-500">
           How We Works
         </h4>
@@ -278,79 +264,90 @@ const Homepage = () => {
             </p>
           </div>
         </div>
+        </div>
       </section>
 
-      <section className="hidden md:flex items-center h-screen">
-        <div className="absolute -z-10 w-[80%] h-[85%] bg-green-haze-50 rounded-bl-[150px]" />
-        <div className="flex flex-col justify-center w-1/4 h-full px-10 py-2 gap-y-2">
-          <h3 className="text-sm font-bold text-green-haze-600">
-            WHO WE WORK WITH
-          </h3>
-          <h2 className="my-2 text-2xl font-bold ">
-            Discover What We Work With{" "}
-            <span className="font-normal">To Achieve Your Goals</span>
-          </h2>
-          <button
-            type="button"
-            className="px-5 py-3 mt-5 text-xs text-white rounded-r-full rounded-bl-full bg-green-haze-500 w-fit"
-          >
-            Hire Your Technician
-          </button>
+      <section className="container-fluid relative overflow-hidden">
+        <div className="container">
+          <div className="row gx-5 items-center justify-center">
+            <div className="md:col-4 space-y-2 order-last md:order-first mt-8 md:mt-0">
+              <h3 className="text-sm font-bold text-green-haze-600">
+                WHO WE WORK WITH
+              </h3>
+              <h2 className="my-2 text-2xl font-bold ">
+                Discover What We Work With{" "}
+                <span className="font-normal">To Achieve Your Goals</span>
+              </h2>
+              <button
+                type="button"
+                className="px-5 py-3 mt-5 text-xs text-white rounded-r-full rounded-bl-full bg-green-haze-500 font-bold"
+              >
+                Hire Your Technician
+              </button>
+            </div>
+            <div className="col row row-cols-1 md:row-cols-2 g-5 mt-0">
+              <div className="mt-0">
+                <div className="h-72 relative">
+                  <p className="absolute top-2 -left-28 px-5 py-2 text-sm font-bold bg-white shadow-md rounded-l-xl rounded-tr-xl text-green-haze-600">
+                    Early Stage Startup
+                  </p>
+                  <Image
+                    src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
+                    alt="People working"
+                    className="rounded-lg object-cover -z-10"
+                    sizes="100vw"
+                    fill
+                  />
+                </div>
+              </div>
+              <div className="md:mt-0">
+                <div className="h-72 relative">
+                  <p className="absolute bottom-2 -right-4 px-5 py-2 text-sm font-bold bg-white shadow-md rounded-r-xl rounded-bl-xl text-green-haze-600">
+                    Funded Startups
+                  </p>
+                  <Image
+                    src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                    alt="People working"
+                    className="rounded-lg object-cover -z-10"
+                    sizes="100vw"
+                    fill
+                  />
+                </div>
+              </div>
+              <div>
+                <div className="h-72 relative">
+                  <p className="absolute -bottom-5 -right-4 px-5 py-2 text-xs font-bold bg-white shadow-md rounded-r-xl rounded-bl-xl text-green-haze-600">
+                    Established (Traditional) Businesses
+                  </p>
+                  <Image
+                    src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
+                    alt="People working"
+                    className="rounded-lg object-cover -z-10"
+                    sizes="100vw"
+                    fill
+                  />
+                </div>
+              </div>
+              <div>
+                <div className="h-72 relative">
+                  <p className="absolute -top-2 -left-4 px-5 py-2 text-sm font-bold bg-white shadow-md rounded-l-xl rounded-tr-xl text-green-haze-600">
+                    Enterprises
+                  </p>
+                  <Image
+                    src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                    alt="People working"
+                    className="rounded-lg object-cover -z-10"
+                    sizes="100vw"
+                    fill
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="grid w-1/2 grid-cols-2 gap-8 mx-auto">
-          <div className="relative">
-            <p className="absolute px-5 py-1 text-sm font-bold -translate-x-32 bg-white shadow-md rounded-l-xl rounded-tr-xl top-2 text-green-haze-600">
-              Early Stage Startup
-            </p>
-            <Image
-              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
-              alt="People working"
-              width={0}
-              height={0}
-              className="w-[300px] rounded-lg"
-              sizes="100vw"
-            />
-          </div>
-          <div className="relative">
-            <p className="absolute right-0 px-5 py-1 text-sm font-bold translate-x-20 bg-white shadow-md rounded-r-xl rounded-bl-xl bottom-2 text-green-haze-600">
-              Funded Startups
-            </p>
-            <Image
-              src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-              alt="People working"
-              width={0}
-              height={0}
-              className="w-[300px] rounded-lg"
-              sizes="100vw"
-            />
-          </div>
-          <div className="relative">
-            <p className="absolute bottom-0 right-0 px-5 py-1 text-xs font-bold translate-x-2 translate-y-5 bg-white shadow-md rounded-r-xl rounded-bl-xl text-green-haze-600">
-              Established (Traditional) Businesses
-            </p>
-            <Image
-              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
-              alt="People working"
-              width={0}
-              height={0}
-              className="w-[300px] rounded-lg"
-              sizes="100vw"
-            />
-          </div>
-          <div className="relative">
-            <p className="absolute top-0 px-5 py-1 text-sm font-bold -translate-x-2 -translate-y-2 bg-white shadow-md rounded-l-xl rounded-tr-xl text-green-haze-600">
-              Enterprises
-            </p>
-            <Image
-              src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-              alt="People working"
-              width={0}
-              height={0}
-              className="w-[300px] rounded-lg"
-              sizes="100vw"
-            />
-          </div>
-        </div>
+        <svg width="1186" height="800" viewBox="0 0 1186 800" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute -z-10 top-0 left-0">
+          <path d="M-1 0H1186V800H249C110.929 800 -1 688.071 -1 550V0Z" fill="#00AB44" fill-opacity="0.05"/>
+        </svg>
       </section>
 
       <section className="overflow-scroll">
