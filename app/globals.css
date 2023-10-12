@@ -2,6 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
+/* These styles will be purged */
+@layer components {
+  html,
+  body {
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  * {
+    box-sizing: border-box;
+    @apply transition duration-300 ease-out;
+  }
+
+  section {
+    @apply py-20;
+  }
+}
 
 :root {
   --foreground-rgb: 0, 0, 0;
