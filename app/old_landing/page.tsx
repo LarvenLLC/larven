@@ -44,8 +44,8 @@ export default function Home() {
                   Unlock Your <span className='text-primary'>Potential</span> with Digital Solutions
                 </h1>
                 <p className="mb-12">
-              We are here to assist you in transforming your business processes and operations so that you can
-              accomplish more in less time while increasing your profitability.
+                  We are here to assist you in transforming your business processes and operations so that you can
+                  accomplish more in less time while increasing your profitability.
                 </p>
                 <button type="button" className={`${buttonStyles.primary} mb-6`}>Hire Your Technicians</button>
               </div>
