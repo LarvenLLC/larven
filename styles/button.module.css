@@ -1,0 +1,32 @@
+@tailwind components;
+
+/* These styles will be purged */
+@layer components {
+  .bottom-edge {
+    @apply !rounded-tl-[30px] !rounded-bl-none;
+  }
+
+  .top-edge {
+    @apply rounded-bl-[30px] rounded-tl-none;
+  }
+
+  .button {
+    @apply inline-flex items-center justify-center px-12 py-4 text-base border border-transparent rounded-[30px] top-edge font-medium shadow;
+  }
+
+  .primary {
+    @apply button text-white bg-primary hover:bg-primary focus:bg-primary;
+  }
+
+  .outline-primary {
+    @apply button text-primary bg-white hover:bg-primary hover:text-white focus:bg-primary;
+  }
+
+  .large {
+    @apply px-12 py-4 text-xl;
+  }
+
+  .small {
+    @apply px-5 py-3 text-base;
+  }
+}
