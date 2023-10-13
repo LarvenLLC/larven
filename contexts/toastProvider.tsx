@@ -1,8 +1,11 @@
-import {createContext, useContext, useState} from 'react';
+import {createContext, useCallback, useContext, useMemo, useState} from 'react';
 
 import Toast from '@/components/toast';
 
-const ToastContext = createContext();
+const ToastContext = createContext({
+  toast: () => {},
+  remove: () => {},
+});
 
 let toastCount = 0;
 
@@ -14,24 +17,33 @@ let toastCount = 0;
 export default function ToastProvider({children}) {
   const [toasts, setToasts] = useState([]);
 
-  const toast = (content) => {
-    const id = toastCount++;
-    const toast = {content, id};
-    setToasts([...toasts, toast]);
-    remove(id, false);
-  };
-  const remove = (id, instantly = true) => {
+  const remove = useCallback((id, instantly = true) => {
     const timeout = instantly ? 0 : 3000;
     const newToasts = toasts.filter((t) => t.id !== id);
     setTimeout(function() {
       setToasts(newToasts);
     }, timeout);
-  };
+  }, [toasts]);
+
+  const toast = useCallback((content) => {
+    const id = toastCount++;
+    const toast = {content, id};
+    setToasts([...toasts, toast]);
+    remove(id, false);
+  }, [remove, toasts]);
+
   // avoid creating a new fn on every render
-  const onDismiss = (id) => () => remove(id);
+  const onDismiss = useCallback((id) => {
+    remove(id);
+  }, [remove]);
+
+  const value = useMemo(() => ({
+    toast,
+    remove
+  }), [remove, toast]);
 
   return (
-    <ToastContext.Provider value={{toast, remove}}>
+    <ToastContext.Provider value={value}>
       {children}
       <div style={{position: 'fixed', right: 10, top: 70}}>
         {toasts.map(({content, id, ...rest}) => (
