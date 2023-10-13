@@ -34,8 +34,8 @@ export default function Newsletter() {
         }
         form[key] = value;
       }
-      window.Tawk_API.setAttributes(form);
-      window.Tawk_API.addEvent('requested-free-audit', form);
+      (window as any).Tawk_API.setAttributes(form);
+      (window as any).Tawk_API.addEvent('requested-free-audit', form);
       axios.post('mailchimp/members', form);
       toast('You have been added to the list.');
       // reset form
