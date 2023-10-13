@@ -3,7 +3,7 @@
  * @component
  * @return {function}
  */
-export default function Toast({children, onDismiss, type}) {
+export default function Toast({children, onDismiss, type}: {children: React.ReactNode, onDismiss: () => void, type?: string}) {
   switch (type) {
     case 'success':
       return (
