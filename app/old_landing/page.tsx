@@ -9,8 +9,8 @@ import {XCircleIcon, CheckCircleIcon} from '@heroicons/react/24/solid';
 import buttonStyles from '@/styles/button.module.css';
 import cardStyles from '@/styles/card.module.css';
 import headingStyles from '@/styles/heading.module.css';
+import Footer from '@/components/footer';
 import Newsletter from '@/components/newsletter';
-import Partners from '@/components/partners';
 import Testimonials from '@/components/testimonials';
 import VerticalButtonIcon from '@/components/verticalButtonIcon';
 
@@ -347,7 +347,7 @@ export default function Home() {
               naturalSlideHeight={50}
               totalSlides={5}
               isIntrinsicHeight
-              className="relative no-prose"
+              className="relative no-prose mt-28"
             >
               <Testimonials />
             </CarouselProvider>
@@ -365,7 +365,7 @@ export default function Home() {
                 <button type="button" className={`${buttonStyles.primary}`}>See All Articles</button>
               </div>
               <div className="md:col-8 lg:col-7">
-                <div className="row md:row-cols-2">
+                <div className="row md:row-cols-2 g-3">
                   {[
                     {image: '/images/early-startup.jpeg', caption: 'Early Stage Startups'},
                     {image: '/images/funded-startup.jpeg', caption: 'Funded Startups'},
@@ -375,11 +375,10 @@ export default function Home() {
                     <div className="relative h-[300px] overflow-hidden rounded-lg">
                       <div
                         className={`
-                          absolute bottom-2 h-[130px] w-[95%] p-3
+                          absolute bottom-2 min-h-[130px] w-[95%] p-3
                           ${index % 2 ?
-                            'right-0 bg-primary bg-opacity-40 text-white rounded-l-xl' :
-                            'left-0 bg-white bg-opacity-80 rounded-r-xl'}
-                          z-10
+                            'right-0 bg-primary bg-opacity-40 text-white rounded-l-xl' : 'left-0 bg-white bg-opacity-80 rounded-r-xl'
+                          } z-10
                         `}
                       >
                         <h5 className="text-xl font-semibold">Lorem ipsum dolor sit amet consectetur.</h5>
@@ -761,28 +760,8 @@ export default function Home() {
             </div>
           </div>
         </section> */}
-        {/* partners section */}
-        <Partners />
-        {/* testimonials section */}
-        <section></section>
-        {/* cta section */}
-        <section className="px-10 bg-gray-50">
-          <div className="mx-auto lg:flex lg:items-center lg:justify-between">
-            <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-              <span className="block">Ready to transform your processes?</span>
-              <span className="block text-primary">Join us now.</span>
-            </h2>
-            <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
-              <div className="inline-flex rounded-md shadow">
-                <Link href="/contacts" >
-                  <button className="button-primary">
-                    Contact Us
-                  </button>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* footer section */}
+        <Footer />
     </>
   );
 }
