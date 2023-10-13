@@ -20,7 +20,7 @@ import VerticalButtonIcon from '@/components/verticalButtonIcon';
  * @return {React.Component}
  */
 export default function Home() {
-  const cardRef = useRef();
+  const cardRef = useRef<HTMLDivElement>(null);
 
   const [cardHeight, setCardHeight] = useState(0);
 
@@ -409,6 +409,7 @@ export default function Home() {
               {[
                 {
                   title: 'Cloud Computing',
+                  caption: 'We monitor and control process and budget, report weekly progress in writing, hold weekly team meetings (via video conference)!',
                   backgroundColor: 'bg-[#000000]',
                   color: 'text-[#000000]',
                   icon: (<svg
@@ -429,6 +430,7 @@ export default function Home() {
                 },
                 {
                   title: 'Blockchain Technology',
+                  caption: 'We monitor and control process and budget, report weekly progress in writing, hold weekly team meetings (via video conference)!',
                   backgroundColor: 'bg-[#AB4400]',
                   color: 'text-[#AB4400]',
                   icon: (
@@ -448,6 +450,7 @@ export default function Home() {
                 },
                 {
                   title: 'Software Project Implementation',
+                  caption: 'We monitor and control process and budget, report weekly progress in writing, hold weekly team meetings (via video conference)!',
                   backgroundColor: 'bg-[#455A64]',
                   color: 'text-[#455A64]',
                   icon: (<svg
@@ -468,6 +471,7 @@ export default function Home() {
                 },
                 {
                   title: 'Cyber Security',
+                  caption: 'We monitor and control process and budget, report weekly progress in writing, hold weekly team meetings (via video conference)!',
                   backgroundColor: 'bg-primary',
                   color: 'text-primary',
                   icon: (<svg
@@ -488,6 +492,7 @@ export default function Home() {
                 },
                 {
                   title: 'Data Analytics',
+                  caption: 'We monitor and control process and budget, report weekly progress in writing, hold weekly team meetings (via video conference)!',
                   backgroundColor: 'bg-[#FF9F47]',
                   color: 'text-[#FF9F47]',
                   icon: (<svg
@@ -505,17 +510,16 @@ export default function Home() {
                   </svg>
                   ),
                 },
-              ].map(({backgroundColor, color, icon, caption}) => (<div key={caption}>
+              ].map(({backgroundColor, color, icon, title, caption}) => (<div key={caption}>
                 <div className={`${cardStyles.card}`}>
                   <p
                     className={`${cardStyles.number} ${backgroundColor} ${color} bg-opacity-[0.15]`}
                   >
                     {icon}
                   </p>
-                  <h3 className={cardStyles.heading}>Implimentation</h3>
+                  <h3 className={cardStyles.heading}>{title}</h3>
                   <p className={cardStyles.description}>
-                    We monitor and control process and budget, report weekly progress in writing, hold weekly team
-                    meetings (via video conference)!
+                    {caption}
                   </p>
                 </div>
               </div>))}
