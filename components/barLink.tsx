@@ -9,7 +9,7 @@ import Link from 'next/link';
  * @param {boolean} props.light
  * @return {JSX}
  */
-export default function BarLink({href, icon, text, light = false}: {href: string, icon: JSX.Element, text: string, light: boolean}) {
+export default function BarLink({href, icon, text, light = false}: {href: string, icon: JSX.Element, text: string, light?: boolean}) {
   return (
     <Link
       href={href}
