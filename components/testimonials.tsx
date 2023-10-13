@@ -9,6 +9,36 @@ import {
   DotGroup,
 } from 'pure-react-carousel';
 
+const data = [
+  {
+    src: '/images/testimonies/c4.jpg',
+    containerClassName: 'relative top-56 z-10',
+  },
+  {
+    src: '/images/testimonies/c1.jpg',
+    containerClassName: '',
+  },
+  {
+    src: '/images/testimonies/c5.jpg',
+    containerClassName: 'relative top-36 z-10',
+  },
+  {
+    src: '/images/testimonies/c2.jpg',
+    containerClassName: '',
+  },
+  {
+    src: '/images/testimonies/c3.jpg',
+    containerClassName: 'relative top-56 z-10',
+  },
+];
+
+function getImageClass(index : number) : string {
+  if (index % 2 === 0) {
+    return 'after:absolute after:top-[calc(50%-100px)] after:left-[calc(50%-100px)] after:h-[200px] after:w-[200px] after:border-2 after:border-primary after:rounded-full';
+  }
+  return 'relative after:absolute after:top-[calc(50%-100px)] after:left-[calc(50%-100px)] after:h-[200px] after:w-[200px] after:border-2 after:border-primary after:rounded-full';
+}
+
 /**
  * @description Carousel component
  * @param {object} props
@@ -33,56 +63,22 @@ export default function Testimonials() {
   return (
     <>
       <div className="row md:row-cols-5 text-center">
-        <div className={`relative top-56 ${currentSlide === 0 ?
-           'after:absolute after:top-[calc(50%-100px)] after:left-[calc(50%-100px)] after:h-[200px] after:w-[200px] after:border-2 after:border-primary after:rounded-full' : '' }`}>
-          <Image
-            src="/images/testimonies/c4.jpg"
-            height={150}
-            width={150}
-            className="rounded-full mx-auto"
-            alt=""
-          />
-        </div>
-        <div className={`${currentSlide === 1 ?
-           'relative after:absolute after:top-[calc(50%-100px)] after:left-[calc(50%-100px)] after:h-[200px] after:w-[200px] after:border-2 after:border-primary after:rounded-full' : '' }`}>
-          <Image
-            src="/images/testimonies/c1.jpg"
-            height={150}
-            width={150}
-            className="rounded-full mx-auto"
-            alt=""
-          />
-        </div>
-        <div className={`relative top-36 ${currentSlide === 2 ?
-           'after:absolute after:top-[calc(50%-100px)] after:left-[calc(50%-100px)] after:h-[200px] after:w-[200px] after:border-2 after:border-primary after:rounded-full' : '' }`}>
-          <Image
-            src="/images/testimonies/c5.jpg"
-            height={150}
-            width={150}
-            className="rounded-full mx-auto"
-            alt=""
-          />
-        </div>
-        <div className={`${currentSlide === 3 ?
-           'relative after:absolute after:top-[calc(50%-100px)] after:left-[calc(50%-100px)] after:h-[200px] after:w-[200px] after:border-2 after:border-primary after:rounded-full' : '' }`}>
-          <Image
-            src="/images/testimonies/c2.jpg"
-            height={150}
-            width={150}
-            className="rounded-full mx-auto"
-            alt=""
-          />
-        </div>
-        <div className={`relative top-56 ${currentSlide === 4 ?
-          'after:absolute after:top-[calc(50%-100px)] after:left-[calc(50%-100px)] after:h-[200px] after:w-[200px] after:border-2 after:border-primary after:rounded-full' : '' }`}>
-          <Image
-            src="/images/testimonies/c3.jpg"
-            height={150}
-            width={150}
-            className="rounded-full mx-auto"
-            alt=""
-          />
-        </div>
+        {data.map(({ containerClassName, src }, index) => (
+          <button
+            key={src}
+            type="button"
+            className={`${containerClassName} ${currentSlide === index ? getImageClass(index) : '' }`}
+            onClick={() => carouselContext.setStoreState({ currentSlide: index })}
+          >
+            <Image
+              src={src}
+              height={150}
+              width={150}
+              className="rounded-full mx-auto"
+              alt=""
+            />
+          </button>
+        ))}
       </div>
       <Slider classNameTray="mt-40 relative overflow-hidden w-100 p-0">
         <Slide index={0} className="p-0 my-0" style={{height: 'auto'}}>
