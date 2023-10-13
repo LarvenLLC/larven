@@ -24,6 +24,10 @@
   section {
     @apply py-20;
   }
+
+  footer {
+    @apply py-20 container px-10 md:px-28 space-y-8;
+  }
 }
 
 :root {
