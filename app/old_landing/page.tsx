@@ -1,18 +1,18 @@
+"use client"
+
 import {useEffect, useRef, useState} from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import {CarouselProvider} from 'pure-react-carousel';
 import {XCircleIcon, CheckCircleIcon} from '@heroicons/react/24/solid';
 
-import Layout from '@/components/layout';
+import buttonStyles from '@/styles/button.module.css';
+import cardStyles from '@/styles/card.module.css';
+import headingStyles from '@/styles/heading.module.css';
 import Newsletter from '@/components/newsletter';
 import Partners from '@/components/partners';
-
-import buttonStyles from '../styles/Button.module.css';
-import cardStyles from '../styles/Card.module.css';
-import headingStyles from '../styles/Heading.module.css';
-import VerticalButtonIcon from '@/components/verticalButtonIcon';
 import Testimonials from '@/components/testimonials';
+import VerticalButtonIcon from '@/components/verticalButtonIcon';
 
 /**
  * Index page
@@ -32,7 +32,6 @@ export default function Home() {
 
   return (
     <>
-      <Layout title="Home">
         {/* announcement section */}
         {/* <Announcement /> */}
         {/* landing section */}
@@ -784,7 +783,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-      </Layout>
     </>
   );
 }
