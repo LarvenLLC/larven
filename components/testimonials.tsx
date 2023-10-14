@@ -1,3 +1,5 @@
+"use client"
+
 import 'pure-react-carousel/dist/react-carousel.es.css';
 
 import {useContext, useEffect, useState} from 'react';
