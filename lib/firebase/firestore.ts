@@ -1,8 +1,10 @@
 import { getApps } from 'firebase/app';
 import {
   getFirestore, addDoc, collection, deleteDoc, doc, getDoc, getDocs,
-  orderBy as orderByFn, query, setDoc, serverTimestamp, where, writeBatch,
+  orderBy as orderByFn, query, setDoc, serverTimestamp, where, writeBatch, CollectionReference, DocumentData, OrderByDirection, DocumentReference,
 } from 'firebase/firestore';
+
+import { blameUpdate, blammable, getCurrentUser } from '@/lib/firebase/auth';
 
 // initialized firebase apps
 // export const app = getApp();
@@ -22,14 +24,13 @@ export const apps = getApps();
  * @param {string} subcollections
  * @returns
  */
-export function collectionRef(collectionName = '') {
+export function collectionRef(collectionName: string): CollectionReference | undefined {
   if (apps.length) {
     const db = getFirestore();
 
     const res = collection(db, collectionName);
     return res;
   }
-  return false;
 }
 
 /**
@@ -38,7 +39,7 @@ export function collectionRef(collectionName = '') {
  * @param {string} id
  * @returns
  */
-export function docRef(collectionName: string, id: string) {
+export function docRef(collectionName: string, id: string): DocumentReference | undefined {
   if (apps.length) {
     const db = getFirestore();
     // const auth = getAuth();
@@ -49,26 +50,26 @@ export function docRef(collectionName: string, id: string) {
   }
 }
 
-export function collectionSubscribe(collectionName: string, options) {
-  const [fieldPath, directionStr] = options?.orderBy ?? ['createdAt', 'desc'];
-  if (apps.length) {
-    let res = [];
-    const unsubscribe = collectionRef(collectionName)
-      .orderBy(fieldPath, directionStr)
-      .onSnapshot((querySnapshot) => {
-        res = querySnapshot.docs;
-      });
-    return [res, unsubscribe];
-  }
-  return false;
-}
+// export function collectionSubscribe(collectionName: string, options?: { orderBy: string[] }) {
+//   const [fieldPath, directionStr] = options?.orderBy ?? ['createdAt', 'desc'];
+//   if (apps.length) {
+//     let res: [] = [];
+//     const unsubscribe = (collectionRef(collectionName) as CollectionReference)
+//       .orderBy(fieldPath, directionStr)
+//       .onSnapshot((querySnapshot) => {
+//         res = querySnapshot.docs;
+//       });
+//     return [res, unsubscribe];
+//   }
+//   return false;
+// }
 
 export async function getDocuments(
-  collectionName = '',
-  whereBy = [],
-  orderBy = { field: 'createdAt', direction: 'desc' },
+  collectionName: string,
+  whereBy: { field: string, operation: '=='|'!=', value: string }[] = [],
+  orderBy: { field: string, direction: OrderByDirection } = { field: 'createdAt', direction: 'desc' },
 ) {
-  const data = [];
+  const data: DocumentData[] = [];
   if (apps.length) {
     const queries = [];
 
@@ -77,7 +78,7 @@ export async function getDocuments(
     });
     queries.push(orderByFn(orderBy.field, orderBy.direction));
 
-    const snapshot = await getDocs(query(collectionRef(collectionName), ...queries));
+    const snapshot = await getDocs(query((collectionRef(collectionName) as CollectionReference), ...queries));
 
     snapshot.forEach((document) => {
       // doc.data() is never undefined for query doc snapshots
@@ -93,7 +94,7 @@ export async function getDocuments(
 
 export async function getDocument(collectionName: string, id: string) {
   if (apps.length) {
-    const res = await getDoc(docRef(collectionName, id));
+    const res = await getDoc((docRef(collectionName, id) as DocumentReference));
     return res?.data();
   }
   return false;
@@ -105,9 +106,8 @@ export async function addDocument(collectionName: string, form = {}, createdAt =
       ...form,
       createdAt,
       updatedAt: createdAt,
-      createdBy: getCurrentUser()?.uid,
     };
-    const res = await addDoc(collectionRef(collectionName), blammable(formData));
+    const res = await addDoc((collectionRef(collectionName) as CollectionReference), blammable(formData));
     return res;
   }
   return false;
@@ -119,9 +119,8 @@ export async function putDocument(collectionName: string, documentName: string, 
       ...form,
       createdAt,
       updatedAt: createdAt,
-      createdBy: getCurrentUser()?.uid,
     };
-    const res = await setDoc(docRef(collectionName, documentName), blameUpdate(formData));
+    const res = await setDoc((docRef(collectionName, documentName) as DocumentReference), blameUpdate(formData));
     return res;
   }
   return false;
@@ -134,8 +133,8 @@ export async function addDocuments(collectionName = '', forms = []) {
     const batch = writeBatch(db);
     const currentUser = getCurrentUser();
     //
-    forms.forEach((form) => {
-      const reference = doc(collectionRef(collectionName));
+    forms.forEach((form: object) => {
+      const reference = doc((collectionRef(collectionName) as CollectionReference));
       batch.set(reference, {
         ...form,
         createdAt: new Date(),
@@ -152,7 +151,7 @@ export async function addDocuments(collectionName = '', forms = []) {
 
 export async function deleteDocument(collectionName: string, id: string) {
   if (apps.length) {
-    const res = await deleteDoc(docRef(collectionName, id));
+    const res = await deleteDoc((docRef(collectionName, id) as DocumentReference));
     return res;
   }
   return false;
@@ -165,7 +164,7 @@ export async function deleteDocuments(collectionName: string, ids: string[]) {
     const batch = writeBatch(db);
     //
     ids.forEach((id) => {
-      const reference = docRef(collectionName, id);
+      const reference = docRef(collectionName, id) as DocumentReference;
       batch.delete(reference);
     });
     // Commit the batch
@@ -182,7 +181,7 @@ export async function updateDocument(collectionName: string, id: string, form = 
       updatedAt: new Date(),
     };
 
-    const res = await setDoc(docRef(collectionName, id), formData, { merge: true });
+    const res = await setDoc((docRef(collectionName, id) as DocumentReference), formData, { merge: true });
     return res;
   }
   return false;
@@ -195,7 +194,7 @@ export async function updateDocuments(collectionName: string, ids: string[], for
     const batch = writeBatch(db);
     //
     ids.forEach((id) => {
-      const reference = docRef(collectionName, id);
+      const reference = docRef(collectionName, id) as DocumentReference;
       batch.update(reference, {
         ...form,
         updatedAt: serverTimestamp(),
@@ -208,4 +207,4 @@ export async function updateDocuments(collectionName: string, ids: string[], for
   return false;
 }
 
-export function unsubscribeCollection(u) { return u; }
+export function unsubscribeCollection(u: any) { return u; }
