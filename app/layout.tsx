@@ -1,6 +1,6 @@
 "use client"
 
-import './globals.css'
+import '@/styles/globals.css'
 import { useEffect } from 'react'
 import Script from "next/script"
 import type { Metadata } from 'next'

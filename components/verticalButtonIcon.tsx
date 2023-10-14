@@ -8,7 +8,7 @@ import Image from 'next/image';
  * @param {string} props.src
  * @return {JSX}
  */
-export default function VerticalButtonIcon({alt, src, colorClass = 'bg-primary'}) {
+export default function VerticalButtonIcon({alt, src, colorClass = 'bg-primary'}: { alt: string , src: string , colorClass?: string }) {
   return (<div className="text-center relative">
     <div
       className="

@@ -4,12 +4,12 @@ import Link from 'next/link';
  * Bar Link Component
  * @param {object} props
  * @param {string} props.href
- * @param {JSX} props.icon
+ * @param {JSX.Element} props.icon
  * @param {string} props.text
  * @param {boolean} props.light
  * @return {JSX}
  */
-export default function BarLink({href, icon, text, light = false}) {
+export default function BarLink({href, icon, text, light = false}: {href: string, icon: JSX.Element, text: string, light?: boolean}) {
   return (
     <Link
       href={href}

@@ -34,6 +34,7 @@
     "typescript": "5.1.6"
   },
   "devDependencies": {
+    "@types/mailchimp__mailchimp_marketing": "^3.0.15",
     "encoding": "^0.1.13",
     "tailwind-bootstrap-grid": "^5.0.1"
   }

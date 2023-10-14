@@ -1,11 +1,12 @@
 import Image from 'next/image';
-import {EnvelopeIcon, MapPinIcon, PhoneIcon} from '@heroicons/react/24/outline';
-import {RiInstagramFill, RiFacebookCircleFill, RiLinkedinFill, RiTwitterFill} from 'react-icons/ri';
+import { EnvelopeIcon, MapPinIcon, PhoneIcon } from '@heroicons/react/24/outline';
+import { RiInstagramFill, RiFacebookCircleFill, RiLinkedinFill, RiTwitterFill } from 'react-icons/ri';
 
 import axios from '@/lib/axios';
-import {useToast} from '@/contexts/toastProvider';
+import { useToast } from '@/contexts/toastProvider';
 import headingStyles from '@/styles/heading.module.css';
 import BarLink from '@/components/barLink';
+import { FormEvent } from 'react';
 
 /**
  * Newsletter custom newsletter signup component
@@ -13,32 +14,32 @@ import BarLink from '@/components/barLink';
  * @return {function}
  */
 export default function Newsletter() {
-  const {toast} = useToast();
+  const { toast } = useToast();
 
   /**
    * Signup function
    * @param {event} e
    * @return {boolean}
    */
-  function signup(e) {
+  function signup(e: FormEvent) {
     try {
       e.preventDefault();
-      const form = {};
-      const formData = new FormData(e.target);
+      const form: { [key: string]: any } = {};
+      const formData = new FormData(e.target as HTMLFormElement);
       for (const pair of formData.entries()) {
-        const key = pair[0];
-        let value = pair[1];
+        const key: string = pair[0];
+        let value: any = pair[1];
         if (typeof value === 'string') {
           value = value.trim();
         }
         form[key] = value;
       }
-      window.Tawk_API.setAttributes(form, function(error) { });
-      window.Tawk_API.addEvent('requested-free-audit', form, function(error) { });
+      (window as any).Tawk_API.setAttributes(form);
+      (window as any).Tawk_API.addEvent('requested-free-audit', form);
       axios.post('mailchimp/members', form);
       toast('You have been added to the list.');
       // reset form
-      event?.target?.reset();
+      (e.target as HTMLFormElement)?.reset();
       return true;
     } catch (error) {
       // show error

@@ -9,8 +9,8 @@ import {XCircleIcon, CheckCircleIcon} from '@heroicons/react/24/solid';
 import buttonStyles from '@/styles/button.module.css';
 import cardStyles from '@/styles/card.module.css';
 import headingStyles from '@/styles/heading.module.css';
+import Footer from '@/components/footer';
 import Newsletter from '@/components/newsletter';
-import Partners from '@/components/partners';
 import Testimonials from '@/components/testimonials';
 import VerticalButtonIcon from '@/components/verticalButtonIcon';
 
@@ -20,7 +20,7 @@ import VerticalButtonIcon from '@/components/verticalButtonIcon';
  * @return {React.Component}
  */
 export default function Home() {
-  const cardRef = useRef();
+  const cardRef = useRef<HTMLDivElement>(null);
 
   const [cardHeight, setCardHeight] = useState(0);
 
@@ -347,7 +347,7 @@ export default function Home() {
               naturalSlideHeight={50}
               totalSlides={5}
               isIntrinsicHeight
-              className="relative no-prose"
+              className="relative no-prose mt-28"
             >
               <Testimonials />
             </CarouselProvider>
@@ -365,7 +365,7 @@ export default function Home() {
                 <button type="button" className={`${buttonStyles.primary}`}>See All Articles</button>
               </div>
               <div className="md:col-8 lg:col-7">
-                <div className="row md:row-cols-2">
+                <div className="row md:row-cols-2 g-3">
                   {[
                     {image: '/images/early-startup.jpeg', caption: 'Early Stage Startups'},
                     {image: '/images/funded-startup.jpeg', caption: 'Funded Startups'},
@@ -375,11 +375,10 @@ export default function Home() {
                     <div className="relative h-[300px] overflow-hidden rounded-lg">
                       <div
                         className={`
-                          absolute bottom-2 h-[130px] w-[95%] p-3
+                          absolute bottom-2 min-h-[130px] w-[95%] p-3
                           ${index % 2 ?
-                            'right-0 bg-primary bg-opacity-40 text-white rounded-l-xl' :
-                            'left-0 bg-white bg-opacity-80 rounded-r-xl'}
-                          z-10
+                            'right-0 bg-primary bg-opacity-40 text-white rounded-l-xl' : 'left-0 bg-white bg-opacity-80 rounded-r-xl'
+                          } z-10
                         `}
                       >
                         <h5 className="text-xl font-semibold">Lorem ipsum dolor sit amet consectetur.</h5>
@@ -410,6 +409,7 @@ export default function Home() {
               {[
                 {
                   title: 'Cloud Computing',
+                  caption: 'We monitor and control process and budget, report weekly progress in writing, hold weekly team meetings (via video conference)!',
                   backgroundColor: 'bg-[#000000]',
                   color: 'text-[#000000]',
                   icon: (<svg
@@ -430,6 +430,7 @@ export default function Home() {
                 },
                 {
                   title: 'Blockchain Technology',
+                  caption: 'We monitor and control process and budget, report weekly progress in writing, hold weekly team meetings (via video conference)!',
                   backgroundColor: 'bg-[#AB4400]',
                   color: 'text-[#AB4400]',
                   icon: (
@@ -449,6 +450,7 @@ export default function Home() {
                 },
                 {
                   title: 'Software Project Implementation',
+                  caption: 'We monitor and control process and budget, report weekly progress in writing, hold weekly team meetings (via video conference)!',
                   backgroundColor: 'bg-[#455A64]',
                   color: 'text-[#455A64]',
                   icon: (<svg
@@ -469,6 +471,7 @@ export default function Home() {
                 },
                 {
                   title: 'Cyber Security',
+                  caption: 'We monitor and control process and budget, report weekly progress in writing, hold weekly team meetings (via video conference)!',
                   backgroundColor: 'bg-primary',
                   color: 'text-primary',
                   icon: (<svg
@@ -489,6 +492,7 @@ export default function Home() {
                 },
                 {
                   title: 'Data Analytics',
+                  caption: 'We monitor and control process and budget, report weekly progress in writing, hold weekly team meetings (via video conference)!',
                   backgroundColor: 'bg-[#FF9F47]',
                   color: 'text-[#FF9F47]',
                   icon: (<svg
@@ -506,17 +510,16 @@ export default function Home() {
                   </svg>
                   ),
                 },
-              ].map(({backgroundColor, color, icon, caption}) => (<div key={caption}>
+              ].map(({backgroundColor, color, icon, title, caption}) => (<div key={caption}>
                 <div className={`${cardStyles.card}`}>
                   <p
                     className={`${cardStyles.number} ${backgroundColor} ${color} bg-opacity-[0.15]`}
                   >
                     {icon}
                   </p>
-                  <h3 className={cardStyles.heading}>Implimentation</h3>
+                  <h3 className={cardStyles.heading}>{title}</h3>
                   <p className={cardStyles.description}>
-                    We monitor and control process and budget, report weekly progress in writing, hold weekly team
-                    meetings (via video conference)!
+                    {caption}
                   </p>
                 </div>
               </div>))}
@@ -539,83 +542,6 @@ export default function Home() {
         </section>
         {/* newsletter section */}
         <Newsletter />
-        {/* testimonials section */}
-        <section className="">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-            <div className="bg-gray-100 relative p-1 rounded-lg">
-              <div className="relative overflow-hidden h-96 w-full rounded-lg bottom-4 left-4">
-                <img
-                  src="/images/ceo.jpg"
-                  className="absolute object-cover object-center my-0"
-                  // layout="fill"
-                  // objectFit="cover"
-                  alt=""
-                />
-              </div>
-            </div>
-            <div>
-              <h1>
-                <svg
-                  version="1.1"
-                  id="Capa_1"
-                  xmlns="http://www.w3.org/2000/svg"
-                  x="0px"
-                  y="0px"
-                  viewBox="0 0 612 612"
-                  style={{enableBackground: 'new 0 0 612 612'}}
-                  height={48}
-                  width={48}
-                >
-                  <g>
-                    <g>
-                      <path
-                        style={{fill: '#010002'}}
-                        d="M587.826,186.966c-16.116-37.332-37.944-69.768-65.484-97.308s-59.976-49.368-97.308-65.484
-			S348.024,0,306,0c-28.152,0-55.284,3.672-81.396,11.016s-50.49,17.646-73.134,30.906s-43.248,29.172-61.812,47.736
-			s-34.476,39.168-47.736,61.812c-13.26,22.646-23.562,47.022-30.906,73.134C3.672,250.716,0,277.848,0,306
-			s3.672,55.284,11.016,81.396c7.344,26.11,17.646,50.487,30.906,73.134c13.26,22.644,29.172,43.249,47.736,61.812
-			c18.564,18.564,39.168,34.478,61.812,47.736c22.644,13.26,47.022,23.561,73.134,30.906C250.716,608.328,277.848,612,306,612
-			s55.284-3.672,81.396-11.016c26.111-7.346,50.488-17.646,73.135-30.906c22.644-13.259,43.249-29.172,61.812-47.736
-			c18.564-18.563,34.478-39.168,47.736-61.812c13.26-22.646,23.561-47.023,30.906-73.135C608.328,361.284,612,334.152,612,306
-			C612,263.976,603.942,224.298,587.826,186.966z M296.82,212.364c-2.04,2.855-4.284,4.284-6.732,4.284
-			c-42.024,6.12-63.036,25.5-63.036,58.14h37.332c6.528,0,9.792,3.264,9.792,9.792v140.76c0,6.528-3.264,9.792-9.792,9.792H146.88
-			c-6.528,0-9.792-3.264-9.792-9.792V303.552c0-95.88,46.92-146.268,140.76-151.164c2.448-0.408,4.59,0.204,6.426,1.836
-			s3.162,3.672,3.978,6.12l9.792,44.676C298.86,207.876,298.452,210.324,296.82,212.364z M477.972,212.364
-			c-1.632,2.855-3.876,4.284-6.729,4.284c-41.208,6.12-62.223,25.5-63.036,58.14h37.332c2.854,0,5.304,0.918,7.344,2.754
-			s3.063,4.182,3.063,7.038v140.76c0,2.856-1.021,5.202-3.063,7.038s-4.489,2.754-7.344,2.754H328.644
-			c-2.854,0-5.304-0.918-7.344-2.754s-3.06-4.182-3.06-7.038V303.552c0-95.88,47.124-146.268,141.372-151.164
-			c2.445-0.408,4.59,0.204,6.426,1.836s3.163,3.672,3.978,6.12l9.792,44.676C480.624,207.876,480.012,210.324,477.972,212.364z"
-                      />
-                    </g>
-                  </g>
-                  <g></g>
-                  <g></g>
-                  <g></g>
-                  <g></g>
-                  <g></g>
-                  <g></g>
-                  <g></g>
-                  <g></g>
-                  <g></g>
-                  <g></g>
-                  <g></g>
-                  <g></g>
-                  <g></g>
-                  <g></g>
-                  <g></g>
-                </svg>
-              </h1>
-              <h3>
-                Technology and business are now inseparable. At Larven, we take
-                the road less travelled to help businesses bridge the gap
-                between business and technology. This way, we not only transform
-                businesses, but we transform lives and communities.
-              </h3>
-              <h6>Adam Beleko</h6>
-              <h6>CEO, Larven Technologies</h6>
-            </div>
-          </div>
-        </section>
         {/* features section */}
         {/* <section className="pt-0 bg-white">
           <div className="mx-auto">
@@ -761,28 +687,8 @@ export default function Home() {
             </div>
           </div>
         </section> */}
-        {/* partners section */}
-        <Partners />
-        {/* testimonials section */}
-        <section></section>
-        {/* cta section */}
-        <section className="px-10 bg-gray-50">
-          <div className="mx-auto lg:flex lg:items-center lg:justify-between">
-            <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-              <span className="block">Ready to transform your processes?</span>
-              <span className="block text-primary">Join us now.</span>
-            </h2>
-            <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
-              <div className="inline-flex rounded-md shadow">
-                <Link href="/contacts" >
-                  <button className="button-primary">
-                    Contact Us
-                  </button>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* footer section */}
+        <Footer />
     </>
   );
 }
