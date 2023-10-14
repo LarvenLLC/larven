@@ -1,6 +1,10 @@
 import Image from "next/image";
-import NavBar from "@/components/navbar";
+import {CarouselProvider} from 'pure-react-carousel';
+
+import headingStyles from '@/styles/heading.module.css';
 import Footer from "@/components/footer";
+import NavBar from "@/components/navbar";
+import Testimonials from '@/components/testimonials';
 
 const servicesData = [
   {
@@ -422,83 +426,29 @@ const Homepage = () => {
           </tbody>
         </table>
       </section>
-
-      <section className="w-full flex flex-col justify-center bg-gray-100">
-        <h4 className="text-center font-bold text-green-500">TESTIMONIAL</h4>
-        <h1 className="text-center font-bold text-black text-3xl">
-          What Our customer Says
-        </h1>
-        <div className="flex justify-stretch my-10 mx-auto w-3/4 h-96">
-          <div className="place-self-end">
-            <Image
-              width={0}
-              height={0}
-              sizes="100vw"
-              className="w-32"
-              src="/images/c4.png"
-              alt="just pic"
-            />
-          </div>
-          <div>
-            <Image
-              width={0}
-              height={0}
-              sizes="100vw"
-              className="w-32"
-              src="/images/c1.png"
-              alt="just pic"
-            />
-          </div>
-          <div className="self-center w-1/2">
-            <div className="flex justify-center items-center w-40 h-40 border-4 border-green-haze-700 rounded-full mx-auto">
-              <Image
-                width={0}
-                height={0}
-                sizes="100vw"
-                className="w-32"
-                src="/images/c5.png"
-                alt="just pic"
-              />
-            </div>
-            <div className="space-y-3 text-center">
-              <p>
-                Lorem ipsum dolor sit amet consectetur. Id fermentum cursus in
-                lacus dignissim elementum vel. Risus egestas tellus vitae
-                tincidunt. At arcu sed urna placerat. Hendrerit sodales
-                vulputate viverra congue erat.
-              </p>
-              <h3 className="text-green-haze-700 font-bold">Adela Mtae</h3>
-              <div className="flex justify-evenly w-fit space-x-4 mx-auto">
-                <div className="w-2 h-2 bg-gray-400 rounded-full" />
-                <div className="w-2 h-2 bg-gray-400 rounded-full" />
-                <div className="w-2 h-2 bg-green-haze-500 rounded-full" />
-                <div className="w-2 h-2 bg-gray-400 rounded-full" />
-              </div>
-            </div>
-          </div>
-          <div>
-            <Image
-              width={0}
-              height={0}
-              sizes="100vw"
-              className="w-32"
-              src="/images/c2.png"
-              alt="just pic"
-            />
-          </div>
-          <div className="place-self-end">
-            <Image
-              width={0}
-              height={0}
-              sizes="100vw"
-              className="w-32"
-              src="/images/c3.png"
-              alt="just pic"
-            />
-          </div>
+      {/* testimonials section */}
+      <section
+        className="container-fluid !px-0 !mx-0 max-w-none relative overflow-x-hidden"
+        style={{background: 'linear-gradient(0deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)), #FFFFFF'}}
+      >
+        <div className="container">
+          <h1 className={headingStyles.title}>TESTIMONIALS</h1>
+          <h2 className={headingStyles.heading}>
+            What Our Customers Say
+          </h2>
+          <CarouselProvider
+            isPlaying
+            infinite
+            naturalSlideWidth={100}
+            naturalSlideHeight={50}
+            totalSlides={5}
+            isIntrinsicHeight
+            className="relative no-prose mt-28"
+          >
+            <Testimonials />
+          </CarouselProvider>
         </div>
       </section>
-
       <section className="container">
         <h4 className="text-center font-bold text-green-500">STORIES</h4>
         <h1 className="text-center font-bold text-black text-3xl mb-10">
