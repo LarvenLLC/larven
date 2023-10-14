@@ -76,5 +76,22 @@ export function getCurrentUser() {
     const res = auth.currentUser;
     return res;
   }
-  return false;
+}
+
+export function blammable(data: any) {
+  if (data) {
+    const form = data;
+    form.createdBy = (getCurrentUser() as User)?.uid;
+    return form;
+  }
+  return null;
+}
+
+export function blameUpdate(data: any) {
+  if (data) {
+    const form = data;
+    form.updatedBy = (getCurrentUser() as User)?.uid;
+    return form;
+  }
+  return null;
 }
