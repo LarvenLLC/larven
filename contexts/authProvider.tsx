@@ -3,7 +3,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import {
   createContext, useCallback, useContext, useEffect, useMemo, useState,
 } from 'react';
-import {User as AuthUser, getAuth, getIdTokenResult, onIdTokenChanged} from 'firebase/auth';
+import {User as AuthUser, Unsubscribe, getAuth, getIdTokenResult, onIdTokenChanged} from 'firebase/auth';
 
 import { app } from '@/lib/firebase';
 import {
@@ -24,13 +24,13 @@ interface User extends AuthUser {
 
 type AuthContextType = {
   user: User | null;
-  onAuthStateChanged: (user: User | undefined) => Promise<void>;
+  onAuthStateChanged: (callback: (user: User) => void) => Unsubscribe | undefined;
   signOut: () => void;
 };
 
 const AuthContext = createContext<AuthContextType>({
   user: null,
-  onAuthStateChanged: async () => {},
+  onAuthStateChanged: () => undefined,
   signOut: () => {},
 });
 AuthContext.displayName = 'AuthContext';
