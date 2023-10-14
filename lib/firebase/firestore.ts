@@ -38,7 +38,7 @@ export function collectionRef(collectionName = '') {
  * @param {string} id
  * @returns
  */
-export function docRef(collectionName, id) {
+export function docRef(collectionName: string, id: string) {
   if (apps.length) {
     const db = getFirestore();
     // const auth = getAuth();
@@ -47,10 +47,9 @@ export function docRef(collectionName, id) {
     const reference = doc(db, collectionName, id);
     return reference;
   }
-  return false;
 }
 
-export function collectionSubscribe(collectionName, options) {
+export function collectionSubscribe(collectionName: string, options) {
   const [fieldPath, directionStr] = options?.orderBy ?? ['createdAt', 'desc'];
   if (apps.length) {
     let res = [];
@@ -92,7 +91,7 @@ export async function getDocuments(
   return false;
 }
 
-export async function getDocument(collectionName = '', id = '') {
+export async function getDocument(collectionName: string, id: string) {
   if (apps.length) {
     const res = await getDoc(docRef(collectionName, id));
     return res?.data();
@@ -100,7 +99,7 @@ export async function getDocument(collectionName = '', id = '') {
   return false;
 }
 
-export async function addDocument(collectionName = '', form = {}, createdAt = new Date()) {
+export async function addDocument(collectionName: string, form = {}, createdAt = new Date()) {
   if (apps.length) {
     const formData = {
       ...form,
@@ -114,7 +113,7 @@ export async function addDocument(collectionName = '', form = {}, createdAt = ne
   return false;
 }
 
-export async function putDocument(collectionName = '', documentName = '', form = {}, createdAt = new Date()) {
+export async function putDocument(collectionName: string, documentName: string, form = {}, createdAt = new Date()) {
   if (apps.length) {
     const formData = {
       ...form,
@@ -151,7 +150,7 @@ export async function addDocuments(collectionName = '', forms = []) {
   return false;
 }
 
-export async function deleteDocument(collectionName = '', id = '') {
+export async function deleteDocument(collectionName: string, id: string) {
   if (apps.length) {
     const res = await deleteDoc(docRef(collectionName, id));
     return res;
@@ -159,7 +158,7 @@ export async function deleteDocument(collectionName = '', id = '') {
   return false;
 }
 
-export async function deleteDocuments(collectionName = '', ids = []) {
+export async function deleteDocuments(collectionName: string, ids: string[]) {
   if (apps.length) {
     const db = getFirestore();
     // Get a new write batch
@@ -176,7 +175,7 @@ export async function deleteDocuments(collectionName = '', ids = []) {
   return false;
 }
 
-export async function updateDocument(collectionName, id, form = {}) {
+export async function updateDocument(collectionName: string, id: string, form = {}) {
   if (apps.length) {
     const formData = {
       ...form,
@@ -189,7 +188,7 @@ export async function updateDocument(collectionName, id, form = {}) {
   return false;
 }
 
-export async function updateDocuments(collectionName = '', ids = [], form = {}) {
+export async function updateDocuments(collectionName: string, ids: string[], form = {}) {
   if (apps.length) {
     const db = getFirestore();
     // Get a new write batch
