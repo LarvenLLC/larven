@@ -8,7 +8,7 @@ export async function POST(request: Request) {
     const {email} = body;
 
     // add subscriber to list
-    const response = await mailchimp.lists.addListMember(process.env.MAILCHIMP_AUDIENCE_ID, {
+    const response = await mailchimp.lists.addListMember(process.env.MAILCHIMP_AUDIENCE_ID as string, {
       email_address: email,
       status: 'subscribed',
       tags: ['audit'],
@@ -32,7 +32,7 @@ export async function DELETE(request: Request) {
   
     // remove subscriber from list
     const response = await mailchimp.lists.deleteListMember(
-        process.env.MAILCHIMP_AUDIENCE_ID,
+        process.env.MAILCHIMP_AUDIENCE_ID as string,
         email,
     );
   
